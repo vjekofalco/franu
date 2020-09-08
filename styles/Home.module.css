@@ -5,6 +5,30 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  overflow: hidden;
+}
+
+.container:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.3;
+  background-image: url('/images/home-page/background.png');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 
 .main {
@@ -14,6 +38,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 
 .footer {
@@ -36,7 +61,7 @@
 }
 
 .title a {
-  color: #0070f3;
+  color: #1B213E;
   text-decoration: none;
 }
 
