@@ -1,0 +1,21 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t vjekobabic/franu .
+
+#script:
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app: "franu"
+  env: "Franu-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-695916590408"
+  bucket_path: "franu"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
