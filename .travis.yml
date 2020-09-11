@@ -17,7 +17,7 @@ deploy:
   region: "eu-central-1"
   app: "franu"
   env: "Franu-env"
-  bucket_name: "elasticbeanstalk-eu-central-1-695916590408"
+  bucket_name: $AWS_S3_BUCKET
   bucket_path: "franu"
   on:
     branch: master
