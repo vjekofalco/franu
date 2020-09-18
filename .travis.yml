@@ -17,17 +17,17 @@ after_success:
   - echo "$DOCKER_PASS" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push vjekobabic/franu
 
-#deploy:
-#  provider: elasticbeanstalk
-#  region: "eu-central-1"
-#  app: "franu"
-#  env: "Franu-env"
-#  bucket_name: $AWS_S3_BUCKET
-#  bucket_path: "franu"
-#  on:
-#    branch: master
-#  access_key_id: $AWS_ACCESS_KEY
-#  secret_access_key: $AWS_SECRET_KEY
-#
-#after_deploy:
-#  - echo "Application Deployed!"
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app: "franu"
+  env: "Franu-env"
+  bucket_name: $AWS_S3_BUCKET
+  bucket_path: "franu"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+
+after_deploy:
+  - echo "Application Deployed!"
