@@ -1,0 +1,7 @@
+export const dark = '#000000'
+export const grayscale2 = '#333333'
+export const grayscale3 = '#4f4f4f'
+export const grayscale4 = '#828282'
+export const grayscale5 = '#bdbdbd'
+export const grayscale6 = '#e0e0e0'
+export const grayscale7 = '#f2f2f2'
