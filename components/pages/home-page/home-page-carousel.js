@@ -19,10 +19,6 @@ export const HomePageCarousel = () => {
         {
             image: '/images/home-page/background.jpg',
             title: 'Franu, wo das Kochen beginnt'
-        },
-        {
-            image: '/images/home-page/background.jpg',
-            title: 'Franu, wo das Kochen beginnt'
         }
     ]
     return (<Carousel showArrows={false} showThumbs={false} showStatus={false} showIndicators={false}>

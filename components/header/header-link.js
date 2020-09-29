@@ -26,7 +26,7 @@ const HeaderLinkStyled = styled.a`
 export const HeaderLink = ({ href, text }) => {
     const router = useRouter()
     const isLinksRoute = router.pathname === href
-    
+
     return(<Link href={href} passHref>
         <HeaderLinkStyled active={isLinksRoute}>{text}</HeaderLinkStyled>
     </Link>)}
