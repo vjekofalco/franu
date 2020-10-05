@@ -1,7 +1,11 @@
+import Link from 'next/link'
 import styled from 'styled-components'
+import { useState, useEffect } from 'react'
 
-import { HeadlineJumbo } from "../../text";
-import { PAGE_CONTENT_NARROW_WIDTH } from "../../../common/constants";
+import { ButtonPrimary } from '../../buttons'
+import {grayscale3} from '../../../styles/colors'
+import { HeadlineJumbo, HeadlineSeccondary } from '../../text'
+import {baseUnit, PAGE_CONTENT_NARROW_WIDTH} from '../../../common/constants'
 
 const HomePageJumbotronWrapper = styled.div`
   height: 100vh;
@@ -18,7 +22,7 @@ const HomePageJumbotronWrapper = styled.div`
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.3;
+  opacity: 0.2;
   background-image: url('/images/home-page/background.jpg');
   background-repeat: no-repeat;
   -ms-background-size: cover;
@@ -29,15 +33,71 @@ const HomePageJumbotronWrapper = styled.div`
   }`}
 `
 
+const HomePageJumbotronImageWrapper = styled.div`
+  flex: 1;
+  padding: ${baseUnit}px;
+  background-color: white;
+  box-shadow: -2px 2px 23px 1px rgba(79,79,79,1);
+  
+  animation: 1s ease-out 0s 1 slideInFromRight;
+  
+  @keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+  }
+`
+
 const HomePageJubotronContent = styled.div`
   z-index: 100;
-  max-width: ${PAGE_CONTENT_NARROW_WIDTH}px;
+  display: flex;
+  max-height: 70vh;
+  max-width: ${PAGE_CONTENT_NARROW_WIDTH + 200}px;
+`
+
+const HomePageJumbotronText = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: ${2 * baseUnit}px;
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+  
+  @keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+  }
 `
 
 export const HomePageJumbotron = () => {
+    const [ live, setLive ] = useState(false)
+
+    useEffect(() => {
+        if( typeof window !== "undefined") setLive(true)
+    })
+
     return (<HomePageJumbotronWrapper image={'/images/home-page/background.jpg'}>
         <HomePageJubotronContent>
-            <HeadlineJumbo>Franu, wo das Kochen beginnt</HeadlineJumbo>
+            <HomePageJumbotronText live={live}>
+                <HeadlineJumbo>Franu, wo das Kochen beginnt</HeadlineJumbo>
+                <HeadlineSeccondary color={grayscale3} marginTop={2}>Finden Sie Ihre Traumküche mit nur wenigen Klicks</HeadlineSeccondary>
+                <div>
+                    <ButtonPrimary big marginTop={3} marginBottom={1}>Bestellen Sie jetzt Ihre Küche</ButtonPrimary>
+                    <Link href={'/examples'}>
+                        <a style={{textDecoration: 'underline', weight: 600, display: 'block'}}>Oder Inspiration finden</a>
+                    </Link>
+                </div>
+            </HomePageJumbotronText>
+            <HomePageJumbotronImageWrapper live={live}>
+                <img src='/images/home-page/jumbotron-image.jpg' alt={'Kitchens photo'}/>
+            </HomePageJumbotronImageWrapper>
         </HomePageJubotronContent>
     </HomePageJumbotronWrapper>)
 }

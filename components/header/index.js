@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { useRouter } from "next/router"
 
-import { HeaderLink } from "./header-link";
+import { HeaderLink, HeaderLinkLike } from "./header-link";
 import { PAGE_CONTENT_NARROW_WIDTH, baseUnit } from "../../common/constants"
 
 const HeaderWrapper = styled.div`
@@ -35,6 +35,19 @@ export const Header = () => {
     const router = useRouter()
     const isHomePage = router.pathname === '/'
 
+    const slideOnHomePage = (id) => {
+        if (!document) return
+
+        const route = `/#${id}`
+
+        if (!isHomePage) {
+            router.push(route)
+        } else {
+            const elem = document.getElementById(id)
+            elem.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
+        }
+    }
+
     return (<HeaderWrapper absolute={isHomePage}>
         <HeaderWrapperInner>
             <HeaderLinksWrapper>
@@ -42,10 +55,10 @@ export const Header = () => {
                 <HeaderLink href={'/about'} text="About"/>
             </HeaderLinksWrapper>
             <HeaderLogoArea>
-                <img src={'images/logos/franu-text-black-and-white.svg'} alt="Franu black and white logo"/>
+                <img src={'images/logos/franu-text-colored.svg'} alt="Franu black and white logo"/>
             </HeaderLogoArea>
             <HeaderLinksWrapper>
-                <HeaderLink href={'/about'} text="About"/>
+                <HeaderLinkLike onClick={() => slideOnHomePage('how-it-works')} >How it works</HeaderLinkLike>
                 <HeaderLink href={'/about'} text="About"/>
             </HeaderLinksWrapper>
         </HeaderWrapperInner>

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
-import { HomePageJumbotron } from "../components/pages/home-page/home-page-jumbotron";
+import { HomePageStepsBar } from '../components/pages/home-page/home-page-steps-bar'
+import { HomePageJumbotron } from '../components/pages/home-page/home-page-jumbotron'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         {/*<link rel="icon" href="/favicon.ico" />*/}
       </Head>
      <HomePageJumbotron/>
+     <HomePageStepsBar/>
     </>
   )
 }
