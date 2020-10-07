@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import { useRouter } from "next/router"
 
-import { HeaderLink, HeaderLinkLike } from "./header-link";
-import { PAGE_CONTENT_NARROW_WIDTH, baseUnit } from "../../common/constants"
+import { ImageOptimizedSvg } from '../image/image-optimized'
+import { HeaderLink, HeaderLinkLike } from './header-link'
+import { PAGE_CONTENT_NARROW_WIDTH, baseUnit } from '../../common/constants'
 
 const HeaderWrapper = styled.div`
   ${({absolute}) => absolute && `
@@ -55,7 +56,7 @@ export const Header = () => {
                 <HeaderLink href={'/about'} text="About"/>
             </HeaderLinksWrapper>
             <HeaderLogoArea>
-                <img src={'images/logos/franu-text-colored.svg'} alt="Franu black and white logo"/>
+                <ImageOptimizedSvg relativeUrl={'logos/franu-text-colored.svg'} alt="Franu kuchen logo"/>
             </HeaderLogoArea>
             <HeaderLinksWrapper>
                 <HeaderLinkLike onClick={() => slideOnHomePage('how-it-works')} >How it works</HeaderLinkLike>

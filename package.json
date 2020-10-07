@@ -8,11 +8,20 @@
     "start": "next start"
   },
   "dependencies": {
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^8.0.0",
+    "jimp": "^0.16.1",
     "next": "9.5.3",
+    "next-compose-plugins": "^2.2.0",
+    "next-optimized-images": "^2.6.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-responsive-carousel": "^3.2.10",
-    "styled-components": "^5.2.0"
+    "responsive-loader": "^2.1.1",
+    "styled-components": "^5.2.0",
+    "svg-sprite-loader": "^5.0.0",
+    "webp-loader": "^0.6.0"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.11.1"

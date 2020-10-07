@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 
 import { ButtonPrimary } from '../../buttons'
 import {grayscale3} from '../../../styles/colors'
+import { ImageOptimized } from '../../image/image-optimized'
 import { HeadlineJumbo, HeadlineSeccondary } from '../../text'
 import {baseUnit, PAGE_CONTENT_NARROW_WIDTH} from '../../../common/constants'
 
@@ -96,7 +97,7 @@ export const HomePageJumbotron = () => {
                 </div>
             </HomePageJumbotronText>
             <HomePageJumbotronImageWrapper live={live}>
-                <img src='/images/home-page/jumbotron-image.jpg' alt={'Kitchens photo'}/>
+                <ImageOptimized relativeUrl='home-page/jumbotron-image.jpg' alt={'Kitchens photo'}/>
             </HomePageJumbotronImageWrapper>
         </HomePageJubotronContent>
     </HomePageJumbotronWrapper>)
