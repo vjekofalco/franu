@@ -12,7 +12,7 @@ export const HeadlineJumbo = styled.h1`
   ${(props) => decWithMargins(props)}
 `
 
-export const HeadlineSeccondary = styled.h2`
+export const HeadlineSecondary = styled.h2`
   font-size: 1.5rem;
   color: ${({ color }) => color || grayscale2};
   
@@ -28,4 +28,27 @@ export const HeadlineTernarry = styled.h3`
   ${({ center }) => center && 'text-align: center;'}
   
   ${(props) => decWithMargins(props)}
+`
+
+export const Text = styled.p`
+    margin: 0;
+    max-width: 100%;
+    
+    ${props => props.size ? `font-size : ${props.size}rem;` : `${props.small ? `font-size : 0.75rem;` : 'font-size : 1rem;'}`}
+    ${props => props.weight && `font-weight : ${props.weight};`}
+    ${props => props.color ? `color : ${props.color};` : `color: ${grayscale2};`}
+    ${props => props.inline && 'display : inline-block;'}
+    ${props => props.cursor && `cursor : ${props.cursor};`}
+    ${props => props.align && `text-align : ${props.align};`}
+    ${props => props.underline && 'text-decoration: underline;'}
+    ${props => props.center && 'text-align: center;'}
+    ${props => props.uppercase && 'text-transform: uppercase;'}
+    
+    ${props => props.hoverColor && `
+      &:hover {
+        color: ${props.hoverColor};
+      }
+    `}
+    
+    ${props => decWithMargins(props)}
 `

@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 
 import { ButtonPrimary } from '../../buttons'
-import {grayscale3} from '../../../styles/colors'
+import { grayscale3 } from '../../../styles/colors'
 import { ImageOptimized } from '../../image/image-optimized'
-import { HeadlineJumbo, HeadlineSeccondary } from '../../text'
-import {baseUnit, PAGE_CONTENT_NARROW_WIDTH} from '../../../common/constants'
+import { HeadlineJumbo, HeadlineSecondary } from '../../text'
+import { baseUnit, PAGE_CONTENT_NARROW_WIDTH } from '../../../common/constants'
 
 const HomePageJumbotronWrapper = styled.div`
   height: 100vh;
@@ -14,6 +14,7 @@ const HomePageJumbotronWrapper = styled.div`
   position: relative;
   align-items: center;
   justify-content: center;
+  box-shadow: 0px -30px 60px 0px rgba(79,79,79,1);
   
   ${({ image }) => image && `&:after {
   content: ' ';
@@ -24,7 +25,7 @@ const HomePageJumbotronWrapper = styled.div`
   width: 100%;
   height: 100%;
   opacity: 0.2;
-  background-image: url('/images/home-page/background.jpg');
+  background-image: url(${require('../../../images/home-page/background.jpg')});
   background-repeat: no-repeat;
   -ms-background-size: cover;
   -o-background-size: cover;
@@ -88,7 +89,7 @@ export const HomePageJumbotron = () => {
         <HomePageJubotronContent>
             <HomePageJumbotronText live={live}>
                 <HeadlineJumbo>Franu, wo das Kochen beginnt</HeadlineJumbo>
-                <HeadlineSeccondary color={grayscale3} marginTop={2}>Finden Sie Ihre Traumküche mit nur wenigen Klicks</HeadlineSeccondary>
+                <HeadlineSecondary color={grayscale3} marginTop={2}>Finden Sie Ihre Traumküche mit nur wenigen Klicks</HeadlineSecondary>
                 <div>
                     <ButtonPrimary big marginTop={3} marginBottom={1}>Bestellen Sie jetzt Ihre Küche</ButtonPrimary>
                     <Link href={'/examples'}>
