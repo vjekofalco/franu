@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
 import styled from 'styled-components'
+import React, { useState } from 'react'
 
 import { HeadlineSecondary, Text } from '../../text'
+import { HomePageGalleryItemContent } from './common'
+import { backgroundColor } from '../../../styles/colors'
 import { SeparationLineDefault } from '../../separation-line'
-import { baseUnit, PAGE_CONTENT_NARROW_WIDTH } from '../../../common/constants'
+import { baseUnit, PAGE_CONTENT_WIDE_WIDTH } from '../../../common/constants'
 
 import Gallery from '../../../images/icons/gallery/gallery.svg?sprite'
 
@@ -11,7 +13,7 @@ const HomePageGalleryWrapper = styled.div`
   height: 500px;
   display: flex;
   margin: 0 auto;
-  max-width: ${PAGE_CONTENT_NARROW_WIDTH + 2 * baseUnit}px;
+  max-width: ${PAGE_CONTENT_WIDE_WIDTH + 2 * baseUnit}px;
 `
 
 const HomePageGalleryHalf = styled.div`
@@ -27,30 +29,10 @@ const HomePageGalleryItemWrapper = styled.div`
   background-position: center;
   flex-grow: 1;
   cursor: pointer;
-  border: ${baseUnit}px solid white;
+  border: ${baseUnit}px solid ${backgroundColor};
   position: relative;
   
   ${({ small }) => small && `flex-basis: 50%;`}
-`
-
-const HomePageGalleryItemContent = styled.div`
-  visibility: hidden;
-  position: absolute;
-  background-color: rgba(242, 242, 242, 0);
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  
-  ${({ active }) => active && `
-      visibility: visible;
-      transition: background-color 300ms;
-      background-color: rgba(242, 242, 242, 0.6);
-  `}
 `
 
 const HomePageGalleryItem = ({ item, small }) => {
@@ -96,7 +78,7 @@ export const HomePageGallery = () => {
         </HomePageGalleryHalf>
         <HomePageGalleryHalf>
             {images.slice(1, images.length)
-                .map(i => (<HomePageGalleryItem small item={i} />))}
+                .map((image, i) => (<HomePageGalleryItem key={`${image.url}-${i}`} small item={image} />))}
         </HomePageGalleryHalf>
     </HomePageGalleryWrapper>
     </div>)

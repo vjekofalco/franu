@@ -7,6 +7,7 @@ import { decWithMargins } from '../../styles/style-helpers'
 const SeparationLine = styled.hr`
   border: none;
   height: 1px;
+  width: 100%;
   margin-top: ${2 * baseUnit}px;
   margin-bottom: ${2 * baseUnit}px;
   
@@ -19,4 +20,9 @@ const SeparationLine = styled.hr`
 export const SeparationLineDefault = styled(SeparationLine)`
   color: ${grayscale5};
   background-color: ${grayscale5}; 
+`
+
+export const SeparationLineCustom = styled(SeparationLine)`
+  color: ${({color}) => color};
+  background-color: ${({color}) => color}; 
 `
