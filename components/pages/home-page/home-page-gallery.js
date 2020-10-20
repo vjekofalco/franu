@@ -69,9 +69,6 @@ export const HomePageGallery = () => {
     ]
 
     return (<div id="find-inspiration">
-        <HeadlineSecondary center marginBottom={1}>No ideas</HeadlineSecondary>
-        <SeparationLineDefault center maxWidth={350} marginBottom={1}/>
-        <Text center marginBottom={3}>Find inspiration in our previous projects and contact us.</Text>
         <HomePageGalleryWrapper>
         <HomePageGalleryHalf>
             <HomePageGalleryItem item={images[0]} />
