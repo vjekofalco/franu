@@ -92,7 +92,7 @@ export const HomePageJumbotron = () => {
                 <HeadlineSecondary color={grayscale3} marginTop={2}>Finden Sie Ihre Traumküche mit nur wenigen Klicks</HeadlineSecondary>
                 <div>
                     <ButtonPrimary big marginTop={3} marginBottom={1}>Bestellen Sie jetzt Ihre Küche</ButtonPrimary>
-                    <Link href={'/examples'}>
+                    <Link href={'/#find-inspiration'}>
                         <a style={{textDecoration: 'underline', weight: 600, display: 'block'}}>Oder Inspiration finden</a>
                     </Link>
                 </div>

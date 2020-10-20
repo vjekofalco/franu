@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Text } from '../../text'
-import { HeadlineTernarry } from '../../text'
+import { HeadlineSecondary } from '../../text'
 import { SeparationLineDefault } from '../../separation-line'
 import { grayscale2, grayscale3, grayscale7 } from '../../../styles/colors'
 import {baseUnit, PAGE_CONTENT_NARROW_WIDTH} from '../../../common/constants'
@@ -83,7 +83,7 @@ const HomePageStepsBarWrapper = styled.div`
   display: flex;
   margin: 0 auto;
   align-items: center;
-  max-width: ${PAGE_CONTENT_NARROW_WIDTH + 200}px;
+  max-width: ${PAGE_CONTENT_NARROW_WIDTH}px;
 `
 
 const HomePageStepsBarStepDescriptionWrapper = styled.div`
@@ -157,7 +157,7 @@ export const HomePageStepsBar = () => {
 
     return (
         <HomePageStepsBarContainer id="how-it-works">
-            <HeadlineTernarry center marginBottom={1}>How it works</HeadlineTernarry>
+            <HeadlineSecondary center marginBottom={1}>How it works</HeadlineSecondary>
             <SeparationLineDefault center maxWidth={350} marginBottom={1}/>
             <Text center marginBottom={3}>Cooking has never been easier. Get your dream kitchen in no time.</Text>
             <HomePageStepsBarWrapper>

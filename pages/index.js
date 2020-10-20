@@ -1,5 +1,6 @@
 import Head from 'next/head'
 
+import { HomePageGallery } from '../components/pages/home-page/home-page-gallery'
 import { HomePageStepsBar } from '../components/pages/home-page/home-page-steps-bar'
 import { HomePageJumbotron } from '../components/pages/home-page/home-page-jumbotron'
 
@@ -15,6 +16,7 @@ export default function Home() {
       </Head>
      <HomePageJumbotron/>
      <HomePageStepsBar/>
+     <HomePageGallery/>
     </>
   )
 }
