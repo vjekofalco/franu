@@ -1,5 +1,6 @@
 import Head from 'next/head'
 
+import { HomePageRequestForm } from '../components/forms/home-page-request-form'
 import { NewArrivals } from '../components/pages/home-page/home-page-new-arivals'
 import { HomePageGallery } from '../components/pages/home-page/home-page-gallery'
 import { HomePageStepsBar } from '../components/pages/home-page/home-page-steps-bar'
@@ -19,6 +20,7 @@ export default function Home() {
      <NewArrivals/>
      <HomePageStepsBar/>
      <HomePageGallery/>
+     <HomePageRequestForm/>
     </>
   )
 }

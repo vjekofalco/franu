@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import React, { useState } from 'react'
 
+import { white} from '../../../styles/colors'
 import { HeadlineSecondary, Text } from '../../text'
 import { HomePageGalleryItemContent } from './common'
-import { backgroundColor } from '../../../styles/colors'
 import { SeparationLineDefault } from '../../separation-line'
 import { baseUnit, PAGE_CONTENT_WIDE_WIDTH } from '../../../common/constants'
 
@@ -29,7 +29,7 @@ const HomePageGalleryItemWrapper = styled.div`
   background-position: center;
   flex-grow: 1;
   cursor: pointer;
-  border: ${baseUnit}px solid ${backgroundColor};
+  border: ${baseUnit}px solid ${white};
   position: relative;
   
   ${({ small }) => small && `flex-basis: 50%;`}

@@ -18,3 +18,5 @@ export const primaryHover = '#FF4837'
 
 
 export const backgroundColor = '#F8F4F0'
+
+export const danger = '#e25141'
