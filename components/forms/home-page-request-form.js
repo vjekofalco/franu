@@ -1,9 +1,11 @@
-import React from 'react';
-import { Formik, Form, useFormik, useField } from 'formik'
+import axios from 'axios'
+import React, { useState } from 'react'
+import { Formik, Form, useField } from 'formik'
 
 import { ButtonSpecial } from '../buttons'
 import { StyledInput } from '../form-elements/input'
 import { ErrorText } from '../form-elements/error-text'
+import {Text} from "../text";
 
 const RequestFormInputField = (props) => {
     const [field, meta] = useField(props)
@@ -19,8 +21,16 @@ const RequestFormInputField = (props) => {
 }
 
 export const HomePageRequestForm = () => {
+    const [submitted, setSubmitted] = useState(false)
+
     const submitForm = values => {
         console.log(values)
+        axios.post('/api/request', values)
+            .then(data => {
+                console.log(data)
+                setSubmitted(true)
+            })
+            .catch(err => console.log(err))
     }
 
     const validate = values => {
@@ -52,7 +62,9 @@ export const HomePageRequestForm = () => {
         email: '',
     }
 
-    return (<Formik initialValues={initialValues} onSubmit={values => submitForm(values)} validate={validate}>
+    return (<>
+        {submitted && <Text>Request Submitted</Text>}
+        <Formik initialValues={initialValues} onSubmit={values => submitForm(values)} validate={validate}>
         <Form>
             <RequestFormInputField id="firstName"
                          name="firstName"
@@ -68,5 +80,5 @@ export const HomePageRequestForm = () => {
                          placeholder="E-mail"/>
             <ButtonSpecial type="submit">Send Request</ButtonSpecial>
         </Form>
-    </Formik>)
+    </Formik></>)
 }
