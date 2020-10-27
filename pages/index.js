@@ -15,7 +15,7 @@ export default function Home() {
       <main className={styles.main}>
         <img src="/images/logos/franu-text-colored.svg"/>
         <h1 className={styles.title}>
-          Wir sind schon bald für Sie erreichbar
+            Wir sind bald für Sie da
         </h1>
         <p className={styles.description}>Franu, wo das Kochen beginnt</p>
       </main>
