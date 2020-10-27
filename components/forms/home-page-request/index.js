@@ -25,15 +25,43 @@ const HomePageFormHalf = styled.div`
 export const HomePageRequestForm = () => {
     const [ step, setStep ] = useState(1)
     const [ submitted, setSubmitted ] = useState(false)
+    const [ appliances, setAppliances ] = useState([])
+    const [ kitchenShape, setKitchenShape ] = useState('')
 
     const submitForm = values => {
+        const data = {
+            ...values,
+            kitchenShape,
+            appliances
+        }
         console.log(values)
-        axios.post('/api/request', values)
+        axios.post('/api/request', data)
             .then(data => {
                 console.log(data)
                 setSubmitted(true)
             })
             .catch(err => console.log(err))
+    }
+
+    const selectKitchenShape = (shape) => {
+        if ( shape === kitchenShape ) {
+            setKitchenShape('')
+        } else {
+            setKitchenShape(shape)
+        }
+    }
+
+    const selectAppliance = (appliance) => {
+        const applianceIndex = appliances.indexOf(appliance)
+
+        if (applianceIndex >= 0) {
+            setAppliances([
+                ...appliances.slice(0, applianceIndex),
+                ...appliances.slice(applianceIndex + 1)
+            ])
+        } else {
+            setAppliances([ ...appliances, appliance ])
+        }
     }
 
     return (<HomePageFormWrapper>
@@ -43,8 +71,8 @@ export const HomePageRequestForm = () => {
             <Formik enableReinitialize initialValues={{}} onSubmit={values => submitForm(values)} validate={validate}>
                 {(props) => (<Form>
                     {step === 1 && <StepOne {...props}/>}
-                    {step === 2 && <StepTwo {...props}/>}
-                    {step === 3 && <StepThree {...props}/>}
+                    {step === 2 && <StepTwo selected={kitchenShape} {...props} onSelect={s => selectKitchenShape(s)}/>}
+                    {step === 3 && <StepThree selected={appliances} {...props} onSelect={a => selectAppliance(a)}/>}
                     <ButtonSecondary onClick={() => setStep(step - 1)} marginTop={1}>Prev</ButtonSecondary>
                     <ButtonSpecial marginLeft={1} marginTop={1} type="submit">Send Request</ButtonSpecial>
                     <ButtonSecondary onClick={() => setStep(step + 1)} marginLeft={1} marginTop={1}>Next</ButtonSecondary>

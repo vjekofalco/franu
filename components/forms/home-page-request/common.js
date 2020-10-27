@@ -22,15 +22,17 @@ export const FormIconWrapper = styled.div`
     
     > svg {
       fill: ${grayscale4};
+      color: ${grayscale4};
     }
   }
   
   ${({ selected }) => selected && `
-    pointer-events: none;
     border: 1px solid ${primaryHover};
     
     > svg {
         fill: ${primaryColor};
+        color: ${primaryColor};
+    }
   `}
 `
 export const FromIconsWrapper = styled.div`
