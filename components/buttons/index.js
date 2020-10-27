@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { baseUnit } from '../../common/constants'
 import { decWithMargins, decWithPadding } from '../../styles/style-helpers'
-import { white, buttonSpecialBorder, support2, support2Hover, primaryColor, primaryHover } from '../../styles/colors'
+import { white, buttonSpecialBorder, support2, support2Hover, primaryColor, primaryHover, support1Hover, support1 } from '../../styles/colors'
 
 const BaseButton = styled.button`
   cursor: pointer;
@@ -48,4 +48,14 @@ export const ButtonPrimary = styled(BaseButton)`
   &:hover {
     background-color: ${primaryHover};
   }
+`
+
+export const ButtonSecondary = styled(BaseButton)`
+  color: ${white};
+  border: 1px solid ${support1};
+  background-color: ${support1};
+  
+  &:hover {
+    background-color: ${support1Hover};
+  } 
 `

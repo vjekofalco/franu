@@ -16,6 +16,8 @@ export const buttonSpecialBorder = '#ffd8af'
 export const primaryColor = '#e4231f'
 export const primaryHover = '#FF4837'
 
+export const support1 = '#3880e5'
+export const support1Hover = '#597AA8'
 
 export const backgroundColor = '#F8F4F0'
 

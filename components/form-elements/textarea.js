@@ -3,14 +3,15 @@ import styled from 'styled-components'
 import { baseUnit } from '../../common/constants'
 import { white, grayscale5, grayscale4, danger  } from '../../styles/colors'
 
-export const StyledInput = styled.input`
+export const StyledTextarea = styled.textarea`
     background-color: ${({ bgColor }) => bgColor || white};
     border: 1px solid ${({ borderColor }) =>  borderColor || grayscale4};
     outline: none;
     line-height: inherit;
-    padding: 0 ${baseUnit / 2}px;
+    padding: ${baseUnit / 2}px;
+    min-height: ${11 * baseUnit}px;
+    height: ${11 * baseUnit}px;
     width: 100%;
-    height: ${3 * baseUnit}px;
     
     &::placeholder {
         color: ${grayscale5};

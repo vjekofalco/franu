@@ -1,10 +1,10 @@
 import Head from 'next/head'
 
-import { HomePageRequestForm } from '../components/forms/home-page-request-form'
 import { NewArrivals } from '../components/pages/home-page/home-page-new-arivals'
 import { HomePageGallery } from '../components/pages/home-page/home-page-gallery'
 import { HomePageStepsBar } from '../components/pages/home-page/home-page-steps-bar'
 import { HomePageJumbotron } from '../components/pages/home-page/home-page-jumbotron'
+import { HomePageRequestFormSection } from '../components/pages/home-page/home-page-request-form-section'
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
      <NewArrivals/>
      <HomePageStepsBar/>
      <HomePageGallery/>
-     <HomePageRequestForm/>
+     <HomePageRequestFormSection/>
     </>
   )
 }
