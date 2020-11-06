@@ -19,3 +19,4 @@ export const HomePageGalleryItemContent = styled.div`
       background-color: rgba(242, 242, 242, 0.6);
   `}
 `
+

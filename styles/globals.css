@@ -1,12 +1,9 @@
 html,
-body {
+body,
+* {
   padding: 0;
   margin: 0;
   font-family: "Open Sans", sans-serif;
-}
-
-body {
-  background-color: #F8F4F0;
 }
 
 img {
