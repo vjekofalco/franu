@@ -1,17 +1,23 @@
 import styled from 'styled-components'
 
 import { baseUnit } from '../../../common/constants'
-import { grayscale3, grayscale4, primaryHover, primaryColor } from '../../../styles/colors'
+import { brown, brownscale2, grayscale3, grayscale4, primaryHover, primaryColor } from '../../../styles/colors'
 
-export const FormIconWrapper = styled.div`
-  display: flex;
-  align-content: center;
+export const FormSelectWrapper = styled.div`
   flex-grow: 1;
   flex-basis: 30%;
   max-width: 30%;
   cursor: pointer;
+  text-align: center;
+  margin-bottom: ${2 * baseUnit}px;
+`
+
+export const FormIconWrapper = styled.div`
+  display: flex;
+  align-content: center;
+  min-width: 100%;
+  margin-top: ${baseUnit}px;
   border: 1px solid ${grayscale3};
-  margin-bottom: ${baseUnit}px;
   
   > svg {
     min-width: 100%;
@@ -19,7 +25,7 @@ export const FormIconWrapper = styled.div`
   
   &:hover {
     border: 1px solid ${grayscale4};
-    
+
     > svg {
       fill: ${grayscale4};
       color: ${grayscale4};
@@ -27,11 +33,10 @@ export const FormIconWrapper = styled.div`
   }
   
   ${({ selected }) => selected && `
-    border: 1px solid ${primaryHover};
-    
+    border: 2px solid ${brownscale2};    
     > svg {
-        fill: ${primaryColor};
-        color: ${primaryColor};
+        fill: ${brown};
+        color: ${brown};
     }
   `}
 `

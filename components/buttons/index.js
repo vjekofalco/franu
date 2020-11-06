@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { baseUnit } from '../../common/constants'
 import { decWithMargins, decWithPadding } from '../../styles/style-helpers'
-import { white, buttonSpecialBorder, support2, support2Hover, primaryColor, primaryHover, support1Hover, support1 } from '../../styles/colors'
+import { brownscale3, brownscale2, white, buttonSpecialBorder, support2, support2Hover, primaryColor, primaryHover, support1Hover, support1 } from '../../styles/colors'
 
 const BaseButton = styled.button`
   cursor: pointer;
@@ -24,6 +24,11 @@ const BaseButton = styled.button`
   
   ${({big}) => big && `
       padding: ${baseUnit * 1.5}px ${baseUnit * 2}px;
+      font-size: 1.25rem;
+  `}   
+
+  ${({medium}) => medium && `
+      padding: ${baseUnit}px ${baseUnit * 1.5}px;
       font-size: 1.25rem;
   `} 
   
@@ -57,5 +62,15 @@ export const ButtonSecondary = styled(BaseButton)`
   
   &:hover {
     background-color: ${support1Hover};
+  } 
+`
+
+export const ButtonBrown = styled(BaseButton)`
+  color: ${white};
+  border: 1px solid ${brownscale2};
+  background-color: ${brownscale2};
+  
+  &:hover {
+    background-color: ${brownscale3};
   } 
 `

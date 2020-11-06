@@ -1,11 +1,11 @@
-import { NextApiRequest, NextApiResponse } from 'next'
 import { PrismaClient } from '@prisma/client'
+import { NextApiRequest, NextApiResponse } from 'next'
 
 // Supports only POST
 const requestApi = async (req: NextApiRequest, res: NextApiResponse) => {
-    const prisma = new PrismaClient({ log: ["query"] })
-
     if (req.method === 'POST') {
+        const prisma = new PrismaClient({ log: ["query"] })
+
         try {
             const { body } = req
             const slug = body.email + '-' + Date.now()
@@ -16,6 +16,10 @@ const requestApi = async (req: NextApiRequest, res: NextApiResponse) => {
                     lastName: body.lastName,
                     email: body.email,
                     phone: body.phoneNumber
+                },
+                requestInfo: {
+                    appliances: body.appliances,
+                    kitchenShape: body.kitchenShape
                 }
             }
 

@@ -8,11 +8,30 @@ import { ErrorText } from '../../form-elements/error-text'
 import { StyledTextarea } from '../../form-elements/textarea'
 
 const HomePageFormInputWrapper = styled.div`
+  flex: 1;
   margin-top: ${baseUnit / 2}px;
+  
+  ${({ wide }) => wide && `
+    min-width: calc(65% - ${baseUnit / 2}px);
+  `}
+  
+  ${({ narrow }) => narrow && `
+    min-width: calc(35% - ${baseUnit / 2}px);
+  `}
+  
+  ${({ split }) => split && `
+    &:last-child {
+        margin-left: ${baseUnit}px;
+    }
+  `}
 `
 
 const HomePageFormErrorWrapper = styled.div`
   min-height: ${1.5 * baseUnit}px;
+`
+
+const HomePageFieldsWrapper = styled.div`
+  display: flex;
 `
 
 const RequestFormInputField = (props) => {
@@ -20,7 +39,7 @@ const RequestFormInputField = (props) => {
     const error = meta.touched && meta.error
 
     return (
-        <HomePageFormInputWrapper>
+        <HomePageFormInputWrapper {...props}>
             <HomePageFormErrorWrapper>
                 {error ? (
                     <ErrorText>{meta.error}</ErrorText>
@@ -33,22 +52,58 @@ const RequestFormInputField = (props) => {
 }
 
 export const StepOne = (props) => (<>
-    <RequestFormInputField name="firstName"
-                           type="text"
-                           placeholder="First Name:"
-                           {...props}/>
-    <RequestFormInputField name="lastName"
-                           type="text"
-                           placeholder="Last Name:"
-                           {...props}/>
-    <RequestFormInputField name="email"
-                           type="text"
-                           placeholder="E-mail:"
-                           {...props}/>
-    <RequestFormInputField name="phoneNumber"
-                           type="text"
-                           placeholder="Phone:"
-                           {...props}/>
+    <HomePageFieldsWrapper>
+        <RequestFormInputField name="firstName"
+                               type="text"
+                               split
+                               placeholder="First Name:"
+                               {...props}/>
+        <RequestFormInputField name="lastName"
+                               type="text"
+                               split
+                               placeholder="Last Name:"
+                               {...props}/>
+    </HomePageFieldsWrapper>
+    <HomePageFieldsWrapper>
+        <RequestFormInputField name="email"
+                               type="text"
+                               split
+                               placeholder="E-mail:"
+                               {...props}/>
+        <RequestFormInputField name="phoneNumber"
+                               type="text"
+                               split
+                               placeholder="Phone:"
+                               {...props}/>
+    </HomePageFieldsWrapper>
+    <HomePageFieldsWrapper>
+        <RequestFormInputField name="Address"
+                               type="text"
+                               split
+                               wide
+                               placeholder="Address:"
+                               {...props}/>
+        <RequestFormInputField name="Number"
+                               type="text"
+                               split
+                               narrow
+                               placeholder="Number:"
+                               {...props}/>
+    </HomePageFieldsWrapper>
+    <HomePageFieldsWrapper>
+        <RequestFormInputField name="zip"
+                               type="text"
+                               split
+                               narrow
+                               placeholder="ZIP:"
+                               {...props}/>
+        <RequestFormInputField name="city"
+                               type="text"
+                               split
+                               wide
+                               placeholder="City:"
+                               {...props}/>
+    </HomePageFieldsWrapper>
     <RequestFormInputField name="message"
                            type="textarea"
                            placeholder="Message:"

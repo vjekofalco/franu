@@ -1,12 +1,21 @@
 import React from 'react'
 
-import { FormIconWrapper, FromIconsWrapper } from './common'
+import {Text} from '../../text'
+import {grayscale4} from '../../../styles/colors'
+import {CheckBoxDesign} from '../../form-elements/checkbox'
+import {FormIconWrapper, FormSelectWrapper, FromIconsWrapper} from './common'
 import { availableAppliances, appliancesIcons } from '../../../common/appliances'
 
 export const StepThree = ({ onSelect, selected }) => {
-    return(<FromIconsWrapper>{availableAppliances.map(a => (
-        <FormIconWrapper selected={selected.indexOf(a.id) >= 0} key={a.id} onClick={() => onSelect(a.id)}>
-            {appliancesIcons(a.id)}
-        </FormIconWrapper>))}
+    return(<FromIconsWrapper>{availableAppliances.map(a => {
+        const isSelected = selected.indexOf(a.id) >= 0
+
+        return(<FormSelectWrapper selected={isSelected} key={a.id} onClick={() => onSelect(a.id)}>
+            <CheckBoxDesign checked={isSelected}/>
+            <Text marginTop={0.5} color={grayscale4}>{a.label}</Text>
+            <FormIconWrapper selected={isSelected}>
+                {appliancesIcons(a.id)}
+        </FormIconWrapper>
+        </FormSelectWrapper>)})}
     </FromIconsWrapper>)
 }
