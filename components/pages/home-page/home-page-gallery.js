@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import React, { useState } from 'react'
 
-import { white} from '../../../styles/colors'
+import { Section } from '../../common/section'
 import { HeadlineSecondary, Text } from '../../text'
+import { white, brown } from '../../../styles/colors'
 import { HomePageGalleryItemContent } from './common'
 import { SeparationLineDefault } from '../../separation-line'
 import { baseUnit, PAGE_CONTENT_WIDE_WIDTH } from '../../../common/constants'
@@ -14,6 +15,8 @@ const HomePageGalleryWrapper = styled.div`
   display: flex;
   margin: 0 auto;
   max-width: ${PAGE_CONTENT_WIDE_WIDTH + 2 * baseUnit}px;
+  background: ${white};
+  box-shadow: rgb(196, 204, 215) 0px 3px 4px 0px;
 `
 
 const HomePageGalleryHalf = styled.div`
@@ -68,10 +71,10 @@ export const HomePageGallery = () => {
         }
     ]
 
-    return (<div id="find-inspiration">
-        <HeadlineSecondary center marginBottom={1}>No ideas</HeadlineSecondary>
+    return (<Section id="find-inspiration">
+        <HeadlineSecondary color={brown} center marginBottom={1}>Find inspiration in our previous projects and contact us</HeadlineSecondary>
         <SeparationLineDefault center maxWidth={350} marginBottom={1}/>
-        <Text center marginBottom={3}>Find inspiration in our previous projects and contact us.</Text>
+        <Text size={1.5} center marginBottom={3}>We let our work speak for us, happy customer is what makes difference</Text>
         <HomePageGalleryWrapper>
         <HomePageGalleryHalf>
             <HomePageGalleryItem item={images[0]} />
@@ -81,5 +84,5 @@ export const HomePageGallery = () => {
                 .map((image, i) => (<HomePageGalleryItem key={`${image.url}-${i}`} small item={image} />))}
         </HomePageGalleryHalf>
     </HomePageGalleryWrapper>
-    </div>)
+    </Section>)
 }

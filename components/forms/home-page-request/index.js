@@ -8,6 +8,7 @@ import { StepTwo } from './step-two'
 import { validate } from './validation'
 import { StepThree } from './step-three'
 import { ButtonBrown } from '../../buttons'
+import { Section } from '../../common/section'
 import { SuccessMessage } from './success-message'
 import { Text, HeadlineSecondary } from '../../text'
 import { ValuesProposition } from './values-proposition'
@@ -17,14 +18,16 @@ import { baseUnit, PAGE_CONTENT_WIDE_WIDTH} from '../../../common/constants'
 import Prev from '../../../images/icons/common/prev-arrow.svg?sprite'
 import Next from '../../../images/icons/common/next-arrow.svg?sprite'
 
-const HomePageFormSection = styled.div`
-  padding: ${3 * baseUnit}px;
+const HomePageFormSection = styled(Section)`
   background: linear-gradient(150deg, rgb(226, 202, 182) 0%, rgb(242, 242, 242) 90%);
+  box-shadow: 0px 30px 60px 0px rgba(79,79,79,1);
 `
 
 const HomePageFormValuesWrapper = styled.div`
   display: flex;
   margin: 0 auto;
+  padding-top: ${3 * baseUnit}px;
+  padding-bottom: ${3 * baseUnit}px;
   max-width: ${PAGE_CONTENT_WIDE_WIDTH + 2 * baseUnit}px;
 `
 
@@ -149,41 +152,41 @@ export const HomePageRequestForm = () => {
 
     return (<HomePageFormSection>
                 <HomePageFormValuesWrapper>
-                <HomePageFormHalf>
-                    <ValuesProposition/>
-                </HomePageFormHalf>
-                <HomePageFormHalf>
-                    <HomePageFormWrapper>
-                        <><HeadlineSecondary color={brown} marginBottom={2}>Order your dream kitchen now</HeadlineSecondary>
-                        <Text>Out team will contact you soon and arrange a meeting with you and our design consultants.</Text>
-                        <Formik enableReinitialize initialValues={{}} onSubmit={values => submitForm(values)} validate={validate}>
-                            {(props) => (<Form>
-                                <HomePageFormInputsWrapper success={submitted}>
-                                    {
-                                        submitted
-                                            ? <SuccessMessage/>
-                                            : <>
-                                                {step === 1 && <StepOne {...props}/>}
-                                                {step === 2 && <StepTwo selected={kitchenShape} {...props} onSelect={s => selectKitchenShape(s)}/>}
-                                                {step === 3 && <StepThree selected={appliances} {...props} onSelect={a => selectAppliance(a)}/>}
-                                            </>
-                                    }
-                                </HomePageFormInputsWrapper>
-                                <ButtonsWrapper disabled={submitted}>
-                                    <StepsControll disabled={step === 1} onClick={() => changeStep(step - 1)}>
-                                        <Prev/>
-                                        <Text marginLeft={0.5}>Prev</Text>
-                                    </StepsControll>
-                                    <SendButton disabled={submitted} medium marginLeft={1} marginRight={1} type="submit">Send Request</SendButton>
-                                    <StepsControll disabled={step === STEPS_NUMBER} onClick={() => changeStep(step + 1)}>
-                                        <Text marginRight={0.5}>Next</Text>
-                                        <Next/>
-                                    </StepsControll>
-                                </ButtonsWrapper>
-                            </Form>)}
-                        </Formik></>
-                    </HomePageFormWrapper>
-                </HomePageFormHalf>
+                    <HomePageFormHalf>
+                        <ValuesProposition/>
+                    </HomePageFormHalf>
+                    <HomePageFormHalf>
+                        <HomePageFormWrapper id="contact-us-form">
+                            <><HeadlineSecondary color={brown} marginBottom={2}>Order your dream kitchen now</HeadlineSecondary>
+                            <Text>Out team will contact you soon and arrange a meeting with you and our design consultants.</Text>
+                            <Formik enableReinitialize initialValues={{}} onSubmit={values => submitForm(values)} validate={validate}>
+                                {(props) => (<Form>
+                                    <HomePageFormInputsWrapper success={submitted}>
+                                        {
+                                            submitted
+                                                ? <SuccessMessage/>
+                                                : <>
+                                                    {step === 1 && <StepOne {...props}/>}
+                                                    {step === 2 && <StepTwo selected={kitchenShape} {...props} onSelect={s => selectKitchenShape(s)}/>}
+                                                    {step === 3 && <StepThree selected={appliances} {...props} onSelect={a => selectAppliance(a)}/>}
+                                                </>
+                                        }
+                                    </HomePageFormInputsWrapper>
+                                    <ButtonsWrapper disabled={submitted}>
+                                        <StepsControll disabled={step === 1} onClick={() => changeStep(step - 1)}>
+                                            <Prev/>
+                                            <Text marginLeft={0.5}>Prev</Text>
+                                        </StepsControll>
+                                        <SendButton disabled={submitted} medium marginLeft={1} marginRight={1} type="submit">Send Request</SendButton>
+                                        <StepsControll disabled={step === STEPS_NUMBER} onClick={() => changeStep(step + 1)}>
+                                            <Text marginRight={0.5}>Next</Text>
+                                            <Next/>
+                                        </StepsControll>
+                                    </ButtonsWrapper>
+                                </Form>)}
+                            </Formik></>
+                        </HomePageFormWrapper>
+                    </HomePageFormHalf>
             </HomePageFormValuesWrapper>
     </HomePageFormSection>)
 }

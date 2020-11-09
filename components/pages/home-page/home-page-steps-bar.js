@@ -3,19 +3,18 @@ import styled from 'styled-components'
 
 import { Text } from '../../text'
 import { HeadlineSecondary } from '../../text'
+import { Section } from '../../common/section'
 import { SeparationLineDefault } from '../../separation-line'
-import { grayscale2, grayscale3, grayscale7 } from '../../../styles/colors'
 import {baseUnit, PAGE_CONTENT_NARROW_WIDTH} from '../../../common/constants'
+import { grayscale2, grayscale3, grayscale7, brown } from '../../../styles/colors'
 
 import Kitchen from '../../../images/icons/progress-bar/kitchen.svg?sprite'
 import DesignIcon from '../../../images/icons/progress-bar/interior-design.svg?sprite'
 import DeliveryCart from '../../../images/icons/progress-bar/delivery-cart.svg?sprite'
 import MeasuringTape from '../../../images/icons/progress-bar/measuring-tape.svg?sprite'
 
-const HomePageStepsBarContainer = styled.div`
+const HomePageStepsBarContainer = styled(Section)`
   counter-reset: step;
-  padding: ${2 * baseUnit}px;
-  margin-top: ${3 * baseUnit}px;
 `
 
 const HomePageStepsBarStep = styled.li`
@@ -27,10 +26,10 @@ const HomePageStepsBarStep = styled.li`
   &:before {
       content: counter(step);
       counter-increment: step;
-      width: 30px;
-      height: 30px;
-      line-height : 30px;
-      border: 2px solid ${grayscale2};
+      width: 40px;
+      height: 40px;
+      line-height : 40px;
+      border: 2.5px solid ${grayscale2};
       background-color: ${grayscale7};
       border-radius: 100%;
       display: block;
@@ -47,16 +46,16 @@ const HomePageStepsBarStep = styled.li`
    }
   
   &:last-child:before {
-    margin-left: calc(100% - 34px);
+    margin-left: calc(100% - 44px);
   }
   
   &:after {
       content: "";
       position: absolute;
       width: 145%;
-      height: 1px;
+      height: 2px;
       background-color: ${grayscale3};
-      top: 15px;
+      top: 20px;
       left: -50%;
       z-index : -1;
   }
@@ -75,11 +74,12 @@ const HomePageStepsBarList = styled.ul`
 `
 
 const HomePageStepsBarIconWrapper = styled.div`
-  width: 30px;
+  flex: 1;
+  width: ${3 * baseUnit}px;
 `
 
 const HomePageStepsBarWrapper = styled.div`
-  height: 300px;
+  min-height: 290px;
   display: flex;
   margin: 0 auto;
   align-items: center;
@@ -92,9 +92,9 @@ const HomePageStepsBarStepDescriptionWrapper = styled.div`
   position: absolute;
   display: inline-block;
   
-  ${({even}) => even ? `padding-top: ${baseUnit}px;` 
+  ${({even}) => even ? `padding-top: ${1.5 * baseUnit}px;` 
     : `bottom: 100%; 
-    padding-bottom: ${baseUnit}px;`}
+    padding-bottom: ${1.5 * baseUnit}px;`}
   
   ${({index}) => index === 1 && `
     margin-left: 25%;
@@ -113,6 +113,10 @@ const HomePageStepTitleWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: ${baseUnit / 2}px;
+  
+  > p {
+    flex: 2;
+  }
 `
 
 const HomePageStepsBarStepDescription = ({ step, even, index, last }) => (
@@ -121,7 +125,7 @@ const HomePageStepsBarStepDescription = ({ step, even, index, last }) => (
             <HomePageStepsBarIconWrapper>
                 {step.image()}
             </HomePageStepsBarIconWrapper>
-            <Text marginLeft={1} inline small weight={600}>{step.title}</Text>
+            <Text marginLeft={1} inline weight={600}>{step.title}</Text>
         </HomePageStepTitleWrapper>
         <Text small>{step.description}</Text>
     </HomePageStepsBarStepDescriptionWrapper>
@@ -145,7 +149,7 @@ export const HomePageStepsBar = () => {
             image: () => (<Kitchen/>)
         },
         {
-            title: 'Delivery and Assembly',
+            title: 'Delivery & Assembly',
             description: 'Your kitchen is delivered on time and assembled from our team',
             image: () => (<DeliveryCart/>)
         }
@@ -157,9 +161,9 @@ export const HomePageStepsBar = () => {
 
     return (
         <HomePageStepsBarContainer id="how-it-works">
-            <HeadlineSecondary center marginBottom={1}>How it works</HeadlineSecondary>
+            <HeadlineSecondary color={brown} center marginBottom={1}>How it works</HeadlineSecondary>
             <SeparationLineDefault center maxWidth={350} marginBottom={1}/>
-            <Text center marginBottom={3}>Cooking has never been easier. Get your dream kitchen in no time.</Text>
+            <Text size={1.5} center marginBottom={3}>Cooking has never been easier. Get your dream kitchen in no time.</Text>
             <HomePageStepsBarWrapper>
                 <HomePageStepsBarList>
                     {steps.map((s, i) => (

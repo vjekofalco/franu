@@ -4,7 +4,7 @@ import { grayscale2 } from "../../styles/colors"
 import { decWithMargins } from "../../styles/style-helpers";
 
 export const HeadlineJumbo = styled.h1`
-  font-size: 3rem;
+  font-size: 3.25rem;
   color: ${({ color }) => color || grayscale2};
   
   ${({ center }) => center && 'text-align: center;'}
@@ -13,7 +13,7 @@ export const HeadlineJumbo = styled.h1`
 `
 
 export const HeadlineSecondary = styled.h2`
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: ${({ color }) => color || grayscale2};
   
   ${({ center }) => center && 'text-align: center;'}
@@ -22,7 +22,7 @@ export const HeadlineSecondary = styled.h2`
 `
 
 export const HeadlineTernarry = styled.h3`
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   color: ${({ color }) => color || grayscale2};
   
   ${({ center }) => center && 'text-align: center;'}

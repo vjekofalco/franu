@@ -45,7 +45,7 @@ export const Header = () => {
             router.push(route)
         } else {
             const elem = document.getElementById(id)
-            elem.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
+            elem.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"})
         }
     }
 

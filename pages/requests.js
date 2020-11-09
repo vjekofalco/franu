@@ -14,7 +14,7 @@ const RequestsPAgeWrapper = styled.div`
 `
 
 const RequestItemWrapper = styled.div`
-  padding: ${baseUnit}px 0;
+  padding: ${baseUnit}px;
   border-top: 1px solid ${grayscale2};
   
   :hover {

@@ -1,17 +1,16 @@
 import styled from 'styled-components'
 import React, { useState } from 'react'
 
-import { grayscale4 } from '../../../styles/colors'
+import { Section } from '../../common/section'
 import { HeadlineSecondary, Text } from '../../text'
 import { HomePageGalleryItemContent } from './common'
+import { grayscale4, brown } from '../../../styles/colors'
 import { ImageOptimized } from '../../image/image-optimized'
 import { baseUnit, PAGE_CONTENT_WIDE_WIDTH } from '../../../common/constants'
 import { SeparationLineCustom, SeparationLineDefault } from '../../separation-line'
 
-const NewArrivalsWrapper = styled.div`
+const NewArrivalsWrapper = styled(Section)`
   text-align: center;
-  padding: ${2 * baseUnit}px;
-  background-color: white;
 `
 
 const NewArriwalsGalleryWrapper = styled.div`
@@ -27,6 +26,11 @@ const NewArrivalsItemWrapper = styled.div`
   cursor: pointer;
   position: relative;
   border: ${baseUnit}px solid white;
+  box-shadow: rgb(196, 204, 215) 0px 3px 4px 0px;
+  
+  &:not(:first-child) {
+    margin-left: ${2 * baseUnit}px;
+  }
 `
 
 const NewArrivalsItem = ({ item }) => {
@@ -49,13 +53,12 @@ export const NewArrivals = () => {
         { name: 'Kitchen Filip', style: 'High Gloss'},
         { name: 'Kitchen Emanuel', style: 'Modern'},
         { name: 'Kitchen Mihael', style: 'Vintage'},
-        { name: 'Kitchen Dora', style: 'Industrial'},
-        { name: 'Kitchen Nera', style: 'Farmhouse'},
+        { name: 'Kitchen Dora', style: 'Industrial'}
         ]
     return (<NewArrivalsWrapper>
-        <HeadlineSecondary center marginBottom={1}>Collection 2021</HeadlineSecondary>
+        <HeadlineSecondary color={brown} center marginBottom={1}>We are bringing you latest trends and standards</HeadlineSecondary>
         <SeparationLineDefault center maxWidth={350} marginBottom={1}/>
-        <Text center marginBottom={3}>We are bringing you latest trends and standards</Text>
+        <Text size={1.5} center marginBottom={3}>Country, modern, high gloss or vintage, choose the design you ever wanted</Text>
         <NewArriwalsGalleryWrapper>
             {items.map(i => (
                 <NewArrivalsItem key={i.name.replace(' ', '-')} item={i}/>

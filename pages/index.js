@@ -2,6 +2,7 @@ import Head from 'next/head'
 
 import { NewArrivals } from '../components/pages/home-page/home-page-new-arivals'
 import { HomePageGallery } from '../components/pages/home-page/home-page-gallery'
+import { HomePagePartners } from '../components/pages/home-page/home-page-partners'
 import { HomePageStepsBar } from '../components/pages/home-page/home-page-steps-bar'
 import { HomePageJumbotron } from '../components/pages/home-page/home-page-jumbotron'
 import { HomePageRequestFormSection } from '../components/pages/home-page/home-page-request-form-section'
@@ -19,6 +20,7 @@ export default function Home() {
      <HomePageJumbotron/>
      <NewArrivals/>
      <HomePageStepsBar/>
+     <HomePagePartners/>
      <HomePageGallery/>
      <HomePageRequestFormSection/>
     </>
