@@ -69,3 +69,13 @@ export const appliancesIcons = (applianceId) => {
             return null
     }
 }
+
+export const getApplianceTranslationLabel = (id) => {
+    const appliances = availableAppliances.filter(a => a.id === id)
+
+    if (appliances && appliances.length > 0) {
+        return appliances[0].label
+    }
+
+    return id
+}

@@ -23,6 +23,10 @@ const requestApi = async (req: NextApiRequest, res: NextApiResponse) => {
                 }
             }
 
+            if (body.address) {
+                kitchenRequest.userData['address'] = `${body.address} ${body.number || ''} ${body.zip || ''} ${body.city || ''}`
+            }
+
             const newKitchenRequest = await prisma.request.create({
                 data: kitchenRequest
             })

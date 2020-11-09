@@ -6,6 +6,7 @@ import LKitchen from '../images/kitchen-forms/l-kitchen.svg?sprite'
 import UKitchen from '../images/kitchen-forms/u-kitchen.svg?sprite'
 import IslandKitchen from '../images/kitchen-forms/island-kitchen.svg?sprite'
 import OneWallKitchen from '../images/kitchen-forms/one-wall-kitchen.svg?sprite'
+import {availableAppliances} from "./appliances";
 
 export const kitchenForms = [
     {
@@ -39,4 +40,14 @@ export const kitchenFormIcon = (form) => {
         default:
             return null
     }
+}
+
+export const getKitchenFormTranslationLabel = (id) => {
+    const forms = kitchenForms.filter(a => a.id === id)
+
+    if (forms && forms.length > 0) {
+        return forms[0].label
+    }
+
+    return id
 }

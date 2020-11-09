@@ -77,13 +77,13 @@ export const StepOne = (props) => (<>
                                {...props}/>
     </HomePageFieldsWrapper>
     <HomePageFieldsWrapper>
-        <RequestFormInputField name="Address"
+        <RequestFormInputField name="address"
                                type="text"
                                split
                                wide
                                placeholder="Address:"
                                {...props}/>
-        <RequestFormInputField name="Number"
+        <RequestFormInputField name="number"
                                type="text"
                                split
                                narrow
