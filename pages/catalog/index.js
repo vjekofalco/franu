@@ -13,7 +13,7 @@ import {
     CATALOG_ITEMS_API
 } from '../../common/constants'
 import axios from "axios";
-import {Text} from "../../components/text";
+import {Text} from "../../components/common/text";
 
 const CatalogSection = styled(Section)`
   display: flex;

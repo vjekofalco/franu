@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Text } from '../../text'
+import { Text } from '../../common/text'
 import { brown } from '../../../styles/colors'
 
 export const CatalogItemDescription = ({ description }) => (<>

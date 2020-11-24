@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { baseUnit } from '../../common/constants'
+import { baseUnit } from '../../../common/constants'
 
 export const Section = styled.section`
   margin-top: ${9 * baseUnit}px;

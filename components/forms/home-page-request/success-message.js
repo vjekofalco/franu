@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { brown, brownscale3 } from '../../../styles/colors'
-import {HeadlineSecondary, Text} from '../../text'
+import {HeadlineSecondary, Text} from '../../common/text'
 import { ImageOptimizedSvg } from '../../image/image-optimized'
 
 import Check from '../../../images/icons/common/check.svg?sprite'

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React, { useState } from 'react'
 
-import { Text } from '../../text'
+import { Text } from '../../common/text'
 import { baseUnit } from '../../../common/constants'
 import { grayscale2, grayscale5, grayscale3 } from '../../../styles/colors'
 

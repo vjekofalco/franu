@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { HeadlineTernarry, Text } from '../../text'
+import { HeadlineTernarry, Text } from '../../common/text'
 import { baseUnit } from '../../../common/constants'
 import { brown, white } from '../../../styles/colors'
 import { NewCatalogItemForm } from '../../forms/new-catalog-item'

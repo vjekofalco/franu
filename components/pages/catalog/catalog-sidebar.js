@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import React, { useState } from 'react'
 
-import { Text } from '../../text'
-import { ButtonSecondary } from '../../buttons'
+import { Text } from '../../common/text'
+import { ButtonSecondary } from '../../common/buttons'
 import { catalogCategories } from '../../../common/catalog-categories'
 import { grayscale7, grayscale6, grayscale5, brown } from '../../../styles/colors'
 import { baseUnit, CATALOG_VIEW_ADD_NEW, CATALOG_VIEW_SHOW_ALL } from '../../../common/constants'

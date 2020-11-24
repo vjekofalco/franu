@@ -53,7 +53,7 @@ export const Header = () => {
         <HeaderWrapperInner>
             <HeaderLinksWrapper>
                 <HeaderLink href={'/'} text="Home"/>
-                <HeaderLink href={'/about'} text="About"/>
+                <HeaderLink href={'/about-us'} text="About us"/>
             </HeaderLinksWrapper>
             <HeaderLogoArea>
                 <ImageOptimizedSvg relativeUrl={'logos/franu-text-colored.svg'} alt="Franu kuchen logo"/>

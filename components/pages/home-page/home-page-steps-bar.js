@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Text } from '../../text'
-import { HeadlineSecondary } from '../../text'
+import { Text } from '../../common/text'
+import { HeadlineSecondary } from '../../common/text'
 import { Section } from '../../common/section'
-import { SeparationLineDefault } from '../../separation-line'
+import { SeparationLineDefault } from '../../common/separation-line'
 import {baseUnit, PAGE_CONTENT_NARROW_WIDTH} from '../../../common/constants'
 import { grayscale2, grayscale3, grayscale7, brown } from '../../../styles/colors'
 

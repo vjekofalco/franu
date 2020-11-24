@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-import { baseUnit } from '../../common/constants'
-import { decWithMargins, decWithPadding } from '../../styles/style-helpers'
-import { brownscale3, brownscale2, white, buttonSpecialBorder, support2, support2Hover, primaryColor, primaryHover, support1Hover, support1 } from '../../styles/colors'
+import { baseUnit } from '../../../common/constants'
+import { decWithMargins, decWithPadding } from '../../../styles/style-helpers'
+import { brownscale3, brownscale2, white, buttonSpecialBorder, support2, support2Hover, primaryColor, primaryHover, support1Hover, support1 } from '../../../styles/colors'
 
 const BaseButton = styled.button`
   cursor: pointer;

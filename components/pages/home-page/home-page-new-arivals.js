@@ -2,12 +2,12 @@ import styled from 'styled-components'
 import React, { useState } from 'react'
 
 import { Section } from '../../common/section'
-import { HeadlineSecondary, Text } from '../../text'
+import { HeadlineSecondary, Text } from '../../common/text'
 import { HomePageGalleryItemContent } from './common'
 import { grayscale4, brown } from '../../../styles/colors'
 import { ImageOptimized } from '../../image/image-optimized'
 import { baseUnit, PAGE_CONTENT_WIDE_WIDTH } from '../../../common/constants'
-import { SeparationLineCustom, SeparationLineDefault } from '../../separation-line'
+import { SeparationLineCustom, SeparationLineDefault } from '../../common/separation-line'
 
 const NewArrivalsWrapper = styled(Section)`
   text-align: center;

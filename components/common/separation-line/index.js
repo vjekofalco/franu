@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-import { grayscale5 } from '../../styles/colors'
-import { baseUnit } from '../../common/constants'
-import { decWithMargins } from '../../styles/style-helpers'
+import { grayscale5 } from '../../../styles/colors'
+import { baseUnit } from '../../../common/constants'
+import { decWithMargins } from '../../../styles/style-helpers'
 
 const SeparationLine = styled.hr`
   border: none;

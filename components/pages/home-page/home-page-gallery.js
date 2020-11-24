@@ -2,10 +2,10 @@ import styled from 'styled-components'
 import React, { useState } from 'react'
 
 import { Section } from '../../common/section'
-import { HeadlineSecondary, Text } from '../../text'
+import { HeadlineSecondary, Text } from '../../common/text'
 import { white, brown } from '../../../styles/colors'
 import { HomePageGalleryItemContent } from './common'
-import { SeparationLineDefault } from '../../separation-line'
+import { SeparationLineDefault } from '../../common/separation-line'
 import { baseUnit, PAGE_CONTENT_WIDE_WIDTH } from '../../../common/constants'
 
 import Gallery from '../../../images/icons/gallery/gallery.svg?sprite'

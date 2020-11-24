@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { brown } from '../../../styles/colors'
-import { Text, HeadlineTernarry } from '../../text'
+import { Text, HeadlineTernarry } from '../../common/text'
 import { baseUnit } from '../../../common/constants'
 
 import Money from '../../../images/icons/common/money.svg?sprite'

@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { ButtonSecondary } from '../../buttons'
-import { HeadlineTernarry, Text } from '../../text'
+import { ButtonSecondary } from '../../common/buttons'
+import { HeadlineTernarry, Text } from '../../common/text'
 import { baseUnit } from '../../../common/constants'
 import { brown, primaryColor, brownscale2 } from '../../../styles/colors'
 import { CatalogItemEnergyEfficiencyLabel } from '../catalog/ctalog-item-energy-efficiency-label'

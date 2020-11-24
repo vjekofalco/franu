@@ -2,12 +2,12 @@ import React from 'react'
 import { useField } from 'formik'
 import styled from 'styled-components'
 
-import { Text } from '../text'
+import { Text } from '../common/text'
 import { baseUnit } from '../../common/constants'
-import { StyledInput } from '../form-elements/input'
-import { StyledSelect } from '../form-elements/select'
-import { ErrorText } from '../form-elements/error-text'
-import { StyledTextarea } from '../form-elements/textarea'
+import { StyledInput } from '../common/form-elements/input'
+import { StyledSelect } from '../common/form-elements/select'
+import { ErrorText } from '../common/form-elements/error-text'
+import { StyledTextarea } from '../common/form-elements/textarea'
 
 export const FormFieldsWrapper = styled.div`
   display: flex;

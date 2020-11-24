@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Text } from '../../text'
+import { Text } from '../../common/text'
 import { white } from '../../../styles/colors'
 import { baseUnit } from '../../../common/constants'
 import { energyEfficiencyLabels } from '../../../common/energy-efficiency-labels'

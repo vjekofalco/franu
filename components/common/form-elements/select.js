@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { baseUnit } from '../../common/constants'
-import { grayscale4, white, danger, grayscale5 } from '../../styles/colors'
+import { baseUnit } from '../../../common/constants'
+import { grayscale4, white, danger, grayscale5 } from '../../../styles/colors'
 
 const Select = styled.select`
     width: 100%;
@@ -25,7 +25,7 @@ const SelectWrapper = styled.div`
     background-position: right ${baseUnit}px center;
     background-color: ${({ bgColor }) => bgColor || white};
     border: 1px solid ${({ borderColor }) =>  borderColor || grayscale4};
-    background-image: url(${require('../../images/icons/common/down-arrow.svg')});
+    background-image: url(${require('../../../images/icons/common/down-arrow.svg')});
     
     &::placeholder {
         color: ${grayscale5};

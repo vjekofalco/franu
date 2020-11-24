@@ -1,40 +1,12 @@
-import Link from 'next/link'
 import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 
-import { ButtonPrimary } from '../../buttons'
+import { ButtonPrimary } from '../../common/buttons'
+import { baseUnit } from '../../../common/constants'
 import { grayscale3, brown } from '../../../styles/colors'
 import { ImageOptimized } from '../../image/image-optimized'
-import {HeadlineJumbo, HeadlineSecondary, HeadlineTernarry, Text} from '../../text'
-import { baseUnit, PAGE_CONTENT_NARROW_WIDTH } from '../../../common/constants'
-
-const HomePageJumbotronWrapper = styled.div`
-  display: flex;
-  position: relative;
-  align-items: center;
-  padding-top: 140px;
-  padding-bottom: 48px;
-  justify-content: center;
-  box-shadow: 0px -30px 60px 0px rgba(79,79,79,1);
-  
-  ${({ image }) => image && `&:after {
-  content: ' ';
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.2;
-  background-image: url(${require('../../../images/home-page/background.jpg')});
-  background-repeat: no-repeat;
-  -ms-background-size: cover;
-  -o-background-size: cover;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  background-size: cover;
-  }`}
-`
+import { HeadlineJumbo, HeadlineTernarry, Text } from '../../common/text'
+import { JumbotronWrapper, JumbotronContent } from '../../jumbotron'
 
 const HomePageJumbotronImageWrapper = styled.div`
   flex: 1;
@@ -54,14 +26,6 @@ const HomePageJumbotronImageWrapperInner = styled.div`
   padding: ${baseUnit}px;
   background-color: white;
   box-shadow: rgba(79,79,79,1) 0px 2px 5px 0px;
-`
-
-const HomePageJubotronContent = styled.div`
-  z-index: 100;
-  display: flex;
-  max-height: 70vh;
-  padding: ${baseUnit}px;
-  max-width: ${PAGE_CONTENT_NARROW_WIDTH + 200}px;
 `
 
 const HomePageJumbotronText = styled.div`
@@ -94,8 +58,8 @@ export const HomePageJumbotron = () => {
         elem.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"})
     }
 
-    return (<HomePageJumbotronWrapper image={'/images/home-page/background.jpg'}>
-        <HomePageJubotronContent>
+    return (<JumbotronWrapper paddingBottom={4} paddingTop={12} image={'home-page/background.jpg'}>
+        <JumbotronContent>
             <HomePageJumbotronText live={live}>
                 <HeadlineJumbo color={brown}>Franu, wo das Kochen beginnt</HeadlineJumbo>
                 <HeadlineTernarry color={grayscale3} marginTop={2}>Finden Sie Ihre Traumküche mit nur wenigen Klicks</HeadlineTernarry>
@@ -109,6 +73,6 @@ export const HomePageJumbotron = () => {
                     <ImageOptimized relativeUrl='home-page/jumbotron-image.jpg' alt={'Kitchens photo'}/>
                 </HomePageJumbotronImageWrapperInner>
             </HomePageJumbotronImageWrapper>
-        </HomePageJubotronContent>
-    </HomePageJumbotronWrapper>)
+        </JumbotronContent>
+    </JumbotronWrapper>)
 }

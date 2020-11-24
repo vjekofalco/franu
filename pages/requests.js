@@ -3,12 +3,12 @@ import moment from 'moment'
 import styled from 'styled-components'
 import React, { useState, useEffect } from 'react'
 
-import { Text, HeadlineSecondary } from '../components/text'
+import { Text, HeadlineSecondary } from '../components/common/text'
 import { PAGE_CONTENT_NARROW_WIDTH } from '../common/constants'
 import { baseUnit, STORED_REQUESTS_API } from '../common/constants'
 import { getApplianceTranslationLabel } from '../common/appliances'
 import { getKitchenFormTranslationLabel } from '../common/kitchen-forms'
-import { Table, TableCell, TableHead, TableHeading } from '../components/tables'
+import { Table, TableCell, TableHead, TableHeading } from '../components/common/tables'
 import { buttonSpecial, support2Hover, grayscale3, brown } from '../styles/colors'
 
 const RequestsPAgeWrapper = styled.div`

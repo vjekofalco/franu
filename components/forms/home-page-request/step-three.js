@@ -1,8 +1,8 @@
 import React from 'react'
 
-import {Text} from '../../text'
+import {Text} from '../../common/text'
 import {grayscale4} from '../../../styles/colors'
-import {CheckBoxDesign} from '../../form-elements/checkbox'
+import {CheckBoxDesign} from '../../common/form-elements/checkbox'
 import {FormIconWrapper, FormSelectWrapper, FromIconsWrapper} from './common'
 import { availableAppliances, appliancesIcons } from '../../../common/appliances'
 

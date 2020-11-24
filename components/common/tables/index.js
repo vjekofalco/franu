@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { baseUnit } from '../../common/constants'
-import { grayscale5, white } from '../../styles/colors'
+import { baseUnit } from '../../../common/constants'
+import { grayscale5, white } from '../../../styles/colors'
 
 function cellStyling ({ textLeft, single }) {
     return `
