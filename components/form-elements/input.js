@@ -22,7 +22,7 @@ export const StyledInput = styled.input`
         
     ${props => props.error && `
     border: 1px solid ${danger}; 
-    outline-color: ${danger};`}
+    `}
     
     ${props => props.hidden && 'display: none;'}
 `

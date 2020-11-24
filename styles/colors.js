@@ -33,3 +33,12 @@ export const support1Hover = '#597AA8'
 export const backgroundColor = '#F8F4F0'
 
 export const danger = '#e25141'
+
+// Energy efficiency colors
+export const eFD = '#EE1620'
+export const eFC = '#F3711C'
+export const eFB = '#FCBA0F'
+export const eFA = '#FEF303'
+export const eFAP = '#C2D82C'
+export const eFAPP = '#4EBA48'
+export const eFAPPP = '#00A850'

@@ -26,6 +26,7 @@ export const HeadlineTernarry = styled.h3`
   color: ${({ color }) => color || grayscale2};
   
   ${({ center }) => center && 'text-align: center;'}
+  ${props => props.align && `text-align : ${props.align};`}
   
   ${(props) => decWithMargins(props)}
 `

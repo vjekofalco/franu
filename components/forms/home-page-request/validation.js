@@ -4,13 +4,13 @@ export const validate = values => {
     if (!values.firstName) {
         errors.firstName = 'Required'
     } else if (values.firstName.length > 20) {
-        errors.firstName = 'Must be 15 characters or less'
+        errors.firstName = 'Must be 20 characters or less'
     }
 
     if (!values.lastName) {
         errors.lastName = 'Required'
     } else if (values.lastName.length > 25) {
-        errors.lastName = 'Must be 20 characters or less'
+        errors.lastName = 'Must be 25 characters or less'
     }
 
     if (!values.email) {

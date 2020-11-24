@@ -3,7 +3,7 @@
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 generator client {
@@ -30,8 +30,6 @@ model Catalog {
     price Float
     description String
     images Json
-    energyEfficiency String?
-    functionalities Json?
     updatedAt DateTime @default(now())
     createdAt DateTime @default(now())
 }

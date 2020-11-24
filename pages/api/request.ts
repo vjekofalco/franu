@@ -1,33 +1,48 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient, Request } from '@prisma/client'
 import { NextApiRequest, NextApiResponse } from 'next'
+
+import { slugCreator } from '../../helpers/slug-creator'
+
+type RequestData = {
+    firstName: string,
+    lastName: string,
+    email: string,
+    phoneNumber: string,
+    address?: string,
+    number?: string,
+    zip?: string,
+    city?: string,
+    message?: string,
+    kitchenShape?: string,
+    appliances?: string[]
+}
 
 // Supports only POST
 const requestApi = async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === 'POST') {
         const prisma = new PrismaClient({ log: ["query"] })
-
+        const newRequest: RequestData = req.body
         try {
-            const { body } = req
-            const slug = body.email + '-' + Date.now()
+            const slug = slugCreator(newRequest.email)
             const kitchenRequest = {
                 slug,
                 userData: {
-                    firstName: body.firstName,
-                    lastName: body.lastName,
-                    email: body.email,
-                    phone: body.phoneNumber
+                    firstName: newRequest.firstName,
+                    lastName: newRequest.lastName,
+                    email: newRequest.email,
+                    phone: newRequest.phoneNumber
                 },
                 requestInfo: {
-                    appliances: body.appliances,
-                    kitchenShape: body.kitchenShape
+                    appliances: newRequest.appliances,
+                    kitchenShape: newRequest.kitchenShape
                 }
             }
 
-            if (body.address) {
-                kitchenRequest.userData['address'] = `${body.address} ${body.number || ''} ${body.zip || ''} ${body.city || ''}`
+            if (newRequest.address) {
+                kitchenRequest.userData['address'] = `${newRequest.address} ${newRequest.number || ''} ${newRequest.zip || ''} ${newRequest.city || ''}`
             }
 
-            const newKitchenRequest = await prisma.request.create({
+            const newKitchenRequest: Request = await prisma.request.create({
                 data: kitchenRequest
             })
 
