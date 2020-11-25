@@ -16,17 +16,15 @@ const TestimonialTextWrapper = styled.div`
   box-shadow: rgb(196, 204, 215) 0px 3px 4px 0px;
   
   &:after {
-    content: '';
-    position: absolute;
+    left:50%;
+    content:'';
+    width:18px;
+    height:18px;
     bottom: -18px;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-left: 14px solid transparent;
-    border-right: 14px solid transparent;
-    clear: both;
-    //transform: rotate(90deg);
-    border-top: 18px solid ${white};
+    position:absolute;
+    background-color:${white};
+    transform:translate(-50%,-50%) rotate(45deg);
+    box-shadow: rgb(196, 204, 215)  3px 3px 3px 0px;
   }
 `
 
