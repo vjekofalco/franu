@@ -1,28 +1,8 @@
 import Link from 'next/link'
-import {useRouter} from 'next/router'
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
 
-import {baseUnit} from '../../common/constants'
-import { dark, grayscale2 } from '../../styles/colors'
-
-const getLinkCommon = (active) => `
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 700;
-  text-decoration: none;
-  
-  &:not(:first-child){
-    margin-left: ${2 * baseUnit}px;
-  }
-  
-  color: ${active ? grayscale2 : dark};
-  
-  &:hover {
-    color: ${grayscale2};
-  }
-  
-  ${active && `border-bottom: 1px solid ${grayscale2};`}
-`
+import { getLinkCommon } from '../common/styled-link'
 
 const HeaderLinkStyled = styled.a`
   ${({active}) => getLinkCommon(active)}

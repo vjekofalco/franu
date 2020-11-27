@@ -37,7 +37,7 @@ export const AboutUsIntroduction = () => {
             <SeparationLineCustom marginTop={0.70} color={grayscale4} maxWidth={300}/>
             <AboutUsDescriptionWrapper>
                 <Text size={1.2}>
-                    Modern kitchen is not just one more room in your home. It is center of your living space, a place where you will share not only a great meal, but also unforgivable moments with your love ones.
+                    Kitchen is not just one more room in your home. It is center of your living space, a place where you will share not only a great meal, but also unforgivable moments with your love ones.
                 </Text>
                 <Text size={1.2} marginTop={0.5}>
                     Because of that, we, at Franu understand that your kitchen needs to be perfect. Not only It needs to fulfil your everyday needs it should reflect your life style.
