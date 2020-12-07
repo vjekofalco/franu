@@ -5,12 +5,18 @@ import { ButtonPrimary } from '../../common/buttons'
 import { baseUnit } from '../../../common/constants'
 import { grayscale3, brown } from '../../../styles/colors'
 import { ImageOptimized } from '../../image/image-optimized'
-import { HeadlineJumbo, HeadlineTernarry, Text } from '../../common/text'
 import { JumbotronWrapper, JumbotronContent } from '../../jumbotron'
+import { HeadlineJumbo, HeadlineTernarry, Text } from '../../common/text'
+import { mediaBreakpointDown, mediaBreakpointUp } from '../../../styles/breakpoionts'
 
 const HomePageJumbotronImageWrapper = styled.div`
   flex: 1;
+  margin-left: ${2 * baseUnit}px;
   animation: 1s ease-out 0s 1 slideInFromRight;
+  
+  @media ${mediaBreakpointDown.m} {
+     display: none;
+  } 
   
   @keyframes slideInFromRight {
     0% {
@@ -33,15 +39,20 @@ const HomePageJumbotronText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-right: ${2 * baseUnit}px;
   animation: 1s ease-out 0s 1 slideInFromLeft;
   
-  @keyframes slideInFromLeft {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0);
+  @media ${mediaBreakpointDown.m} {
+     text-align: center;
+  } 
+  
+  @media ${mediaBreakpointUp.l} {
+    @keyframes slideInFromLeft {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
     }
   }
 `
