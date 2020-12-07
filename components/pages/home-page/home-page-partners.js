@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Section } from '../../common/section'
-import { HeadlineSecondary, Text } from '../../common/text'
 import { brown, white } from '../../../styles/colors'
+import { HeadlineSecondary, Text } from '../../common/text'
+import { mediaBreakpointDown } from '../../../styles/breakpoionts'
 import { SeparationLineDefault } from '../../common/separation-line'
 import { baseUnit, PAGE_CONTENT_WIDE_WIDTH } from '../../../common/constants'
 
@@ -28,8 +29,21 @@ const HomePagePartnersWrapper = styled.div`
   align-items: center;
   max-width: ${PAGE_CONTENT_WIDE_WIDTH + 2 * baseUnit}px;
   
+  @media ${mediaBreakpointDown.s} {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+  
   > svg {
     width: 20%;
+    
+    @media ${mediaBreakpointDown.s} {
+      &:not(:first-child) {
+        margin-left: ${2 * baseUnit}px;
+      }
+      
+      min-width: ${12 * baseUnit}px;
+    }
   }
 `
 

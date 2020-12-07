@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import { grayscale6 } from '../../styles/colors'
-import { getLinkCommon } from '../common/styled-link'
+import {dark, grayscale2, grayscale6} from '../../styles/colors'
 import { ImageOptimizedSvg } from '../image/image-optimized'
 import { baseUnit, PAGE_CONTENT_WIDE_WIDTH } from '../../common/constants'
+import { mediaBreakpointDown, mediaBreakpointUp } from '../../styles/breakpoionts'
 
 const FooterWrapper = styled.div`
   background-color: ${grayscale6};
@@ -14,30 +14,63 @@ const FooterWrapper = styled.div`
 const FooterContentWrapper = styled.div`
   display: flex;
   margin: 0 auto;
-  align-items: center;
   justify-content: space-between;
   padding-left: ${3 * baseUnit}px;
   padding-right: ${3 * baseUnit}px;
   max-width: ${PAGE_CONTENT_WIDE_WIDTH}px;
+  
+  @media ${mediaBreakpointDown.s} {
+    padding: 0px;
+  }
+  
+  @media ${mediaBreakpointUp.m} {
+    align-items: center;
+  }
 `
 
 const FooterLogoArea = styled.div`
   display: flex;
   max-width: ${3 * baseUnit}px;
+  min-width: ${3 * baseUnit}px;
 `
 
 const FooterLinkStyled = styled.a`
-  ${({active}) => getLinkCommon(active)}
+   cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  
+  &:not(:first-child){
+    margin-left: ${2 * baseUnit}px;
+    
+    @media ${mediaBreakpointDown.s} {
+      margin-left: 0px;
+      margin-top: ${baseUnit}px;
+    }
+  }
+  
+  color: ${dark};
+  
+  &:hover {
+    color: ${grayscale2};
+  }
 `
 
 const FooterLinksWrapper = styled.div`
   display: flex;
   padding-left: ${3 * baseUnit}px;
+  
+  @media ${mediaBreakpointDown.s} {
+    flex-direction: column;
+  }
 `
 
 const FooterInternalLinksWrapper = styled.div`
   display: flex;
-  align-items: center;
+  
+  @media ${mediaBreakpointUp.m} {
+    align-items: center;
+  }
 `
 
 const FooterSocialLinks = styled.div`
@@ -45,8 +78,18 @@ const FooterSocialLinks = styled.div`
   
   &:not(:first-child) {
     div {
-      margin-left: ${2 * baseUnit}px;  
+      @media ${mediaBreakpointUp.m} {
+        margin-left: ${2 * baseUnit}px;
+      }
+      
+      @media ${mediaBreakpointDown.s} {
+        margin-top: ${baseUnit}px;
+      }  
     }
+  }
+  
+  @media ${mediaBreakpointDown.s} {
+    flex-direction: column;
   }
 `
 

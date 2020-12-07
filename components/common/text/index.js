@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
-import { grayscale2 } from "../../../styles/colors"
-import { decWithMargins } from "../../../styles/style-helpers";
+import { grayscale2 } from '../../../styles/colors'
+import { decWithMargins } from '../../../styles/style-helpers'
+import { mediaBreakpointDown } from '../../../styles/breakpoionts'
 
 export const HeadlineJumbo = styled.h1`
   font-size: 3.25rem;
@@ -10,6 +11,10 @@ export const HeadlineJumbo = styled.h1`
   ${({ center }) => center && 'text-align: center;'}
   
   ${(props) => decWithMargins(props)}
+  
+  @media ${mediaBreakpointDown.s} {
+    font-size: 2.75rem;
+  }
 `
 
 export const HeadlineSecondary = styled.h2`
@@ -19,6 +24,10 @@ export const HeadlineSecondary = styled.h2`
   ${({ center }) => center && 'text-align: center;'}
   
   ${(props) => decWithMargins(props)}
+  
+  @media ${mediaBreakpointDown.s} {
+    font-size: 2rem;
+  }
 `
 
 export const HeadlineTernarry = styled.h3`
@@ -29,6 +38,10 @@ export const HeadlineTernarry = styled.h3`
   ${props => props.align && `text-align : ${props.align};`}
   
   ${(props) => decWithMargins(props)}
+  
+  @media ${mediaBreakpointDown.s} {
+    font-size: 1.25rem;
+  }
 `
 
 export const Text = styled.p`

@@ -13,6 +13,7 @@ import { SuccessMessage } from './success-message'
 import { Text, HeadlineSecondary } from '../../common/text'
 import { ValuesProposition } from './values-proposition'
 import { brown, white, grayscale2 } from '../../../styles/colors'
+import { mediaBreakpointDown } from '../../../styles/breakpoionts'
 import { baseUnit, PAGE_CONTENT_WIDE_WIDTH} from '../../../common/constants'
 
 import Prev from '../../../images/icons/common/prev-arrow.svg?sprite'
@@ -29,6 +30,10 @@ const HomePageFormValuesWrapper = styled.div`
   padding-top: ${3 * baseUnit}px;
   padding-bottom: ${3 * baseUnit}px;
   max-width: ${PAGE_CONTENT_WIDE_WIDTH + 2 * baseUnit}px;
+  
+  @media ${mediaBreakpointDown.m} {
+    flex-direction: column-reverse;
+  }
 `
 
 const HomePageFormHalf = styled.div`
@@ -40,6 +45,11 @@ const HomePageFormWrapper = styled.div`
   padding: ${2 * baseUnit}px;
   position: relative;
   box-shadow: rgb(196, 204, 215) 0px 3px 4px 0px;
+  
+  @media ${mediaBreakpointDown.s} {
+    padding-left: ${baseUnit}px;
+    padding-right: ${baseUnit}px;
+  }
 `
 
 const HomePageFormInputsWrapper = styled.div`
@@ -177,7 +187,7 @@ export const HomePageRequestForm = () => {
                                             <Prev/>
                                             <Text marginLeft={0.5}>Prev</Text>
                                         </StepsControll>
-                                        <SendButton disabled={submitted} medium marginLeft={1} marginRight={1} type="submit">Send Request</SendButton>
+                                        <SendButton disabled={submitted} medium marginLeft={1} marginRight={1} type="submit">Send</SendButton>
                                         <StepsControll disabled={step === STEPS_NUMBER} onClick={() => changeStep(step + 1)}>
                                             <Text marginRight={0.5}>Next</Text>
                                             <Next/>

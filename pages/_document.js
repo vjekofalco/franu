@@ -32,6 +32,7 @@ export default class MyDocument extends Document {
         return (
             <Html lang="de">
                 <Head>
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
                     <script dangerouslySetInnerHTML={{ __html: 'WebFont.load({custom: {families: ["Open Sans"],urls: ["/static/fonts/fonts.css"]}});' }}></script>
                 </Head>

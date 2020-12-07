@@ -2,11 +2,12 @@ import styled from 'styled-components'
 import React, { useState } from 'react'
 
 import { Section } from '../../common/section'
-import { HeadlineSecondary, Text } from '../../common/text'
 import { HomePageGalleryItemContent } from './common'
 import { grayscale4, brown } from '../../../styles/colors'
+import { HeadlineSecondary, Text } from '../../common/text'
 import { ImageOptimized } from '../../image/image-optimized'
 import { baseUnit, PAGE_CONTENT_WIDE_WIDTH } from '../../../common/constants'
+import { mediaBreakpointDown, mediaBreakpointUp } from '../../../styles/breakpoionts'
 import { SeparationLineCustom, SeparationLineDefault } from '../../common/separation-line'
 
 const NewArrivalsWrapper = styled(Section)`
@@ -28,8 +29,22 @@ const NewArrivalsItemWrapper = styled.div`
   border: ${baseUnit}px solid white;
   box-shadow: rgb(196, 204, 215) 0px 3px 4px 0px;
   
-  &:not(:first-child) {
-    margin-left: ${2 * baseUnit}px;
+  @media ${mediaBreakpointDown.s} {
+    flex-basis: 40%;
+    
+    &:nth-child(even) {
+      margin-left: ${2 * baseUnit}px;
+    }
+    
+    &:nth-child(n+3) {
+      margin-top: ${2 * baseUnit}px;
+    }
+  }
+  
+  @media ${mediaBreakpointUp.m} {
+      &:not(:first-child) {
+        margin-left: ${2 * baseUnit}px;
+      }
   }
 `
 

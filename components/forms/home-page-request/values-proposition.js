@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 import { brown } from '../../../styles/colors'
-import { Text, HeadlineTernarry } from '../../common/text'
 import { baseUnit } from '../../../common/constants'
+import { Text, HeadlineTernarry } from '../../common/text'
+import { mediaBreakpointDown } from '../../../styles/breakpoionts'
 
 import Money from '../../../images/icons/common/money.svg?sprite'
 import Medal from '../../../images/icons/common/medal.svg?sprite'
@@ -14,6 +15,15 @@ const PropositionWrapper = styled.div`
   margin-left:  auto;
   margin-right:  auto;
   padding-top: ${2 * baseUnit}px;
+  
+  @media ${mediaBreakpointDown.m} {
+    margin-left: 0;
+    max-width: 100%;
+    
+    &:first-child {
+      margin-top: ${2 * baseUnit}px;
+    }
+  }
 `
 
 const PropositionHeadlineWrapper = styled.div`
