@@ -4,6 +4,7 @@ import { Text } from '../../common/text'
 import { Section } from '../../common/section'
 import { HeadlineTernarry } from '../../common/text'
 import { brown, grayscale4 } from '../../../styles/colors'
+import { mediaBreakpointDown } from '../../../styles/breakpoionts'
 import { SeparationLineCustom } from '../../common/separation-line'
 import {baseUnit, PAGE_CONTENT_NARROW_WIDTH} from '../../../common/constants'
 
@@ -19,6 +20,10 @@ const AboutUsIntroductionWrapper = styled.div`
 
 const AboutUsDescriptionWrapper = styled.div`
   padding-left: ${5 * baseUnit}px;
+  
+  @media ${mediaBreakpointDown.s} {
+    padding-left: ${2 * baseUnit}px;
+  }
 `
 
 const VisionMissionWrapper = styled.div`

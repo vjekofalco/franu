@@ -1,11 +1,20 @@
 import styled from 'styled-components'
 
 import { Text } from '../common/text'
-import {grayscale4, white} from '../../styles/colors'
 import { baseUnit } from '../../common/constants'
+import { grayscale4, white } from '../../styles/colors'
+import { mediaBreakpointDown } from '../../styles/breakpoionts'
 
 const TestimonialWrapper = styled.div`
   width: 48%;
+  
+  @media ${mediaBreakpointDown.s} {
+    min-width: 85%;
+    
+    &:not(:first-child) {
+      margin-left: ${2 * baseUnit}px;
+    }
+  }
 `
 
 const TestimonialTextWrapper = styled.div`
