@@ -15,13 +15,7 @@ const FooterContentWrapper = styled.div`
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
-  padding-left: ${3 * baseUnit}px;
-  padding-right: ${3 * baseUnit}px;
   max-width: ${PAGE_CONTENT_WIDE_WIDTH}px;
-  
-  @media ${mediaBreakpointDown.s} {
-    padding: 0px;
-  }
   
   @media ${mediaBreakpointUp.m} {
     align-items: center;
