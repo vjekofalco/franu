@@ -2,11 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Text } from '../../common/text'
-import { HeadlineSecondary } from '../../common/text'
 import { Section } from '../../common/section'
+import { HeadlineSecondary } from '../../common/text'
 import { SeparationLineDefault } from '../../common/separation-line'
 import {baseUnit, PAGE_CONTENT_NARROW_WIDTH} from '../../../common/constants'
 import { grayscale2, grayscale3, grayscale7, brown } from '../../../styles/colors'
+import { mediaBreakpointUp, mediaBreakpointDown } from '../../../styles/breakpoionts'
 
 import Kitchen from '../../../images/icons/progress-bar/kitchen.svg?sprite'
 import DesignIcon from '../../../images/icons/progress-bar/interior-design.svg?sprite'
@@ -18,10 +19,7 @@ const HomePageStepsBarContainer = styled(Section)`
 `
 
 const HomePageStepsBarStep = styled.li`
-  width: 25%;
   list-style: none;
-  position: relative;
-  display: inline-block;
   
   &:before {
       content: counter(step);
@@ -37,35 +35,53 @@ const HomePageStepsBarStep = styled.li`
       font-weight: 600;
   }
   
-   &:nth-child(2):before {
-    margin-left: 25%;
-   } 
-   
-   &:nth-child(3):before {
-    margin-left: 50%;
-   }
-  
-  &:last-child:before {
-    margin-left: calc(100% - 44px);
+  @media ${mediaBreakpointDown.s} {
+    width: 85%;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    
+    &:not(:first-child) {
+      margin-top: ${2 * baseUnit}px;
+    }
   }
-  
-  &:after {
-      content: "";
-      position: absolute;
-      width: 145%;
-      height: 2px;
-      background-color: ${grayscale3};
-      top: 20px;
-      left: -50%;
-      z-index : -1;
-  }
-  
-  &:nth-child(2):after {
-    left: -95%;
-  }
-  
-  &:first-child:after {
-    content: none;
+
+  @media ${mediaBreakpointUp.m} {
+      width: 25%;
+      position: relative;
+      display: inline-block;
+      
+       &:nth-child(2):before {
+        margin-left: 25%;
+       } 
+       
+       &:nth-child(3):before {
+        margin-left: 50%;
+       }
+      
+      &:last-child:before {
+        margin-left: calc(100% - 44px);
+      }
+      
+      &:after {
+          content: "";
+          position: absolute;
+          width: 145%;
+          height: 2px;
+          background-color: ${grayscale3};
+          top: 20px;
+          left: -50%;
+          z-index : -1;
+      }
+      
+      &:nth-child(2):after {
+        left: -95%;
+      }
+      
+      &:first-child:after {
+        content: none;
+      }
   }
 `
 
@@ -76,6 +92,10 @@ const HomePageStepsBarList = styled.ul`
 const HomePageStepsBarIconWrapper = styled.div`
   flex: 1;
   width: ${3 * baseUnit}px;
+  
+  @media ${mediaBreakpointDown.s} {
+    max-width: ${4 * baseUnit}px;
+  }
 `
 
 const HomePageStepsBarWrapper = styled.div`
@@ -87,26 +107,32 @@ const HomePageStepsBarWrapper = styled.div`
 `
 
 const HomePageStepsBarStepDescriptionWrapper = styled.div`
-  float: left;
-  max-width: 150px;
-  position: absolute;
-  display: inline-block;
+  @media ${mediaBreakpointDown.s} {
+    max-width: 70%;
+    min-width: 70%;
+    margin-left: ${2 * baseUnit}px;
+  }
   
-  ${({even}) => even ? `padding-top: ${1.5 * baseUnit}px;` 
-    : `bottom: 100%; 
-    padding-bottom: ${1.5 * baseUnit}px;`}
-  
-  ${({index}) => index === 1 && `
-    margin-left: 25%;
-  `}
-  
-  ${({index}) => index === 2 && `
-    margin-left: 50%;
-  `} 
-  
-  ${({last}) => last && `right: 0;
-    text-align: right;
-  `}
+  @media ${mediaBreakpointUp.m} {
+      float: left;
+      max-width: 150px;
+      position: absolute;
+      display: inline-block;
+      
+      ${({even}) => even 
+        ? `padding-top: ${1.5 * baseUnit}px;` 
+        : `bottom: 100%; 
+            padding-bottom: ${1.5 * baseUnit}px;`}
+      
+      ${({index}) => index === 1 && `
+        margin-left: 25%;
+      `}
+      
+      ${({index}) => index === 2 && `margin-left: 50%;`} 
+      
+      ${({last}) => last && `right: 0;
+        text-align: right;`}
+  }
 `
 
 const HomePageStepTitleWrapper = styled.div`
