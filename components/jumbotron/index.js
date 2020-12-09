@@ -34,7 +34,7 @@ export const JumbotronWrapper = styled.div`
 `
 
 export const JumbotronContent = styled.div`
-  z-index: 100;
+  z-index: 10;
   display: flex;
   max-height: 70vh;
   padding: ${baseUnit}px;

@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { useRouter } from "next/router"
 
-import { ImageOptimizedSvg } from '../image/image-optimized'
-import { HeaderLink, HeaderLinkLike } from './header-link'
+import { MobileHeader } from './mobile-header'
+import { DesktopHeader } from './desktop-header'
 import { PAGE_CONTENT_NARROW_WIDTH, baseUnit } from '../../common/constants'
 
 const HeaderWrapper = styled.div`
@@ -13,23 +13,6 @@ const HeaderWrapper = styled.div`
     z-index:100;
     background-color: rgba(255, 255, 255, 0.3);
   `}
-`
-
-const HeaderWrapperInner = styled.div`
-  display: flex;
-  margin: 0 auto;
-  align-items: center;
-  padding: ${baseUnit}px;
-  justify-content: space-between;
-  max-width: ${PAGE_CONTENT_NARROW_WIDTH}px;
-`
-
-const HeaderLinksWrapper = styled.div`
-  
-`
-
-const HeaderLogoArea = styled.div`
-  max-width: 200px;
 `
 
 export const Header = () => {
@@ -50,18 +33,7 @@ export const Header = () => {
     }
 
     return (<HeaderWrapper absolute={isHomePage}>
-        <HeaderWrapperInner>
-            <HeaderLinksWrapper>
-                <HeaderLink href={'/'} text="Home"/>
-                <HeaderLink href={'/about-us'} text="About us"/>
-            </HeaderLinksWrapper>
-            <HeaderLogoArea>
-                <ImageOptimizedSvg relativeUrl={'logos/franu-text-colored.svg'} alt="Franu kuchen logo"/>
-            </HeaderLogoArea>
-            <HeaderLinksWrapper>
-                <HeaderLinkLike onClick={() => slideOnHomePage('how-it-works')} >How it works</HeaderLinkLike>
-                <HeaderLink href={'/about'} text="About"/>
-            </HeaderLinksWrapper>
-        </HeaderWrapperInner>
+        <DesktopHeader slideOnHomePage={slideOnHomePage}/>
+        <MobileHeader slideOnHomePage={slideOnHomePage}/>
     </HeaderWrapper>)
 }

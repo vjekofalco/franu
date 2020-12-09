@@ -3,22 +3,28 @@ import styled from 'styled-components'
 import { useRouter } from 'next/router'
 
 import { getLinkCommon } from '../common/styled-link'
+import { decWithMargins } from '../../styles/style-helpers'
 
 const HeaderLinkStyled = styled.a`
-  ${({active}) => getLinkCommon(active)}
+  ${({active, block}) => getLinkCommon(active, block)}
+  
+  ${(props) => decWithMargins(props)}
 `
 
 export const HeaderLinkLike = styled.p`
   display: inline-block;
-  ${({active}) => getLinkCommon(active)}
+  ${({active, block}) => getLinkCommon(active, block)}
+  
+  ${(props) => decWithMargins(props)}
 `
 
-export const HeaderLink = ({ href, text, onClick }) => {
+export const HeaderLink = (props) => {
+    const { href, text } = props
     const router = useRouter()
     const isLinksRoute = router.pathname === href
 
     return(<Link href={href} passHref>
-        <HeaderLinkStyled active={isLinksRoute}>{text}</HeaderLinkStyled>
+        <HeaderLinkStyled active={isLinksRoute} {...props}>{text}</HeaderLinkStyled>
     </Link>)
 }
 
