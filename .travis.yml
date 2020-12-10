@@ -24,7 +24,9 @@ deploy:
   bucket_name: $AWS_S3_BUCKET
   bucket_path: "franu"
   on:
-    branch: master
+    branches:
+      only:
+        - master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
 
