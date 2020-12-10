@@ -1,7 +1,11 @@
 import Head from 'next/head'
+import { useIntl } from 'react-intl'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const { formatMessage } = useIntl()
+  const f = id => formatMessage({ id })
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,9 +19,9 @@ export default function Home() {
       <main className={styles.main}>
         <img src="/images/logos/franu-text-colored.svg"/>
         <h1 className={styles.title}>
-            Wir sind bald für Sie da!
+            {f('title')}
         </h1>
-        <p className={styles.description}>Franu, wo das Kochen beginnt</p>
+        <p className={styles.description}>{f('subTitle')}</p>
       </main>
     </div>
   )
