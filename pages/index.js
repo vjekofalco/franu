@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useIntl } from 'react-intl'
 
 import { NewArrivals } from '../components/pages/home-page/home-page-new-arivals'
 import { HomePageGallery } from '../components/pages/home-page/home-page-gallery'
@@ -8,6 +9,9 @@ import { HomePageJumbotron } from '../components/pages/home-page/home-page-jumbo
 import { HomePageRequestFormSection } from '../components/pages/home-page/home-page-request-form-section'
 
 export default function Home() {
+  const { formatMessage } = useIntl()
+  const f = id => formatMessage({ id })
+
   return (
     <>
       <Head>
