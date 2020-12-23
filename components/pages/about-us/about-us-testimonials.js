@@ -30,12 +30,12 @@ const testimonials = [
     }
 ]
 
-export const AboutUsTestimonials = () => (
+export const AboutUsTestimonials = ({ f }) => (
     <AboutUsTestimonialsSection>
         <AboutUsTestimonialsTitleWrapper>
-            <HeadlineSecondary color={brown} marginBottom={2}>Our happy clients</HeadlineSecondary>
-            <Text size={1.2} marginBottom={3}>What they say about us</Text>
+            <HeadlineSecondary color={brown} marginBottom={2}>{f('customers.title')}</HeadlineSecondary>
+            <Text size={1.2} marginBottom={3}>{f('customers.subTitle')}</Text>
         </AboutUsTestimonialsTitleWrapper>
-        <Testimonials testimonials={testimonials}/>
+        <Testimonials testimonials={testimonials} f={f}/>
     </AboutUsTestimonialsSection>
 )

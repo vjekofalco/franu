@@ -15,18 +15,18 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Franu Küchen</title>
-        <meta name="description" content="Bestellen Sie Ihre Traumküche mit nur wenigen Klicks" />
-        <meta name="keywords" content="Traumküche, Küche" />
+        <title>{f('seo.title')}</title>
+        <meta name="description" content={f('seo.description')} />
+        <meta name="keywords" content="Dream kitchen, Küche" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/*<link rel="icon" href="/favicon.ico" />*/}
       </Head>
-     <HomePageJumbotron/>
-     <NewArrivals/>
-     <HomePageStepsBar/>
-     <HomePagePartners/>
-     <HomePageGallery/>
-     <HomePageRequestFormSection/>
+     <HomePageJumbotron f={f}/>
+     <NewArrivals f={f}/>
+     <HomePageStepsBar f={f}/>
+     <HomePagePartners f={f}/>
+     <HomePageGallery f={f}/>
+     <HomePageRequestFormSection f={f}/>
     </>
   )
 }

@@ -69,7 +69,7 @@ const HomePageGalleryItemWrapper = styled.div`
   `}
 `
 
-const HomePageGalleryItem = ({ item, small }) => {
+const HomePageGalleryItem = ({ item, small, f }) => {
     const [ overlayVisible, setOverlay ] = useState(false)
 
     return (<HomePageGalleryItemWrapper small={small}
@@ -78,12 +78,12 @@ const HomePageGalleryItem = ({ item, small }) => {
                                         onMouseLeave={() => setOverlay(false)}>
         <HomePageGalleryItemContent active={overlayVisible}>
             <Gallery width={30} height={30}/>
-            <Text weight={600} marginTop={0.5}>More photos</Text>
+            <Text weight={600} marginTop={0.5}>{f('common.morePhotos')}</Text>
         </HomePageGalleryItemContent>
     </HomePageGalleryItemWrapper>)
 }
 
-export const HomePageGallery = () => {
+export const HomePageGallery = ({ f }) => {
     const images = [
         {
             url: '/'
@@ -104,17 +104,17 @@ export const HomePageGallery = () => {
 
     return (<HomePageGallerySection id="find-inspiration">
         <HomePageGallerySectionTextWrapper>
-            <HeadlineSecondary color={brown} center marginBottom={1}>Find inspiration in our previous projects and contact us</HeadlineSecondary>
+            <HeadlineSecondary color={brown} center marginBottom={1}>{f('gallery.title')}</HeadlineSecondary>
             <SeparationLineDefault center maxWidth={350} marginBottom={1}/>
-            <Text size={1.5} center marginBottom={3}>We let our work speak for us, happy customer is what makes difference</Text>
+            <Text size={1.5} center marginBottom={3}>{f('gallery.subTitle')}</Text>
         </HomePageGallerySectionTextWrapper>
         <HomePageGalleryWrapper>
         <HomePageGalleryHalf wide>
-            <HomePageGalleryItem item={images[0]} />
+            <HomePageGalleryItem item={images[0]} f={f}/>
         </HomePageGalleryHalf>
         <HomePageGalleryHalf>
             {images.slice(1, images.length)
-                .map((image, i) => (<HomePageGalleryItem key={`${image.url}-${i}`} small item={image} />))}
+                .map((image, i) => (<HomePageGalleryItem f={f} key={`${image.url}-${i}`} small item={image} />))}
         </HomePageGalleryHalf>
     </HomePageGalleryWrapper>
     </HomePageGallerySection>)

@@ -1,13 +1,7 @@
 const withPlugins = require('next-compose-plugins');
 const optimizedImages = require('next-optimized-images');
 
-module.exports = withPlugins([
-    [optimizedImages, {
-        optimizeImagesInDev: true
-    }],
-]);
-
-module.exports = {
+const nextConfig = {
     i18n: {
         // These are all the locales you want to support in
         // your application
@@ -18,3 +12,10 @@ module.exports = {
         localeDetection: false
     }
 }
+
+module.exports = withPlugins([
+        [optimizedImages, {
+            optimizeImagesInDev: true
+        }],
+    ],
+    nextConfig)

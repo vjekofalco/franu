@@ -47,11 +47,11 @@ const HomePagePartnersWrapper = styled.div`
   }
 `
 
-export const HomePagePartners = () => {
+export const HomePagePartners = ({ f }) => {
     return (<HomePagePartnersSection>
-        <HeadlineSecondary color={brown} center marginBottom={1}>Our trusted partners</HeadlineSecondary>
+        <HeadlineSecondary color={brown} center marginBottom={1}>{f('partners.title')}</HeadlineSecondary>
         <SeparationLineDefault center maxWidth={350} marginBottom={1}/>
-        <Text size={1.5} center marginBottom={3}>Our partners are trusted brands and well known retailers</Text>
+        <Text size={1.5} center marginBottom={3}>{f('partners.subTitle')}</Text>
         <HomePagePartnersWrapper>
             <Bosch/>
             <MediaMarkt/>

@@ -22,17 +22,17 @@ const DesktopHeaderWrapper = styled.div`
     display: none;
   }
 `
-export const DesktopHeader = ({ slideOnHomePage }) => {
+export const DesktopHeader = ({ slideOnHomePage, f }) => {
     return (<DesktopHeaderWrapper>
         <HeaderLinksWrapper>
-            <HeaderLink href={'/'} text="Home"/>
-            <HeaderLink href={'/about-us'} text="About us"/>
+            <HeaderLink href={'/'} text={f('common.home')}/>
+            <HeaderLink href={'/about-us'} text={f('common.aboutUs')}/>
         </HeaderLinksWrapper>
         <DesktopHeaderLogoArea>
             <ImageOptimizedSvg relativeUrl={'logos/franu-text-colored.svg'} alt="Franu kuchen logo"/>
         </DesktopHeaderLogoArea>
         <HeaderLinksWrapper>
-            <HeaderLinkLike onClick={() => slideOnHomePage('how-it-works')} >How it works</HeaderLinkLike>
+            <HeaderLinkLike onClick={() => slideOnHomePage('how-it-works')} >{f('common.howItWorks')}</HeaderLinkLike>
             <HeaderLink href={'/about'} text="About"/>
         </HeaderLinksWrapper>
     </DesktopHeaderWrapper>)

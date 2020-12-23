@@ -1,6 +1,16 @@
+import { common } from '../common/en'
+import { homeEn } from '../pages/home/en'
+import { aboutUsEn } from '../pages/about-us/en'
+
 export const en = {
-    '/' : {
-        title: 'Coming soon!',
-        subTitle: 'Franu, where cooking begins'
+    '/': { ...homeEn,
+        common: {
+            ...common
+        }
+    },
+    '/about-us': { ...aboutUsEn,
+        common: {
+            ...common
+        }
     }
 }

@@ -6,24 +6,27 @@ import LKitchen from '../images/kitchen-forms/l-kitchen.svg?sprite'
 import UKitchen from '../images/kitchen-forms/u-kitchen.svg?sprite'
 import IslandKitchen from '../images/kitchen-forms/island-kitchen.svg?sprite'
 import OneWallKitchen from '../images/kitchen-forms/one-wall-kitchen.svg?sprite'
-import {availableAppliances} from "./appliances";
 
 export const kitchenForms = [
     {
         id: L_KITCHEN,
-        label: 'L kitchen'
+        label: 'L kitchen',
+        translationKey: 'common.lKitchen'
     },
     {
         id: U_KITCHEN,
-        label: 'U kitchen'
+        label: 'U kitchen',
+        translationKey: 'common.uKitchen'
     },
     {
         id: ISLAND_KITCHEN,
-        label: 'Island kitchen'
+        label: 'Island kitchen',
+        translationKey: 'common.islandKitchen'
     },
     {
         id: ONE_WALL_KITCHEN,
-        label: 'One wall kitchen'
+        label: 'One wall kitchen',
+        translationKey: 'common.oneWallKitchen'
     }
 ]
 

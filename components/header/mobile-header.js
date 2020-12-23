@@ -25,7 +25,7 @@ const MobileHeaderLogoArea = styled.div`
   max-width: ${10 * baseUnit}px;
 `
 
-export const MobileHeader = ({ slideOnHomePage }) => {
+export const MobileHeader = ({ slideOnHomePage, f }) => {
     const [overlayOpened, setOverlayOpened] = useState(false)
 
     const closeOverlay = () => {
@@ -39,6 +39,6 @@ export const MobileHeader = ({ slideOnHomePage }) => {
             </MobileHeaderLogoArea>
             <Menu width={30} height={30} onClick={() => setOverlayOpened(!overlayOpened)}/>
         </MobileHeaderWrapper>
-        {overlayOpened && <MobileHeaderMenu slideOnHomePage={slideOnHomePage} closeOverlay={closeOverlay}/>}
+        {overlayOpened && <MobileHeaderMenu slideOnHomePage={slideOnHomePage} closeOverlay={closeOverlay} f={f}/>}
     </MobileHeaderOuterWrapper>)
 }

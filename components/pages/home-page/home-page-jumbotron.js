@@ -57,7 +57,7 @@ const HomePageJumbotronText = styled.div`
   }
 `
 
-export const HomePageJumbotron = () => {
+export const HomePageJumbotron = ({ f }) => {
     const [ live, setLive ] = useState(false)
 
     useEffect(() => {
@@ -72,11 +72,11 @@ export const HomePageJumbotron = () => {
     return (<JumbotronWrapper paddingBottom={4} paddingTop={12} image={'home-page/background.jpg'}>
         <JumbotronContent>
             <HomePageJumbotronText live={live}>
-                <HeadlineJumbo color={brown}>Franu, wo das Kochen beginnt</HeadlineJumbo>
-                <HeadlineTernarry color={grayscale3} marginTop={2}>Finden Sie Ihre Traumküche mit nur wenigen Klicks</HeadlineTernarry>
+                <HeadlineJumbo color={brown}>{f('jumbotron.title')}</HeadlineJumbo>
+                <HeadlineTernarry color={grayscale3} marginTop={2}>{f('jumbotron.subTitle')}</HeadlineTernarry>
                 <div>
-                    <ButtonPrimary big marginTop={3} marginBottom={1} onClick={() => scrollToView('contact-us-form')}>Bestellen Sie jetzt Ihre Küche</ButtonPrimary>
-                    <Text weight={600} onClick={() => scrollToView('find-inspiration')} style={{cursor: 'pointer', textDecoration: 'underline'}}>Oder Inspiration finden</Text>
+                    <ButtonPrimary big marginTop={3} marginBottom={1} onClick={() => scrollToView('contact-us-form')}>{f('jumbotron.cta')}</ButtonPrimary>
+                    <Text weight={600} onClick={() => scrollToView('find-inspiration')} style={{cursor: 'pointer', textDecoration: 'underline'}}>{f('jumbotron.link')}</Text>
                 </div>
             </HomePageJumbotronText>
             <HomePageJumbotronImageWrapper live={live}>

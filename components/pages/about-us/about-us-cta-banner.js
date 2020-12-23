@@ -15,9 +15,9 @@ const AboutUsCtaBannerWrapper = styled(Section)`
   box-shadow: 12px 12px 108px -12px rgba(79,79,79,1);
 `
 
-export const AboutUsCtaBanner = () => (<AboutUsCtaBannerWrapper>
-    <HeadlineSecondary color={brown}>Become a part of winning recipe and get your dream kitchen</HeadlineSecondary>
+export const AboutUsCtaBanner = ({ f }) => (<AboutUsCtaBannerWrapper>
+    <HeadlineSecondary color={brown}>{f('teaser.title')}</HeadlineSecondary>
     <Link href={'/#contact-us-form'}>
-        <ButtonPrimary big marginTop={3}>Order your kitchen now</ButtonPrimary>
+        <ButtonPrimary big marginTop={3}>{f('teaser.cta')}</ButtonPrimary>
     </Link>
 </AboutUsCtaBannerWrapper>)

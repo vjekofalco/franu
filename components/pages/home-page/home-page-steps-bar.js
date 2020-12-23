@@ -157,26 +157,26 @@ const HomePageStepsBarStepDescription = ({ step, even, index, last }) => (
     </HomePageStepsBarStepDescriptionWrapper>
 )
 
-export const HomePageStepsBar = () => {
+export const HomePageStepsBar = ({ f }) => {
     const steps = [
         {
-            title: 'Designer Consultation',
-            description: 'Express your wishes and get value feedback from our kitchen designers',
+            title: f('howItWorks.stepOne.title'),
+            description: f('howItWorks.stepOne.description'),
             image: () => (<DesignIcon/>)
         },
         {
-            title: 'Measuring',
-            description: 'Together with our team, take your kitchen measures important for a perfect fit',
+            title: f('howItWorks.stepTwo.title'),
+            description: f('howItWorks.stepTwo.description'),
             image: () => (<MeasuringTape/>)
         },
         {
-            title: 'Production',
-            description: 'Relax while your kitchen is built and check progress status at any time.',
+            title: f('howItWorks.stepThree.title'),
+            description: f('howItWorks.stepThree.description'),
             image: () => (<Kitchen/>)
         },
         {
-            title: 'Delivery & Assembly',
-            description: 'Your kitchen is delivered on time and assembled from our team',
+            title: f('howItWorks.stepFour.title'),
+            description: f('howItWorks.stepFour.description'),
             image: () => (<DeliveryCart/>)
         }
     ]
@@ -187,9 +187,9 @@ export const HomePageStepsBar = () => {
 
     return (
         <HomePageStepsBarContainer id="how-it-works">
-            <HeadlineSecondary color={brown} center marginBottom={1}>How it works</HeadlineSecondary>
+            <HeadlineSecondary color={brown} center marginBottom={1}>{f('howItWorks.title')}</HeadlineSecondary>
             <SeparationLineDefault center maxWidth={350} marginBottom={1}/>
-            <Text size={1.5} center marginBottom={3}>Cooking has never been easier. Get your dream kitchen in no time.</Text>
+            <Text size={1.5} center marginBottom={3}>{f('howItWorks.subTitle')}</Text>
             <HomePageStepsBarWrapper>
                 <HomePageStepsBarList>
                     {steps.map((s, i) => (

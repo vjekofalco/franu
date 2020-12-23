@@ -63,17 +63,17 @@ const NewArrivalsItem = ({ item }) => {
     )
 }
 
-export const NewArrivals = () => {
+export const NewArrivals = ({ f }) => {
     const items = [
-        { name: 'Kitchen Filip', style: 'High Gloss'},
-        { name: 'Kitchen Emanuel', style: 'Modern'},
-        { name: 'Kitchen Mihael', style: 'Vintage'},
-        { name: 'Kitchen Dora', style: 'Industrial'}
+        { name: `${f('common.kitchen')} Filip`, style: `${f('newArivals.highGloss')}` },
+        { name: `${f('common.kitchen')} Emanuel`, style: `${f('newArivals.modern')}`},
+        { name: `${f('common.kitchen')} Mihael`, style: `${f('newArivals.vintage')}`},
+        { name: `${f('common.kitchen')} Dora`, style: `${f('newArivals.industrial')}`}
         ]
     return (<NewArrivalsWrapper>
-        <HeadlineSecondary color={brown} center marginBottom={1}>We are bringing you latest trends and standards</HeadlineSecondary>
+        <HeadlineSecondary color={brown} center marginBottom={1}>{f('newArivals.title')}</HeadlineSecondary>
         <SeparationLineDefault center maxWidth={350} marginBottom={1}/>
-        <Text size={1.5} center marginBottom={3}>Country, modern, high gloss or vintage, choose the design you ever wanted</Text>
+        <Text size={1.5} center marginBottom={3}>{f('newArivals.subTitle')}</Text>
         <NewArriwalsGalleryWrapper>
             {items.map(i => (
                 <NewArrivalsItem key={i.name.replace(' ', '-')} item={i}/>

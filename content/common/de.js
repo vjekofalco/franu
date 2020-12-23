@@ -1,0 +1,40 @@
+/**
+ * Every translation page object (ect. '/about-us') should include common object.
+ * Common object contains locales for strings that every page should use.
+ */
+export const common = {
+    aboutUs: 'Über uns',
+    contact: 'Kontakt',
+    howItWorks: 'Wie es funktioniert',
+    home: 'Home',
+    impressum: 'Impressum',
+    privacy: 'Privatsphäre',
+    termsAndConditions: 'Geschäftsbedingungen',
+    firstName: 'Vorname',
+    lastName: 'Nachname',
+    eMail: 'E-mail',
+    address: 'Adresse',
+    number: 'Nummer',
+    zip: 'Postleitzahl',
+    city: 'Stadt',
+    message: 'Nachricht',
+    phone: 'Telefonnummer',
+    send: 'Senden',
+    next: 'Next',
+    prev: 'Prev',
+    kitchen: 'Küche',
+    lKitchen: 'L Küche',
+    uKitchen: 'U Küche',
+    islandKitchen: 'Inselküche',
+    oneWallKitchen: 'Eine Wandküche',
+    oven: 'Ofen',
+    cookerHob: 'Kochfeld',
+    dishwasher: 'Geschirrspülmaschine',
+    exhaustHood: 'Abzugshaube',
+    fridge: 'Kühlschrank',
+    microwave: 'Mikrowelle',
+    coffeMachine: 'Kaffeemaschine',
+    morePhotos: 'Mehr Fotos',
+    munich: 'München',
+    confirm: 'Bestätigen'
+}

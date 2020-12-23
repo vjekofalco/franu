@@ -1,9 +1,9 @@
+import { useIntl } from 'react-intl'
 import styled from 'styled-components'
-import { useRouter } from "next/router"
+import { useRouter } from 'next/router'
 
 import { MobileHeader } from './mobile-header'
 import { DesktopHeader } from './desktop-header'
-import { PAGE_CONTENT_NARROW_WIDTH, baseUnit } from '../../common/constants'
 
 const HeaderWrapper = styled.div`
   ${({absolute}) => absolute && `
@@ -16,6 +16,8 @@ const HeaderWrapper = styled.div`
 `
 
 export const Header = () => {
+    const { formatMessage } = useIntl()
+    const f = id => formatMessage({ id })
     const router = useRouter()
     const isHomePage = router.pathname === '/'
 
@@ -33,7 +35,7 @@ export const Header = () => {
     }
 
     return (<HeaderWrapper absolute={isHomePage}>
-        <DesktopHeader slideOnHomePage={slideOnHomePage}/>
-        <MobileHeader slideOnHomePage={slideOnHomePage}/>
+        <DesktopHeader slideOnHomePage={slideOnHomePage} f={f}/>
+        <MobileHeader slideOnHomePage={slideOnHomePage} f={f}/>
     </HeaderWrapper>)
 }

@@ -7,24 +7,24 @@ export const StepOne = (props) => (<>
         <FormInputField name="firstName"
                                type="text"
                                split
-                               placeholder="First Name:"
+                               placeholder={`${props.f('common.firstName')}:`}
                                {...props}/>
         <FormInputField name="lastName"
                                type="text"
                                split
-                               placeholder="Last Name:"
+                               placeholder={`${props.f('common.lastName')}:`}
                                {...props}/>
     </FormFieldsWrapper>
     <FormFieldsWrapper>
         <FormInputField name="email"
                                type="text"
                                split
-                               placeholder="E-mail:"
+                               placeholder={`${props.f('common.eMail')}:`}
                                {...props}/>
         <FormInputField name="phoneNumber"
                                type="text"
                                split
-                               placeholder="Phone:"
+                               placeholder={`${props.f('common.phone')}:`}
                                {...props}/>
     </FormFieldsWrapper>
     <FormFieldsWrapper>
@@ -32,13 +32,13 @@ export const StepOne = (props) => (<>
                                type="text"
                                split
                                wide
-                               placeholder="Address:"
+                               placeholder={`${props.f('common.address')}:`}
                                {...props}/>
         <FormInputField name="number"
                                type="text"
                                split
                                narrow
-                               placeholder="Number:"
+                               placeholder={`${props.f('common.number')}:`}
                                {...props}/>
     </FormFieldsWrapper>
     <FormFieldsWrapper>
@@ -46,17 +46,17 @@ export const StepOne = (props) => (<>
                                type="text"
                                split
                                narrow
-                               placeholder="ZIP:"
+                               placeholder={`${props.f('common.zip')}:`}
                                {...props}/>
         <FormInputField name="city"
                                type="text"
                                split
                                wide
-                               placeholder="City:"
+                               placeholder={`${props.f('common.city')}:`}
                                {...props}/>
     </FormFieldsWrapper>
     <FormInputField name="message"
                            type="textarea"
-                           placeholder="Message:"
+                           placeholder={`${props.f('common.message')}:`}
                            {...props}/>
 </>)

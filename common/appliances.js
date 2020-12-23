@@ -21,31 +21,38 @@ import {
 export const availableAppliances = [
     {
         id: APPLIANCE_OVEN,
-        label: 'Oven'
+        label: 'Oven',
+        translationKey: 'common.oven'
     },
     {
         id: APPLIANCE_COOKER_HOB,
-        label: 'Cooker hob'
+        label: 'Cooker hob',
+        translationKey: 'common.cookerHob'
     },
     {
         id: APPLIANCE_DISHWASHER,
-        label: 'Dishwasher'
+        label: 'Dishwasher',
+        translationKey: 'common.dishwasher'
     },
     {
         id: APPLIANCE_EXHAUST_HOOD,
-        label: 'Exhaust hood'
+        label: 'Exhaust hood',
+        translationKey: 'common.exhaustHood'
     },
     {
         id: APPLIANCE_FRIDGE,
-        label: 'Fridge'
+        label: 'Fridge',
+        translationKey: 'common.fridge'
     },
     {
         id: APPLIANCE_MICROWAVE,
-        label: 'Microwave'
+        label: 'Microwave',
+        translationKey: 'common.microwave'
     },
     {
         id: APPLIANCE_COFFE_MACHINE,
-        label: 'Coffe machine'
+        label: 'Coffe machine',
+        translationKey: 'common.coffeMachine'
     }
 ]
 

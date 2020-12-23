@@ -24,7 +24,7 @@ const MobileHeaderLinkWrapper = styled.div`
   padding: ${2 * baseUnit}px ${baseUnit}px 0px ${baseUnit}px
 `
 
-export const MobileHeaderMenu = ({slideOnHomePage, closeOverlay}) => {
+export const MobileHeaderMenu = ({slideOnHomePage, closeOverlay, f}) => {
     useEffect(() => {
         document.body.classList.add('body-noscroll')
 
@@ -34,15 +34,15 @@ export const MobileHeaderMenu = ({slideOnHomePage, closeOverlay}) => {
     return (<MobileHeaderMenuWrapper>
         <MobileHeaderOverlay>
             <MobileHeaderLinkWrapper>
-                <HeaderLink onClick={() => closeOverlay()} block href={'/'} text="Home"/>
+                <HeaderLink onClick={() => closeOverlay()} block href={'/'} text={f('common.home')}/>
             </MobileHeaderLinkWrapper>
             <MobileHeaderLinkWrapper>
-                <HeaderLink onClick={() => closeOverlay()} block href={'/about-us'} text="About us"/>
+                <HeaderLink onClick={() => closeOverlay()} block href={'/about-us'} text={f('common.aboutUs')}/>
             </MobileHeaderLinkWrapper>
             <MobileHeaderLinkWrapper>
                 <HeaderLinkLike block onClick={() => {
                     closeOverlay()
-                    slideOnHomePage('how-it-works')}} >How it works</HeaderLinkLike>
+                    slideOnHomePage('how-it-works')}} >{f('common.howItWorks')}</HeaderLinkLike>
             </MobileHeaderLinkWrapper>
             <MobileHeaderLinkWrapper>
                 <HeaderLink onClick={() => closeOverlay()} block href={'/about'} text="About"/>

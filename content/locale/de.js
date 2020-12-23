@@ -1,6 +1,20 @@
+import { common } from '../common/de'
+
 export const de = {
-    '/' : {
-        title: 'Wir sind bald für Sie da!',
-        subTitle: 'Franu, wo das Kochen beginnt'
+    '/': {
+        jumbotron: {
+            title: 'Ovo je neki njemacki naslov',
+            subTitle: 'Get your dream custom kitchen in just few clicks.',
+            cta: 'Order your kitchen now',
+            link: 'Or just, find inspiration'
+        },
+        common: {
+            ...common
+        }
+    },
+    '/about-us': {
+        common: {
+            ...common
+        }
     }
 }

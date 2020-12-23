@@ -38,35 +38,35 @@ const PropositionHeadlineWrapper = styled.div`
   }
 `
 
-export const ValuesProposition = () => (
+export const ValuesProposition = ({ f }) => (
     <>
         <PropositionWrapper>
                 <PropositionHeadlineWrapper>
                         <Design/>
-                        <HeadlineTernarry marginLeft={1}>Unique design</HeadlineTernarry>
+                        <HeadlineTernarry marginLeft={1}>{f('requestForm.valueProposition.one.title')}</HeadlineTernarry>
                 </PropositionHeadlineWrapper>
-                <Text>There is no where kitchen like yours. Every kitchen we built is custom measured with unique design.</Text>
+                <Text>{f('requestForm.valueProposition.one.description')}</Text>
         </PropositionWrapper>
         <PropositionWrapper>
                 <PropositionHeadlineWrapper>
                         <Medal/>
-                        <HeadlineTernarry marginLeft={1}>Top quality</HeadlineTernarry>
+                        <HeadlineTernarry marginLeft={1}>{f('requestForm.valueProposition.two.title')}</HeadlineTernarry>
                 </PropositionHeadlineWrapper>
-                <Text>Our kitchens are made of top materials and build to serve you for a long time.</Text>
+                <Text>{f('requestForm.valueProposition.two.description')}</Text>
         </PropositionWrapper>
         <PropositionWrapper>
                 <PropositionHeadlineWrapper>
                         <DeliveryTruck/>
-                        <HeadlineTernarry marginLeft={1}>Fast delivery</HeadlineTernarry>
+                        <HeadlineTernarry marginLeft={1}>{f('requestForm.valueProposition.three.title')}</HeadlineTernarry>
                 </PropositionHeadlineWrapper>
-                <Text>In just few weeks your kitchen is assembled and ready to use.</Text>
+                <Text>{f('requestForm.valueProposition.three.description')}</Text>
         </PropositionWrapper>
         <PropositionWrapper>
                 <PropositionHeadlineWrapper>
                         <Money/>
-                        <HeadlineTernarry marginLeft={1}>Fair prices</HeadlineTernarry>
+                        <HeadlineTernarry marginLeft={1}>{f('requestForm.valueProposition.four.title')}</HeadlineTernarry>
                 </PropositionHeadlineWrapper>
-                <Text>With every project we are giving our best to give you more for your money.</Text>
+                <Text>{f('requestForm.valueProposition.four.description')}</Text>
         </PropositionWrapper>
     </>
 )

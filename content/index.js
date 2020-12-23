@@ -1,3 +1,3 @@
-export * from './en'
-export * from './de'
-export * from './hr'
+export * from './locale/en'
+export * from './locale/de'
+export * from './locale/hr'

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import {useIntl} from 'react-intl'
 import styled from 'styled-components'
 
 import {dark, grayscale2, grayscale6} from '../../styles/colors'
@@ -97,8 +98,11 @@ const FooterSocialLink = styled.div`
   ${({ image }) => image && `background-image: url(${require(`../../images/social/${image}.svg`)});`}
 `
 
-export const Footer = () => (
-    <FooterWrapper>
+export const Footer = () => {
+    const { formatMessage } = useIntl()
+    const f = id => formatMessage({ id })
+
+    return (<FooterWrapper>
         <FooterContentWrapper>
             <FooterInternalLinksWrapper>
                 <FooterLogoArea>
@@ -111,17 +115,17 @@ export const Footer = () => (
                 <FooterLinksWrapper>
                     <Link href="/terms-and-conditions#impresum">
                         <FooterLinkStyled>
-                            Impressum
+                            {f('common.impressum')}
                         </FooterLinkStyled>
                     </Link>
                     <Link href="/terms-and-conditions#privacy-policy">
                         <FooterLinkStyled>
-                            Privacy
+                            {f('common.privacy')}
                         </FooterLinkStyled>
                     </Link>
                     <Link href="/terms-and-conditions#terms-and-conditions">
                         <FooterLinkStyled>
-                            Terms and conditions
+                            {f('common.termsAndConditions')}
                         </FooterLinkStyled>
                     </Link>
                 </FooterLinksWrapper>
@@ -139,6 +143,6 @@ export const Footer = () => (
                 </Link>
             </FooterSocialLinks>
         </FooterContentWrapper>
-    </FooterWrapper>
-)
+    </FooterWrapper>)
+}
 

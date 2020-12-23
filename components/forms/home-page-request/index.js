@@ -109,7 +109,7 @@ const SendButton = styled(ButtonBrown)`
     background-image: url(${require('../../../images/icons/common/paper-plane.svg')});
 `
 
-export const HomePageRequestForm = () => {
+export const HomePageRequestForm = ({ f }) => {
     const STEPS_NUMBER = 3
     const INITIAL_STEP = 1
 
@@ -163,12 +163,12 @@ export const HomePageRequestForm = () => {
     return (<HomePageFormSection>
                 <HomePageFormValuesWrapper>
                     <HomePageFormHalf>
-                        <ValuesProposition/>
+                        <ValuesProposition f={f}/>
                     </HomePageFormHalf>
                     <HomePageFormHalf>
                         <HomePageFormWrapper id="contact-us-form">
-                            <><HeadlineSecondary color={brown} marginBottom={2}>Order your dream kitchen now</HeadlineSecondary>
-                            <Text>Out team will contact you soon and arrange a meeting with you and our design consultants.</Text>
+                            <><HeadlineSecondary color={brown} marginBottom={2}>{f('requestForm.title')}</HeadlineSecondary>
+                            <Text>{f('requestForm.subTitle')}</Text>
                             <Formik enableReinitialize initialValues={{}} onSubmit={values => submitForm(values)} validate={validate}>
                                 {(props) => (<Form>
                                     <HomePageFormInputsWrapper success={submitted}>
@@ -176,20 +176,20 @@ export const HomePageRequestForm = () => {
                                             submitted
                                                 ? <SuccessMessage/>
                                                 : <>
-                                                    {step === 1 && <StepOne {...props}/>}
-                                                    {step === 2 && <StepTwo selected={kitchenShape} {...props} onSelect={s => selectKitchenShape(s)}/>}
-                                                    {step === 3 && <StepThree selected={appliances} {...props} onSelect={a => selectAppliance(a)}/>}
+                                                    {step === 1 && <StepOne {...props} f={f}/>}
+                                                    {step === 2 && <StepTwo f={f} selected={kitchenShape} {...props} onSelect={s => selectKitchenShape(s)}/>}
+                                                    {step === 3 && <StepThree f={f} selected={appliances} {...props} onSelect={a => selectAppliance(a)}/>}
                                                 </>
                                         }
                                     </HomePageFormInputsWrapper>
                                     <ButtonsWrapper disabled={submitted}>
                                         <StepsControll disabled={step === 1} onClick={() => changeStep(step - 1)}>
                                             <Prev/>
-                                            <Text marginLeft={0.5}>Prev</Text>
+                                            <Text marginLeft={0.5}>{f('common.prev')}</Text>
                                         </StepsControll>
-                                        <SendButton disabled={submitted} medium marginLeft={1} marginRight={1} type="submit">Send</SendButton>
+                                        <SendButton disabled={submitted} medium marginLeft={1} marginRight={1} type="submit">{f('common.send')}</SendButton>
                                         <StepsControll disabled={step === STEPS_NUMBER} onClick={() => changeStep(step + 1)}>
-                                            <Text marginRight={0.5}>Next</Text>
+                                            <Text marginRight={0.5}>{f('common.next')}</Text>
                                             <Next/>
                                         </StepsControll>
                                     </ButtonsWrapper>
