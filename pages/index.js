@@ -6,7 +6,7 @@ export default function Home() {
   const { formatMessage } = useIntl()
   const f = id => formatMessage({ id })
 
-  return (
+    return (
     <div className={styles.container}>
       <Head>
         <title>Franu Küchen</title>
