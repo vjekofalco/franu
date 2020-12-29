@@ -27,6 +27,7 @@ function MyApp({ Component, pageProps }) {
       defaultLocale={defaultLocale}
       messages={messages}>
     <Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       // Global site tag (gtag.js) - Google Analytics
       {publicRuntimeConfig.GA_ENABLED && <>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVNH1XGR2H"></script>
@@ -36,7 +37,7 @@ function MyApp({ Component, pageProps }) {
         function gtag(){dataLayer.push(arguments)}
         gtag('js', new Date());
 
-        gtag('config', 'G-PVNH1XGR2H');`}} />
+    gtag('config', 'G-PVNH1XGR2H');`}} />
       </>}
     </Head>
   <Header/>

@@ -9,7 +9,7 @@ const ENVIRONMENT_CONFIGS = {
     },
     production: {
         GA_ENABLED: true,
-        GA_TRACKING_ID: 'UA-85033665-5'
+        GA_TRACKING_ID: 'G-PVNH1XGR2H'
     }
 }
 
