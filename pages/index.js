@@ -18,7 +18,6 @@ export default function Home() {
         <title>{f('seo.title')}</title>
         <meta name="description" content={f('seo.description')} />
         <meta name="keywords" content="Dream kitchen, Küche" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/*<link rel="icon" href="/favicon.ico" />*/}
       </Head>
      <HomePageJumbotron f={f}/>
