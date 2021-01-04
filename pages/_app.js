@@ -18,10 +18,7 @@ function MyApp({ Component, pageProps }) {
 
   const messages =  localeCopy[pathname] ? flatten(localeCopy[pathname]) : flatten({ common: englishCommon })
 
-  console.log(messages)
-
   const { publicRuntimeConfig } = getConfig()
-  console.log(publicRuntimeConfig)
 
   return (<IntlProvider locale={locale}
       defaultLocale={defaultLocale}
@@ -31,13 +28,10 @@ function MyApp({ Component, pageProps }) {
       // Global site tag (gtag.js) - Google Analytics
       {publicRuntimeConfig.GA_ENABLED && <>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVNH1XGR2H"></script>
-        <script
-            dangerouslySetInnerHTML={{
-              __html: `window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments)}
-        gtag('js', new Date());
-
-    gtag('config', 'G-PVNH1XGR2H');`}} />
+        <script dangerouslySetInnerHTML={{_html: `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)}
+          gtag('js', new Date());
+          gtag('config', '${publicRuntimeConfig.GA_TRACKING_ID}');`}} />
       </>}
     </Head>
   <Header/>
