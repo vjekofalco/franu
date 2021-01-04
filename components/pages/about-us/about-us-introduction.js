@@ -49,7 +49,7 @@ export const AboutUsIntroduction = ({ f }) => {
                     <VisionMissionText size={1.2} paddingLeft={1} dangerouslySetInnerHTML={{ __html: f('description.missionStatement') }}></VisionMissionText>
                 </VisionMissionWrapper>
                 <VisionMissionWrapper>
-                    <VisionMissionText size={1.2} paddingLeft={1} dangerouslySetInnerHTML={{ __html: f('description.missionStatement') }}></VisionMissionText>
+                    <VisionMissionText size={1.2} paddingLeft={1} dangerouslySetInnerHTML={{ __html: f('description.visionStatement') }}></VisionMissionText>
                 </VisionMissionWrapper>
             </AboutUsDescriptionWrapper>
         </AboutUsIntroductionWrapper>

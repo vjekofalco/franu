@@ -10,6 +10,7 @@ import '../styles/globals.css'
 import * as locales from '../content'
 import { Header } from '../components/header'
 import { Footer } from '../components/footer'
+import { CookieBanner } from '../components/cookie-banner'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -37,6 +38,7 @@ function MyApp({ Component, pageProps }) {
   <Header/>
   <Component {...pageProps} />
   <Footer/>
+  <CookieBanner/>
   </IntlProvider>)
 }
 

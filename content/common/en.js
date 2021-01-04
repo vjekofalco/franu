@@ -38,8 +38,9 @@ export const common = {
     munich: 'Munich',
     confirm: 'Confirm',
     cookies: {
+        cookiesTitle: 'Franu Cookies',
         acceptAll: 'Accept all',
-        cookeSettings: 'Cookie settings',
+        cookieSettings: 'Cookie settings',
         disclaimer: 'Franu uses cookies to improve your experience and measure your interaction on our web site. If you agree with that click "Accept all". To change your preferences, click "cookie settings". To find more information about our cookies visit our privacy policy page.',
         necessary: "Necessary",
         necessaryDescription: "These cookies are necessary for our web page in order to function properly. There for they can not be disabled",
