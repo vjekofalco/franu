@@ -27,6 +27,7 @@
     "responsive-loader": "^2.0.0",
     "styled-components": "^5.2.0",
     "svg-sprite-loader": "^5.0.0",
+    "universal-cookie": "^4.0.4",
     "webp-loader": "^0.6.0"
   },
   "devDependencies": {

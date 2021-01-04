@@ -12,7 +12,8 @@ import { Header } from '../components/header'
 import { Footer } from '../components/footer'
 import { CookieBanner } from '../components/cookie-banner'
 
-function MyApp({ Component, pageProps }) {
+function FranuApp({ Component, pageProps, cookies }) {
+  console.log(cookies)
   const router = useRouter()
   const { locale, defaultLocale, pathname } = router
   const localeCopy = locales[locale]
@@ -38,8 +39,17 @@ function MyApp({ Component, pageProps }) {
   <Header/>
   <Component {...pageProps} />
   <Footer/>
-  <CookieBanner/>
+  <CookieBanner cookies={cookies}/>
   </IntlProvider>)
 }
 
-export default MyApp
+FranuApp.getInitialProps = async (ctx) => {
+  const { req } = ctx
+  const cookies = req && req.headers.cookie
+
+  return {
+    cookies
+  }
+}
+
+export default FranuApp

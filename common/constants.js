@@ -51,3 +51,7 @@ export const ENERGY_EFFICIENCY_D = 'D'
 export const ENERGY_EFFICIENCY_A_PLUS = 'A+'
 export const ENERGY_EFFICIENCY_A_PLUS2 = 'A++'
 export const ENERGY_EFFICIENCY_A_PLUS3 = 'A+++'
+
+// Cookies
+export const COOKIE_CONSENT = 'franu-consent-given-cookie'
+export const COOKIE_STATISTICS_CONSENT = 'franu-statistics-consent-cookie'
