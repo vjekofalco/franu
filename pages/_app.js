@@ -13,7 +13,6 @@ import { Footer } from '../components/footer'
 import { CookieBanner } from '../components/cookie-banner'
 
 function FranuApp({ Component, pageProps, cookies }) {
-  console.log(cookies)
   const router = useRouter()
   const { locale, defaultLocale, pathname } = router
   const localeCopy = locales[locale]
@@ -25,21 +24,13 @@ function FranuApp({ Component, pageProps, cookies }) {
   return (<IntlProvider locale={locale}
       defaultLocale={defaultLocale}
       messages={messages}>
-    <Head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      // Global site tag (gtag.js) - Google Analytics
-      {publicRuntimeConfig.GA_ENABLED && <>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVNH1XGR2H"></script>
-        <script dangerouslySetInnerHTML={{_html: `window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)}
-          gtag('js', new Date());
-          gtag('config', '${publicRuntimeConfig.GA_TRACKING_ID}');`}} />
-      </>}
-    </Head>
+  <Head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </Head>
+  <CookieBanner cookies={cookies}/>
   <Header/>
   <Component {...pageProps} />
   <Footer/>
-  <CookieBanner cookies={cookies}/>
   </IntlProvider>)
 }
 

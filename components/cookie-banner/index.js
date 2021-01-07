@@ -18,8 +18,7 @@ const CookieBannerWrapper = styled.div`
   padding: ${2 * baseUnit}px;
   z-index: 100;
   bottom: ${baseUnit}px;
-  box-shadow: 0px 2px 5px ${grayscale7};
-  border-radius: 4px;
+  box-shadow: rgba(79,79,79,1) 0px 1px 6px 0px;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -33,14 +32,16 @@ const CookieBannerContentWrapper = styled.div`
 
 export function renderableScripts (cookies) {
     const { publicRuntimeConfig } = getConfig()
+    console.log('Cookies', cookies)
 
     let gaOptOut, gaScript, gaSettings
     const adsTracking = (cookies.get(COOKIE_STATISTICS_CONSENT) === undefined)
+    console.log('Consent', adsTracking)
 
     if (publicRuntimeConfig.GA_ENABLED) {
-        gaOptOut = <script  dangerouslySetInnerHTML={{_html:`window['ga-disable-${publicRuntimeConfig.GA_TRACKING_ID}'] = ${adsTracking};`}} />
+        gaOptOut = <script dangerouslySetInnerHTML={{__html:`window['ga-disable-${publicRuntimeConfig.GA_TRACKING_ID}'] = ${adsTracking};`}} />
         gaScript = <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVNH1XGR2H"></script>
-        gaSettings = <script dangerouslySetInnerHTML={{_html: `window.dataLayer = window.dataLayer || [];
+        gaSettings = <script dangerouslySetInnerHTML={{__html:`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments)}
           gtag('js', new Date());
           gtag('config', '${publicRuntimeConfig.GA_TRACKING_ID}');
@@ -83,7 +84,7 @@ export const CookieBanner = ({ cookies }) => {
     }
 
     const scripts = renderableScripts(c)
-    return (<>
+    return (<div>
         <Head>
             {scripts.gaOptOut}
             {scripts.gaScript}
@@ -98,5 +99,5 @@ export const CookieBanner = ({ cookies }) => {
                 <Text onClick={() => openCookieSettings()} cursor="pointer" color={brownscale2} underline inline marginLeft={2}>{f('common.cookies.cookieSettings')}</Text>
             </CookieBannerContentWrapper>
         </CookieBannerWrapper>}
-    </>)
+    </div>)
 }

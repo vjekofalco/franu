@@ -3,7 +3,8 @@ const optimizedImages = require('next-optimized-images')
 
 const ENVIRONMENT_CONFIGS = {
     default: {
-        GA_ENABLED: false,
+        GA_ENABLED: true,
+        GA_TRACKING_ID: 'G-PVNH1XGR2H',
         NODE_ENV: process.env.NODE_ENV,
         GA_ENABLE_LOG_TO_CONSOLE: false
     },
