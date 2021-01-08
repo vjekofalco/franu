@@ -5,7 +5,8 @@ export const cookieList = [
         name: COOKIE_CONSENT,
         title: 'common.cookies.necessary',
         description: 'common.cookies.necessaryDescription',
-        preselected: true
+        preselected: true,
+        disabled: true
     },
     {
         name: COOKIE_STATISTICS_CONSENT,

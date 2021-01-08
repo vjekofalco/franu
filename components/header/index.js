@@ -10,7 +10,7 @@ const HeaderWrapper = styled.div`
     position: absolute;
     left: 0;
     right: 0;
-    z-index:100;
+    z-index: 100;
     background-color: rgba(255, 255, 255, 0.3);
   `}
 `

@@ -10,6 +10,7 @@ const BaseButton = styled.button`
   font-weight: 600;
   text-align: center;
   display: inline-block;
+  border-radius: 2px;
   transition: background-color 0.15s;
   padding: ${baseUnit / 2}px ${baseUnit}px;
   

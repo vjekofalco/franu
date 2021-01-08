@@ -3,13 +3,14 @@ import getConfig from 'next/config'
 import { useIntl } from 'react-intl'
 import styled from 'styled-components'
 import Cookies from 'universal-cookie'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { Text } from '../common/text'
 import { cookieList } from './cookies-list'
+import { CookiesPopup } from './cookies-popup'
 import { ButtonBrown } from '../common/buttons'
+import { white, brownscale2 } from '../../styles/colors'
 import { SeparationLineDefault } from '../common/separation-line'
-import { white, grayscale7, brownscale2 } from '../../styles/colors'
 import { baseUnit, PAGE_CONTENT_NARROW_WIDTH, COOKIE_CONSENT, COOKIE_STATISTICS_CONSENT } from '../../common/constants'
 
 const CookieBannerWrapper = styled.div`
@@ -17,7 +18,7 @@ const CookieBannerWrapper = styled.div`
   background-color: ${white};
   padding: ${2 * baseUnit}px;
   z-index: 100;
-  bottom: ${baseUnit}px;
+  bottom: 0;
   box-shadow: rgba(79,79,79,1) 0px 1px 6px 0px;
   left: 0;
   right: 0;
@@ -32,11 +33,9 @@ const CookieBannerContentWrapper = styled.div`
 
 export function renderableScripts (cookies) {
     const { publicRuntimeConfig } = getConfig()
-    console.log('Cookies', cookies)
 
     let gaOptOut, gaScript, gaSettings
     const adsTracking = (cookies.get(COOKIE_STATISTICS_CONSENT) === undefined)
-    console.log('Consent', adsTracking)
 
     if (publicRuntimeConfig.GA_ENABLED) {
         gaOptOut = <script dangerouslySetInnerHTML={{__html:`window['ga-disable-${publicRuntimeConfig.GA_TRACKING_ID}'] = ${adsTracking};`}} />
@@ -64,7 +63,12 @@ export const CookieBanner = ({ cookies }) => {
         consentGiven: c.get(COOKIE_CONSENT)
     }
 
+    const [ popupOpened, togglePopup ] = useState(false)
     const [ allowedCookies, setAllowedCookies ] = useState(consentCookie)
+
+    useEffect(() => {
+        setAllowedCookies(consentCookie)
+    }, [ popupOpened ])
 
     const acceptAll = () => {
         cookieList.forEach((cookie, i) => {
@@ -79,8 +83,8 @@ export const CookieBanner = ({ cookies }) => {
         })
     }
 
-    const openCookieSettings = () => {
-        console.log('OPEN BANNER')
+    const closeCookiesSettingsPopup = () => {
+       togglePopup(false)
     }
 
     const scripts = renderableScripts(c)
@@ -90,14 +94,18 @@ export const CookieBanner = ({ cookies }) => {
             {scripts.gaScript}
             {scripts.gaSettings}
         </Head>
-        {!allowedCookies.consentGiven && <CookieBannerWrapper>
-            <CookieBannerContentWrapper>
-                <Text size={2} weight={600}>{f('common.cookies.cookiesTitle').toUpperCase()}</Text>
-                <SeparationLineDefault/>
-                <Text marginBottom={3} dangerouslySetInnerHTML={{ __html: f('common.cookies.disclaimer') }}></Text>
-                <ButtonBrown medium onClick={() => acceptAll()}>{f('common.cookies.acceptAll')}</ButtonBrown>
-                <Text onClick={() => openCookieSettings()} cursor="pointer" color={brownscale2} underline inline marginLeft={2}>{f('common.cookies.cookieSettings')}</Text>
-            </CookieBannerContentWrapper>
-        </CookieBannerWrapper>}
+        {!allowedCookies.consentGiven && <>
+            {popupOpened
+                ? <CookiesPopup onClose={() => closeCookiesSettingsPopup()} f={f}/>
+                : <CookieBannerWrapper>
+                    <CookieBannerContentWrapper>
+                        <Text size={2} weight={600}>{f('common.cookies.cookiesTitle').toUpperCase()}</Text>
+                        <SeparationLineDefault/>
+                        <Text marginBottom={3} dangerouslySetInnerHTML={{ __html: f('common.cookies.disclaimer') }}></Text>
+                        <ButtonBrown medium onClick={() => acceptAll()}>{f('common.cookies.acceptAll')}</ButtonBrown>
+                        <Text onClick={() => togglePopup(true)} cursor="pointer" color={brownscale2} underline inline marginLeft={2}>{f('common.cookies.cookieSettings')}</Text>
+                    </CookieBannerContentWrapper>
+                  </CookieBannerWrapper>}
+        </>}
     </div>)
 }

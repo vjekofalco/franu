@@ -1,12 +1,10 @@
 import { baseUnit } from "../common/constants";
 
-export const decMarginAuto = () => 'margin-auto {margin: auto};'
 export const decMargin = (marginType, multiplier) => `${marginType}: ${baseUnit * multiplier}px;`
 export const decPadding = (paddingType, multiplier) => `${paddingType}: ${baseUnit * multiplier}px;`
 
 export const decWithMargins = (props) => {
-    return `
-    ${addMarginAuto(props.marginAuto)}
+ return `
     ${addMargin('margin', props.margin)}
     ${addMargin('margin-top', props.marginTop)}
     ${addMargin('margin-left', props.marginLeft)}
@@ -16,7 +14,7 @@ export const decWithMargins = (props) => {
 }
 
 export const decWithPadding = (props) => {
-    return `
+ return `
     ${addPadding('padding', props.padding)}
     ${addPadding('padding-top', props.paddingTop)}
     ${addPadding('padding-left', props.paddingLeft)}
@@ -33,6 +31,3 @@ function addPadding (paddingType, value) {
     return (value && decPadding(paddingType, value)) || ''
 }
 
-function addMarginAuto (value) {
-    return (value && 'margin: auto;') || ''
-}

@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
-    <title>Icon/White/ios-checkmark-empty</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Icon/White/ios-checkmark-empty" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="ios-checkmark-empty" transform="translate(0.000000, 4.000000)" fill="#FFFFFF">
-            <path d="M10.6657019,22.3545918 C10.3183792,22.7066327 9.82633864,23 9.39218524,23 C8.95803184,23 8.46599132,22.6919643 8.10419682,22.3399235 L0,14.1256378 L2.57597685,11.5146684 L9.40665702,18.4381378 L27.4674385,0 L30,2.65497449 L10.6657019,22.3545918 L10.6657019,22.3545918 Z" id="Shape"></path>
-        </g>
-    </g>
+<?xml version="1.0" encoding="iso-8859-1"?>
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 426.667 426.667" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve">
+<g>
+	<g>
+		<path d="M421.876,56.307c-6.548-6.78-17.352-6.968-24.132-0.42c-0.142,0.137-0.282,0.277-0.42,0.42L119.257,334.375
+			l-90.334-90.334c-6.78-6.548-17.584-6.36-24.132,0.42c-6.388,6.614-6.388,17.099,0,23.713l102.4,102.4
+			c6.665,6.663,17.468,6.663,24.132,0L421.456,80.44C428.236,73.891,428.424,63.087,421.876,56.307z"/>
+	</g>
+</g>
 </svg>
