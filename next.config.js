@@ -1,6 +1,8 @@
 const withPlugins = require('next-compose-plugins')
 const optimizedImages = require('next-optimized-images')
 
+const locales = require('./locales')
+
 const ENVIRONMENT_CONFIGS = {
     default: {
         GA_ENABLED: true,
@@ -23,10 +25,10 @@ const nextConfig = {
     i18n: {
         // These are all the locales you want to support in
         // your application
-        locales: ['de', 'en', 'hr'],
+        locales: locales.languages,
         // This is the default locale you want to be used when visiting
         // a non-locale prefixed path e.g. `/hello`
-        defaultLocale: 'de',
+        defaultLocale: locales.mainLanguage,
         localeDetection: false
     },
     publicRuntimeConfig: environmentConfig

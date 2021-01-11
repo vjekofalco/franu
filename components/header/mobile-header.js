@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import React, { useState } from 'react'
 
 import { baseUnit } from '../../common/constants'
+import { LanguagePicker } from '../language-picker'
 import { MobileHeaderMenu } from './mobile-header-menu'
 import { ImageOptimizedSvg } from '../image/image-optimized'
 import { mediaBreakpointUp } from '../../styles/breakpoionts'
@@ -25,6 +26,15 @@ const MobileHeaderLogoArea = styled.div`
   max-width: ${10 * baseUnit}px;
 `
 
+const MobileMenuArea = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+const MenuIconWrapper = styled.div`
+  margin-left: ${baseUnit * 2}px;
+`
+
 export const MobileHeader = ({ slideOnHomePage, f }) => {
     const [overlayOpened, setOverlayOpened] = useState(false)
 
@@ -37,7 +47,12 @@ export const MobileHeader = ({ slideOnHomePage, f }) => {
             <MobileHeaderLogoArea>
                 <ImageOptimizedSvg relativeUrl={'logos/franu-text-colored.svg'} alt="Franu kuchen logo"/>
             </MobileHeaderLogoArea>
-            <Menu width={30} height={30} onClick={() => setOverlayOpened(!overlayOpened)}/>
+            <MobileMenuArea>
+                <LanguagePicker/>
+                <MenuIconWrapper>
+                    <Menu width={30} height={30} onClick={() => setOverlayOpened(!overlayOpened)}/>
+                </MenuIconWrapper>
+            </MobileMenuArea>
         </MobileHeaderWrapper>
         {overlayOpened && <MobileHeaderMenu slideOnHomePage={slideOnHomePage} closeOverlay={closeOverlay} f={f}/>}
     </MobileHeaderOuterWrapper>)
