@@ -113,17 +113,17 @@ export const Footer = () => {
                     </Link>
                 </FooterLogoArea>
                 <FooterLinksWrapper>
-                    <Link href="/terms-and-conditions#impresum">
+                    <Link href="/terms-and-conditions#impresum" passHref>
                         <FooterLinkStyled>
                             {f('common.impressum')}
                         </FooterLinkStyled>
                     </Link>
-                    <Link href="/terms-and-conditions#privacy-policy">
+                    <Link href="/terms-and-conditions#privacy-policy" passHref>
                         <FooterLinkStyled>
                             {f('common.privacy')}
                         </FooterLinkStyled>
                     </Link>
-                    <Link href="/terms-and-conditions#terms-and-conditions">
+                    <Link href="/terms-and-conditions" passHref>
                         <FooterLinkStyled>
                             {f('common.termsAndConditions')}
                         </FooterLinkStyled>

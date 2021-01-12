@@ -12,5 +12,10 @@ export const en = {
         common: {
             ...common
         }
+    },
+    '/terms-and-conditions': {
+        common: {
+            ...common
+        }
     }
 }
