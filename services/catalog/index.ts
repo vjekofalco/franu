@@ -1,20 +1,18 @@
-import { PrismaClient, Catalog } from '@prisma/client'
+import { connectToDatabase } from '../../util/mongodb'
 
 export const getCatalogItemData = async (slug: string) => {
-    const prisma = new PrismaClient({ log: ["query"] })
+    const { db } = await connectToDatabase()
 
     try {
-        const catalogItem: Catalog = await prisma.catalog.findOne({
-            where: {
+        const catalogItem = await db.collection('catalogue')
+            .findOne({
                 slug
-            }
-        })
+            })
 
-        return { ...catalogItem, createdAt: JSON.stringify(catalogItem.createdAt), updatedAt: JSON.stringify(catalogItem.updatedAt)}
+        return { ...catalogItem, _id: JSON.stringify(catalogItem._id)}
     } catch (e) {
+        console.log(e)
         throw e
-    } finally {
-        await prisma.$disconnect()
     }
 }
 

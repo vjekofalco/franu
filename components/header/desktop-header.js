@@ -19,7 +19,7 @@ const DesktopHeaderWrapper = styled.div`
   justify-content: space-between;
   max-width: ${PAGE_CONTENT_NARROW_WIDTH}px;
   
-  @media ${mediaBreakpointDown.s} {
+  @media ${mediaBreakpointDown.m} {
     display: none;
   }
 `

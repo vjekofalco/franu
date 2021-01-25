@@ -1,18 +1,14 @@
 import { common } from '../common/de'
+import { homeDe } from '../pages/home/de'
+import { aboutUsDe } from '../pages/about-us/de'
 
 export const de = {
-    '/': {
-        jumbotron: {
-            title: 'Ovo je neki njemacki naslov',
-            subTitle: 'Get your dream custom kitchen in just few clicks.',
-            cta: 'Order your kitchen now',
-            link: 'Or just, find inspiration'
-        },
+    '/': { ...homeDe,
         common: {
             ...common
         }
     },
-    '/about-us': {
+    '/about-us': { ...aboutUsDe,
         common: {
             ...common
         }

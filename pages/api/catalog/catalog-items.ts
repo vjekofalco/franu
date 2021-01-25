@@ -1,21 +1,23 @@
-import { PrismaClient } from '@prisma/client'
 import { NextApiRequest, NextApiResponse } from 'next'
+
+import { connectToDatabase } from '../../../util/mongodb'
 
 const catalogItemsApi = async (req: NextApiRequest, res: NextApiResponse) => {
     if(req.method === 'GET') {
-        const prisma = new PrismaClient({ log: ["query"] })
+        const { db } = await connectToDatabase()
 
         try {
-            const catalogItems = await prisma.catalog.findMany({
-                orderBy: [{ createdAt: 'desc' }]
-            })
+            const catalogItems = await db
+                .collection("catalogue")
+                .find({})
+                .limit(100)
+                .toArray()
+
             return res.status(200).json(catalogItems)
         }
         catch (e) {
+            console.log(e)
             res.status(500)
-        }
-        finally {
-            await prisma.$disconnect()
         }
     }
 

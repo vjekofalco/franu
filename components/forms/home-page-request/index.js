@@ -160,6 +160,20 @@ export const HomePageRequestForm = ({ f }) => {
         }
     }
 
+    const initialValues = {
+        firstName: '',
+        lastName: '',
+        email: '',
+        phoneNumber: '',
+        address: '',
+        number: '',
+        zip: '',
+        city: '',
+        message: '',
+        kitchenShape: '',
+        appliances: []
+    }
+
     return (<HomePageFormSection>
                 <HomePageFormValuesWrapper>
                     <HomePageFormHalf>
@@ -169,7 +183,7 @@ export const HomePageRequestForm = ({ f }) => {
                         <HomePageFormWrapper id="contact-us-form">
                             <><HeadlineSecondary color={brown} marginBottom={2}>{f('requestForm.title')}</HeadlineSecondary>
                             <Text>{f('requestForm.subTitle')}</Text>
-                            <Formik enableReinitialize initialValues={{}} onSubmit={values => submitForm(values)} validate={validate}>
+                            <Formik enableReinitialize initialValues={initialValues} onSubmit={values => submitForm(values)} validate={validate}>
                                 {(props) => (<Form>
                                     <HomePageFormInputsWrapper success={submitted}>
                                         {

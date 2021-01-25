@@ -17,7 +17,7 @@ export default function Home() {
       <Head>
         <title>{f('seo.title')}</title>
         <meta name="description" content={f('seo.description')} />
-        <meta name="keywords" content="Dream kitchen, Küche" />
+        <meta name="keywords" content="Einbauküche, Küchenstudio, Küchen nach Maß" />
         {/*<link rel="icon" href="/favicon.ico" />*/}
       </Head>
      <HomePageJumbotron f={f}/>

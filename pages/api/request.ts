@@ -1,6 +1,6 @@
-import { PrismaClient, Request } from '@prisma/client'
 import { NextApiRequest, NextApiResponse } from 'next'
 
+import { connectToDatabase } from '../../util/mongodb'
 import { slugCreator } from '../../helpers/slug-creator'
 
 type RequestData = {
@@ -20,7 +20,7 @@ type RequestData = {
 // Supports only POST
 const requestApi = async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === 'POST') {
-        const prisma = new PrismaClient({ log: ["query"] })
+        const { db } = await connectToDatabase()
         const newRequest: RequestData = req.body
         try {
             const slug = slugCreator(newRequest.email)
@@ -42,9 +42,7 @@ const requestApi = async (req: NextApiRequest, res: NextApiResponse) => {
                 kitchenRequest.userData['address'] = `${newRequest.address} ${newRequest.number || ''} ${newRequest.zip || ''} ${newRequest.city || ''}`
             }
 
-            const newKitchenRequest: Request = await prisma.request.create({
-                data: kitchenRequest
-            })
+            const newKitchenRequest: Request = await db.collection('requests').insertOne(kitchenRequest)
 
             res.status(201)
             res.json(newKitchenRequest)
@@ -53,9 +51,6 @@ const requestApi = async (req: NextApiRequest, res: NextApiResponse) => {
             console.log(error)
             res.status(500)
             res.json({ error })
-        }
-        finally {
-            await prisma.$disconnect()
         }
     } else {
         return res.status(404)

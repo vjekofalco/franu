@@ -36,5 +36,15 @@ export const common = {
     coffeMachine: 'Kaffeemaschine',
     morePhotos: 'Mehr Fotos',
     munich: 'München',
-    confirm: 'Bestätigen'
+    confirm: 'Bestätigen',
+    cookies: {
+        cookiesTitle: 'Franu Cookies',
+        acceptAll: 'Akzeptiere alle',
+        cookieSettings: 'Cookies-Haftungsausschluss',
+        disclaimer: 'Franu verwendet Cookies, um Ihre Erfahrung zu verbessern und Ihre Interaktion auf unserer Website zu messen. Wenn Sie damit einverstanden sind, klicken Sie auf "Alle akzeptieren". Um Ihre Einstellungen zu ändern, klicken Sie auf "Cookie-Einstellungen". Um mehr Informationen über unsere Cookies zu erhalten, besuchen Sie unsere Seite zu den Datenschutzrichtlinien.',
+        necessary: "Erforderliche Cookies",
+        necessaryDescription: "Diese Cookies sind für unsere Webseite notwendig, um richtig zu funktionieren. Daher können sie nicht deaktiviert werden.",
+        statistics: "Statistik-Cookies",
+        statisticsDescription: "Diese Cookies helfen uns, unsere Besucher besser zu verstehen, so dass wir in der Lage sind, Ihnen bessere Inhalte und die beste Erfahrung zu bieten."
+    }
 }

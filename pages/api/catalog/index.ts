@@ -1,6 +1,6 @@
-import { PrismaClient, Catalog } from '@prisma/client'
 import { NextApiRequest, NextApiResponse } from 'next'
 
+import { connectToDatabase } from '../../../util/mongodb'
 import { slugCreator } from '../../../helpers/slug-creator'
 
 type Functionality = {
@@ -23,7 +23,7 @@ type NewCatalogItemRequest = {
 
 const catalogApi = async (req: NextApiRequest, res: NextApiResponse) => {
     if (req.method === 'POST') {
-        const prisma: PrismaClient = new PrismaClient({ log: ["query"] })
+        const { db, client } = await connectToDatabase()
         try {
             const request: NewCatalogItemRequest = req.body
             const slug = slugCreator(request.brand)
@@ -46,15 +46,13 @@ const catalogApi = async (req: NextApiRequest, res: NextApiResponse) => {
                 energyEfficiency: request.energyEfficiency,
                 functionalities
             }
-            const newCatalogItem: Catalog = await prisma.catalog.create({ data: catalogItem })
+            const newCatalogItem = await db.collection('catalogue').insertOne(catalogItem)
             res.status(201)
             res.json(newCatalogItem)
         }
         catch (e) {
             console.log(e)
-        }
-        finally {
-            await prisma.$disconnect()
+            res.status(500)
         }
     } else {
         return res.status(404)

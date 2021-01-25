@@ -6,7 +6,7 @@ import { white, grayscale4 } from '../../styles/colors'
 
 const BubbleContainer = styled.div`
   position: absolute;
-  top: ${6 * baseUnit}px;
+  top: ${5 * baseUnit}px;
   z-index: 101;
   
   ${({ position }) => {
@@ -20,7 +20,7 @@ const BubbleContainerWrapper = styled.div`
   position: relative;
 
   background-color: ${white};
-  border-radius: 4px;
+  border-radius: 2px;
   box-shadow: 0 2px 5px ${grayscale4};
   
   ${({ width }) => width && `width: ${width}px;`}

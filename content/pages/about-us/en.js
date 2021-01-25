@@ -21,5 +21,9 @@ export const aboutUsEn = {
     customers: {
         title: 'Our happy clients',
         subTitle: 'What they say about us',
+        testimonials: {
+            first: "Franu team did a great job and make my wishes come true. With great guidance trough design process and record delivery and assembly time, my dream kitchen was fully equipped and ready to use in just 4 weeks.",
+            second: "Didn’t believe this is possible in Munich. I was impressed with possibility to customize every single part of my kitchen. I had really great experience and I would recommend Franu to everyone."
+        }
     }
 }

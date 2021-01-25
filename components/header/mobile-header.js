@@ -10,7 +10,7 @@ import { mediaBreakpointUp } from '../../styles/breakpoionts'
 import Menu from '../../images/icons/common/menu.svg?sprite'
 
 const MobileHeaderOuterWrapper = styled.div`
-  @media ${mediaBreakpointUp.m} {
+  @media ${mediaBreakpointUp.l} {
     display: none;
   }
 `
