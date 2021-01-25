@@ -36,10 +36,10 @@ export async function connectToDatabase() {
             useUnifiedTopology: true,
         }
 
-        cached.promise = MongoClient.connect('mongodb+srv://franu:293v6ScVhV86UOpA@franu-sandbox-cluster.wwkpb.mongodb.net/franu?retryWrites=true&w=majority', opts).then((client) => {
+        cached.promise = MongoClient.connect('connection-string', opts).then((client) => {
             return {
                 client,
-                db: client.db('franu'),
+                db: client.db('DB-name'),
             }
         })
     }

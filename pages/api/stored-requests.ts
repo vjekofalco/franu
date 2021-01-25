@@ -5,7 +5,7 @@ import { connectToDatabase } from '../../util/mongodb'
 const storedRequestsApi = async (req: NextApiRequest, res: NextApiResponse) => {
     if(req.method === 'GET') {
         const { db } = await connectToDatabase()
-        
+
         try {
             const requests = await db.collection('requests')
                 .find({})
