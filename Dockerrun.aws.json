@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "vjekobabic/franu",
+    "Name": "vjekobabic/franu:latest",
     "Update": "true"
   },
   "Ports": [
