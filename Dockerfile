@@ -16,6 +16,7 @@ COPY --from=build /usr/src/app/package.json /usr/src/app/package.json
 COPY --from=build /usr/src/app/package-lock.json /usr/src/app/package-lock.json
 COPY --from=build /usr/src/app/next.config.js /usr/src/app/next.config.js
 COPY --from=build /usr/src/app/locales /usr/src/app/locales
+COPY --from=build /usr/src/app/Dockerrun.aws.json /usr/src/app/Dockerrun.aws.json
 
 EXPOSE 3000
 
