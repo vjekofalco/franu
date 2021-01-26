@@ -38,6 +38,14 @@ const CatalogItem = ({ data }) => {
 }
 
 export async function getServerSideProps({ query }) {
+    const session = await getSession(ctx)
+
+    if (!session) {
+        ctx.res.writeHead(302, { Location: '/' })
+        ctx.res.end()
+        return {}
+    }
+
     const { slug } = query
     let data
 
@@ -49,24 +57,11 @@ export async function getServerSideProps({ query }) {
 
     return {
         props: {
-            data
+            data,
+            user: session.user,
         }
     }
 }
 
 export default CatalogItem
 
-export async function getServerSideProps(ctx) {
-    const session = await getSession(ctx)
-    if (!session) {
-        ctx.res.writeHead(302, { Location: '/' })
-        ctx.res.end()
-        return {}
-    }
-
-    return {
-        props: {
-            user: session.user,
-        },
-    }
-}
