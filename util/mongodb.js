@@ -17,7 +17,7 @@ const { MONGODB_URI, MONGODB_DB } = process.env
 /**
  * Global is used here to maintain a cached connection across hot reloads
  * in development. This prevents connections growing exponentially
- * during API Route usage.
+ * during API Route usage. Check production.
  */
 let cached = global.mongo
 
