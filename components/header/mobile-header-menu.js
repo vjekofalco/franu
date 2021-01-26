@@ -45,7 +45,9 @@ export const MobileHeaderMenu = ({slideOnHomePage, closeOverlay, f}) => {
                     slideOnHomePage('how-it-works')}} >{f('common.howItWorks')}</HeaderLinkLike>
             </MobileHeaderLinkWrapper>
             <MobileHeaderLinkWrapper>
-                <HeaderLink onClick={() => closeOverlay()} block href={'/about'} text="About"/>
+                <HeaderLinkLike block onClick={() => {
+                    closeOverlay()
+                    slideOnHomePage('contact-us-form')}} >{f('common.contact')}</HeaderLinkLike>
             </MobileHeaderLinkWrapper>
         </MobileHeaderOverlay>
     </MobileHeaderMenuWrapper>)

@@ -131,12 +131,12 @@ export const Footer = () => {
                 </FooterLinksWrapper>
             </FooterInternalLinksWrapper>
             <FooterSocialLinks>
-                <Link href="/">
+                <Link href="https://www.facebook.com/franukuechen/" passHref>
                     <a>
                         <FooterSocialLink image="facebook"/>
                     </a>
                 </Link>
-                <Link href="/">
+                <Link href="mailto:info@franu.de" passHref>
                     <a>
                         <FooterSocialLink image="email"/>
                     </a>

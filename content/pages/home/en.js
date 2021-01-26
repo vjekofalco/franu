@@ -66,5 +66,8 @@ export const homeEn = {
                 description: 'With every project we are giving our best to give you more for your money.'
             }
         }
+    },
+    temp: {
+        title: 'We are here for you soon!'
     }
 }

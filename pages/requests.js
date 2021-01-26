@@ -1,6 +1,7 @@
 import axios from 'axios'
 import moment from 'moment'
 import styled from 'styled-components'
+import { getSession } from 'next-auth/client'
 import React, { useState, useEffect } from 'react'
 
 import { Text, HeadlineSecondary } from '../components/common/text'
@@ -96,10 +97,11 @@ const RequestItem = ({ request }) => {
     </>)
 }
 
-export default function Requests () {
+export default function Requests ({ user }) {
     const [ requests, setRequests ] = useState([])
 
     useEffect( () => {
+        console.log(user)
          axios.get(STORED_REQUESTS_API)
                 .then(data => setRequests(data.data))
                 .catch(e => console.log(e))
@@ -141,4 +143,19 @@ export default function Requests () {
             </tbody>
         </Table>
     </RequestsPAgeWrapper>)
+}
+
+export async function getServerSideProps(ctx) {
+    const session = await getSession(ctx)
+    if (!session) {
+        ctx.res.writeHead(302, { Location: '/' })
+        ctx.res.end()
+        return {}
+    }
+
+    return {
+        props: {
+            user: session.user,
+        },
+    }
 }

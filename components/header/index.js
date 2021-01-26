@@ -6,23 +6,23 @@ import { MobileHeader } from './mobile-header'
 import { DesktopHeader } from './desktop-header'
 
 const HeaderWrapper = styled.div`
-  ${({absolute}) => absolute && `
+  ${({absolute}) => absolute ? `
     position: absolute;
     left: 0;
     right: 0;
     z-index: 100;
     background-color: rgba(255, 255, 255, 0.3);
-  `}
+  ` : 'box-shadow: 0px 5px 360px 0px rgba(79,79,79,1);'}
 `
 
 export const Header = () => {
     const { formatMessage } = useIntl()
     const f = id => formatMessage({ id })
     const router = useRouter()
-    const isHomePage = router.pathname === '/'
+    const isHomePage = router.pathname === '/' || router.pathname === '/home-page'
 
     const slideOnHomePage = (id) => {
-        if (!document) return
+        if (!document || router.pathname === '/') return // TODO reset for home page after full release
 
         const route = `/#${id}`
 

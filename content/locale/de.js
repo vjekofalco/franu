@@ -17,5 +17,10 @@ export const de = {
         common: {
             ...common
         }
+    },
+    '/home-page': { ...homeDe,
+        common: {
+            ...common
+        }
     }
 }

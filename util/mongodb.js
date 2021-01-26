@@ -1,18 +1,18 @@
 import { MongoClient } from 'mongodb'
 
-// const { MONGODB_URI, MONGODB_DB } = process.env
-//
-// if (!MONGODB_URI) {
-//     throw new Error(
-//         'Please define the MONGODB_URI environment variable inside .env.local'
-//     )
-// }
-//
-// if (!MONGODB_DB) {
-//     throw new Error(
-//         'Please define the MONGODB_DB environment variable inside .env.local'
-//     )
-// }
+const { MONGODB_URI, MONGODB_DB } = process.env
+
+if (!MONGODB_URI) {
+    throw new Error(
+        'Please define the MONGODB_URI environment variable inside .env.local'
+    )
+}
+
+if (!MONGODB_DB) {
+    throw new Error(
+        'Please define the MONGODB_DB environment variable inside .env.local'
+    )
+}
 
 /**
  * Global is used here to maintain a cached connection across hot reloads
@@ -36,10 +36,10 @@ export async function connectToDatabase() {
             useUnifiedTopology: true,
         }
 
-        cached.promise = MongoClient.connect('connection-string', opts).then((client) => {
+        cached.promise = MongoClient.connect(MONGODB_URI, opts).then((client) => {
             return {
                 client,
-                db: client.db('DB-name'),
+                db: client.db(MONGODB_DB),
             }
         })
     }

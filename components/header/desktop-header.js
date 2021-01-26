@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import styled from 'styled-components'
 
 import { HeaderLinksWrapper } from './common'
@@ -26,16 +27,19 @@ const DesktopHeaderWrapper = styled.div`
 export const DesktopHeader = ({ slideOnHomePage, f }) => {
     return (<DesktopHeaderWrapper>
         <HeaderLinksWrapper>
-            <HeaderLink href={'/'} text={f('common.home')}/>
             <HeaderLink href={'/about-us'} text={f('common.aboutUs')}/>
+            <HeaderLinkLike onClick={() => slideOnHomePage('contact-us-form')}>{f('common.contact')}</HeaderLinkLike>
         </HeaderLinksWrapper>
         <DesktopHeaderLogoArea>
-            <ImageOptimizedSvg relativeUrl={'logos/franu-text-colored.svg'} alt="Franu kuchen logo"/>
+            <Link href={'/'} passhref>
+                <a>
+                    <ImageOptimizedSvg relativeUrl={'logos/franu-text-colored.svg'} alt="Franu kuchen logo"/>
+                </a>
+            </Link>
         </DesktopHeaderLogoArea>
         <HeaderLinksWrapper>
             <LanguagePicker/>
             <HeaderLinkLike onClick={() => slideOnHomePage('how-it-works')} >{f('common.howItWorks')}</HeaderLinkLike>
-            <HeaderLink href={'/about'} text="About"/>
         </HeaderLinksWrapper>
     </DesktopHeaderWrapper>)
 }

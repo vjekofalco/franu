@@ -11,7 +11,7 @@ const ENVIRONMENT_CONFIGS = {
         GA_ENABLE_LOG_TO_CONSOLE: false
     },
     production: {
-        GA_ENABLED: true,
+        GA_ENABLED: false,
         GA_TRACKING_ID: 'G-PVNH1XGR2H'
     }
 }

@@ -1,6 +1,9 @@
+import axios from 'axios'
 import styled from 'styled-components'
+import { getSession } from 'next-auth/client'
 import React, {useEffect, useState} from 'react'
 
+import { Text } from '../../components/common/text'
 import { Section } from '../../components/common/section'
 import { CatalogAddNew } from '../../components/pages/catalog/catalog-add-new'
 import { CatalogSidebar } from '../../components/pages/catalog/catalog-sidebar'
@@ -12,8 +15,7 @@ import {
     CATALOG_VIEW_ADD_NEW,
     CATALOG_ITEMS_API
 } from '../../common/constants'
-import axios from "axios";
-import {Text} from "../../components/common/text";
+
 
 const CatalogSection = styled(Section)`
   display: flex;
@@ -63,3 +65,18 @@ const Catalog = () => {
 }
 
 export default Catalog
+
+export async function getServerSideProps(ctx) {
+    const session = await getSession(ctx)
+    if (!session) {
+        ctx.res.writeHead(302, { Location: '/' })
+        ctx.res.end()
+        return {}
+    }
+
+    return {
+        props: {
+            user: session.user,
+        },
+    }
+}

@@ -17,5 +17,11 @@ export const en = {
         common: {
             ...common
         }
+    },
+    '/home-page' : {
+        ...homeEn,
+        common: {
+            ...common
+        }
     }
 }
