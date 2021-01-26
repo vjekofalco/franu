@@ -12,7 +12,7 @@ before_install:
 #script:
 
 after_success:
-  - docker build -t vjekobabic/franu .
+  - docker build -t vjekobabic/franu --build-arg MONGODB_URI=$MONGODB_URI --build-arg MONGODB_DB=$MONGODB_DB .
   - echo "$DOCKER_PASS" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push vjekobabic/franu
 
