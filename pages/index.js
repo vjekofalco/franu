@@ -18,13 +18,13 @@ export default function Home() {
                 {/*<link rel="icon" href="/favicon.ico" />*/}
             </Head>
 
-            <main className={styles.main}>
+            <div className={styles.main}>
                 <ImageOptimizedSvg relativeUrl={'logos/franu-text-colored.svg'} alt="Franu, einbauküche studio logo"/>
                 <h1 className={styles.title} style={{marginTop: '24px'}}>
                     {f('seo.title')}
                 </h1>
                 <p className={styles.description}>{f('temp.title')}</p>
-            </main>
+            </div>
         </div>
     )
 }
