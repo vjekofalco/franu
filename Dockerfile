@@ -1,7 +1,7 @@
 FROM node:12.18 as build
 RUN apt-get update
 
-WORKDIR /usr/src/app
+WORKDIR /src
 
 COPY . .
 RUN npm ci
@@ -11,15 +11,16 @@ FROM node:12.18
 
 WORKDIR /usr/src/app
 
-COPY --from=build /usr/src/app/.next /usr/src/app/.next
-COPY --from=build /usr/src/app/package.json /usr/src/app/package.json
-COPY --from=build /usr/src/app/package-lock.json /usr/src/app/package-lock.json
-COPY --from=build /usr/src/app/next.config.js /usr/src/app/next.config.js
-COPY --from=build /usr/src/app/locales /usr/src/app/locales
-COPY --from=build /usr/src/app/Dockerrun.aws.json /usr/src/app/Dockerrun.aws.json
+COPY --from=build /src/.next /usr/src/app/.next
+COPY --from=build /src/locales /usr/src/app/locales
+COPY --from=build /src/package.json /usr/src/app/package.json
+COPY --from=build /src/next.config.js /usr/src/app/next.config.js
+COPY --from=build /src/package-lock.json /usr/src/app/package-lock.json
+COPY --from=build /src/Dockerrun.aws.json /usr/src/app/Dockerrun.aws.json
 
 EXPOSE 3000
 
 RUN npm ci --production --cache .npm --prefer-offline --no-audit --no-fund
 
 CMD npm run start
+
