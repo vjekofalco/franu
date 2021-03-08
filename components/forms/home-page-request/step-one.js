@@ -59,4 +59,8 @@ export const StepOne = (props) => (<>
                            type="textarea"
                            placeholder={`${props.f('common.message')}:`}
                            {...props}/>
+    <FormInputField name="termsAndConditions"
+                    label={`${props.f('common.termsAndConditionsClaim')}`}
+                           type="checkbox"
+                           {...props}/>
 </>)

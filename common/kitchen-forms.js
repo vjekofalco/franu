@@ -1,9 +1,10 @@
 import React from 'react'
 
-import { L_KITCHEN, U_KITCHEN, ISLAND_KITCHEN, ONE_WALL_KITCHEN } from './constants'
+import { L_KITCHEN, U_KITCHEN, ISLAND_KITCHEN, ONE_WALL_KITCHEN, GALLEY_KITCHEN } from './constants'
 
 import LKitchen from '../images/kitchen-forms/l-kitchen.svg?sprite'
 import UKitchen from '../images/kitchen-forms/u-kitchen.svg?sprite'
+import GalleyKitchen from '../images/kitchen-forms/galley-kitchen.svg?sprite'
 import IslandKitchen from '../images/kitchen-forms/island-kitchen.svg?sprite'
 import OneWallKitchen from '../images/kitchen-forms/one-wall-kitchen.svg?sprite'
 
@@ -27,6 +28,11 @@ export const kitchenForms = [
         id: ONE_WALL_KITCHEN,
         label: 'One wall kitchen',
         translationKey: 'common.oneWallKitchen'
+    },
+    {
+        id: GALLEY_KITCHEN,
+        label: 'Galley kitchen',
+        translationKey: 'common.galleyKitchen'
     }
 ]
 
@@ -40,6 +46,8 @@ export const kitchenFormIcon = (form) => {
             return <IslandKitchen/>
         case  ONE_WALL_KITCHEN:
             return <OneWallKitchen/>
+        case GALLEY_KITCHEN:
+            return <GalleyKitchen/>
         default:
             return null
     }

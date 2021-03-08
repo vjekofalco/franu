@@ -42,6 +42,7 @@ export const homeEn = {
         subTitle: 'Our partners are trusted brands and well known retailers'
     },
     gallery: {
+        popupTitle: "Check out our work",
         title: 'Find inspiration in our work and contact us',
         subTitle: 'We let our work speak for us, happy customer is what only matters',
     },

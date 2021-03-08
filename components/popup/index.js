@@ -10,7 +10,7 @@ const PopupOverlay = styled.div`
     width: 100%;
     background-color: rgb(79, 79, 79, 0.5);
     z-index: 1000;
-    position: absolute;
+    position: fixed;
     padding: ${baseUnit}px ${baseUnit / 2}px;
     display: flex;
     justify-content: center;
@@ -24,6 +24,7 @@ const PopupOverlay = styled.div`
 
 const PopupBody = styled.div`
     display: flex;
+    overflow: hidden;
     flex-direction: column;
     background-color: ${white};
     padding: ${1.5 * baseUnit}px;

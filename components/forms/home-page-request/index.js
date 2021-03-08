@@ -18,6 +18,8 @@ import { baseUnit, PAGE_CONTENT_WIDE_WIDTH} from '../../../common/constants'
 
 import Prev from '../../../images/icons/common/prev-arrow.svg?sprite'
 import Next from '../../../images/icons/common/next-arrow.svg?sprite'
+import {WarningMessage} from "../../warning-message";
+import {IntlProvider} from "react-intl";
 
 const HomePageFormSection = styled(Section)`
   background: linear-gradient(150deg, rgb(226, 202, 182) 0%, rgb(242, 242, 242) 90%);
@@ -53,10 +55,9 @@ const HomePageFormWrapper = styled.div`
 `
 
 const HomePageFormInputsWrapper = styled.div`
-  min-height: 400px;
-  max-height: 400px;
+  min-height: 485px;
+  max-height: 485px;
   overflow-y: scroll;
-  margin-top: ${2 * baseUnit}px;
   
   ${({ success }) => success && `
     display: flex;
@@ -171,7 +172,8 @@ export const HomePageRequestForm = ({ f }) => {
         city: '',
         message: '',
         kitchenShape: '',
-        appliances: []
+        appliances: [],
+        termsAndConditions: false
     }
 
     return (<HomePageFormSection>
@@ -183,7 +185,7 @@ export const HomePageRequestForm = ({ f }) => {
                         <HomePageFormWrapper id="contact-us-form">
                             <><HeadlineSecondary color={brown} marginBottom={2}>{f('requestForm.title')}</HeadlineSecondary>
                             <Text>{f('requestForm.subTitle')}</Text>
-                            <Formik enableReinitialize initialValues={initialValues} onSubmit={values => submitForm(values)} validate={validate}>
+                                <Formik enableReinitialize initialValues={initialValues} onSubmit={values => submitForm(values)} validate={validate}>
                                 {(props) => (<Form>
                                     <HomePageFormInputsWrapper success={submitted}>
                                         {
@@ -196,6 +198,7 @@ export const HomePageRequestForm = ({ f }) => {
                                                 </>
                                         }
                                     </HomePageFormInputsWrapper>
+                                    <WarningMessage message={'Some warning message'}/>
                                     <ButtonsWrapper disabled={submitted}>
                                         <StepsControll disabled={step === 1} onClick={() => changeStep(step - 1)}>
                                             <Prev/>

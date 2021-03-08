@@ -14,7 +14,8 @@ type RequestData = {
     city?: string,
     message?: string,
     kitchenShape?: string,
-    appliances?: string[]
+    appliances?: string[],
+    termsAndConditions: boolean
 }
 
 // Supports only POST
@@ -30,7 +31,8 @@ const requestApi = async (req: NextApiRequest, res: NextApiResponse) => {
                     firstName: newRequest.firstName,
                     lastName: newRequest.lastName,
                     email: newRequest.email,
-                    phone: newRequest.phoneNumber
+                    phone: newRequest.phoneNumber,
+                    termsAndConditions: newRequest.termsAndConditions
                 },
                 requestInfo: {
                     appliances: newRequest.appliances,

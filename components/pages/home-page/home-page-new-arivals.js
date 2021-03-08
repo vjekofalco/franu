@@ -35,7 +35,7 @@ const NewArrivalsItemWrapper = styled.div`
     flex-basis: 40%;
     
     &:nth-child(even) {
-      margin-left: ${2 * baseUnit}px;
+      margin-left: ${1.5 * baseUnit}px;
     }
     
     &:nth-child(n+3) {
@@ -45,7 +45,7 @@ const NewArrivalsItemWrapper = styled.div`
   
   @media ${mediaBreakpointUp.m} {
       &:not(:first-child) {
-        margin-left: ${2 * baseUnit}px;
+        margin-left: ${1.5 * baseUnit}px;
       }
   }
 `

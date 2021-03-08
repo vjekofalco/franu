@@ -7,6 +7,7 @@ export const PAGE_CONTENT_NARROW_WIDTH = 1000
 export const L_KITCHEN = 'l-kitchen'
 export const U_KITCHEN = 'u-kitchen'
 export const ISLAND_KITCHEN = 'island-kitchen'
+export const GALLEY_KITCHEN = 'galley-kitchen'
 export const ONE_WALL_KITCHEN = 'one-wall-kitchen'
 
 // Appliances

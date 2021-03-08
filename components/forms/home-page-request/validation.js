@@ -25,5 +25,9 @@ export const validate = values => {
         errors.phoneNumber = 'Invalid phone number'
     }
 
+    if(!values.termsAndConditions) {
+        errors.termsAndConditions = 'Required'
+    }
+
     return errors;
 }

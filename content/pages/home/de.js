@@ -42,6 +42,7 @@ export const homeDe = {
         subTitle: 'Unsere Partner sind vertrauenswürdige Marken und bekannte Einzelhändler.'
     },
     gallery: {
+        popupTitle: "Schau dir unsere Arbeit an",
         title: 'Lassen Sie sich von unserer Arbeit inspirieren und kontaktieren Sie uns',
         subTitle: 'Wir lassen unsere Arbeit für uns sprechen, zufriedene Kunden sind unsere Priorität.',
     },

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import React, { useState } from 'react'
 
 import { Section } from '../../common/section'
+import { PopupGallery } from '../../popup-gallery'
 import { white, brown } from '../../../styles/colors'
 import { HomePageGalleryItemContent } from './common'
 import { HeadlineSecondary, Text } from '../../common/text'
@@ -49,7 +50,6 @@ const HomePageGalleryHalf = styled.div`
 `
 
 const HomePageGalleryItemWrapper = styled.div`
-  background-image: url(${require('../../../images/home-page/kitchen-gallery-photo.jpg')});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -57,7 +57,9 @@ const HomePageGalleryItemWrapper = styled.div`
   cursor: pointer;
   border: ${baseUnit}px solid ${white};
   position: relative;
-  
+
+  background-image: ${({image}) => `url(${image})`};
+
   @media ${mediaBreakpointDown.s} {
     width: 200px;   
   }
@@ -69,11 +71,12 @@ const HomePageGalleryItemWrapper = styled.div`
   `}
 `
 
-const HomePageGalleryItem = ({ item, small, f }) => {
+const HomePageGalleryItem = ({ item, small, f, onItemClick }) => {
     const [ overlayVisible, setOverlay ] = useState(false)
 
     return (<HomePageGalleryItemWrapper small={small}
                                         image={item.image}
+                                        onClick={() => onItemClick()}
                                         onMouseEnter={() => setOverlay(true)}
                                         onMouseLeave={() => setOverlay(false)}>
         <HomePageGalleryItemContent active={overlayVisible}>
@@ -84,25 +87,87 @@ const HomePageGalleryItem = ({ item, small, f }) => {
 }
 
 export const HomePageGallery = ({ f }) => {
+    const [ openGallery, setOpenGallery ] = useState(false)
+
     const images = [
         {
-            url: '/'
+            image: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0115-2.jpg'
         },
         {
-            url: '/'
+            image: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0102-2.jpg'
         },
         {
-            url: '/'
+            image: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0182-2.jpg'
         },
         {
-            url: '/'
+            image: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0075-2.jpg'
         },
         {
-            url: '/'
+            image: 'https://franu-images.s3.eu-central-1.amazonaws.com/WhatsApp+Image+2020-10-19+at+21.25.08-2.jpg'
         }
     ]
 
-    return (<HomePageGallerySection id="find-inspiration">
+    const popupImages = [
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA00531.jpeg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0058-2.jpg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0065-2.jpg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0069-2.jpg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0075-2.jpg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0102-2.jpg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0115-2.jpg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0126-2.jpg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA00491-2.jpg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0149-2.jpg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0147-2.jpg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0150-2.jpg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0151-2.jpg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0182-2.jpg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA0164-2.jpg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA00531.jpeg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/IMG-20201019-WA00491-2.jpg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/WhatsApp-Image-2020-10-19-at-21.26.15.jpg'
+        },
+        {
+            url: 'https://franu-images.s3.eu-central-1.amazonaws.com/WhatsApp+Image+2020-10-19+at+21.25.08-2.jpg'
+        }
+    ]
+
+    return (<><HomePageGallerySection id="find-inspiration">
         <HomePageGallerySectionTextWrapper>
             <HeadlineSecondary color={brown} center marginBottom={1}>{f('gallery.title')}</HeadlineSecondary>
             <SeparationLineDefault center maxWidth={350} marginBottom={1}/>
@@ -110,12 +175,14 @@ export const HomePageGallery = ({ f }) => {
         </HomePageGallerySectionTextWrapper>
         <HomePageGalleryWrapper>
         <HomePageGalleryHalf wide>
-            <HomePageGalleryItem item={images[0]} f={f}/>
+            <HomePageGalleryItem item={images[0]} f={f} onItemClick={() => setOpenGallery(true)}/>
         </HomePageGalleryHalf>
         <HomePageGalleryHalf>
             {images.slice(1, images.length)
-                .map((image, i) => (<HomePageGalleryItem f={f} key={`${image.url}-${i}`} small item={image} />))}
+                .map((image, i) => (<HomePageGalleryItem f={f} key={`${image.url}-${i}`} small item={image} onItemClick={() => setOpenGallery(true)}/>))}
         </HomePageGalleryHalf>
     </HomePageGalleryWrapper>
-    </HomePageGallerySection>)
+    </HomePageGallerySection>
+        {openGallery && <PopupGallery onClose={() => setOpenGallery(false)} images={popupImages} galleryTitle={f('gallery.popupTitle')}/>}
+    </>)
 }

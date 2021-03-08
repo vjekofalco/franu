@@ -8,6 +8,7 @@ import { StyledInput } from '../common/form-elements/input'
 import { StyledSelect } from '../common/form-elements/select'
 import { ErrorText } from '../common/form-elements/error-text'
 import { StyledTextarea } from '../common/form-elements/textarea'
+import { CheckBoxIntegrated } from '../common/form-elements/checkbox'
 
 export const FormFieldsWrapper = styled.div`
   display: flex;
@@ -42,7 +43,8 @@ const FormErrorWrapper = styled.div`
 
 export const FormInputField = (props) => {
     const [field, meta] = useField(props)
-    const error = meta.touched && meta.error
+    const { placeholder, label } = props
+    const error = meta.error
 
     return (
         <FormInputWrapper {...props}>
@@ -52,9 +54,10 @@ export const FormInputField = (props) => {
                     <ErrorText>{meta.error}</ErrorText>
                 ) : null}
             </FormErrorWrapper>
-            {props.type === 'text' && <StyledInput {...field} {...props} error={error} />}
-            {props.type === 'textarea' && <StyledTextarea {...field} {...props} error={error} />}
-            {props.type === 'select' && <StyledSelect options={props.options} {...field} {...props} error={error} />}
+            {props.type === 'text' && <StyledInput {...field} error={error} placeholder={placeholder}/>}
+            {props.type === 'textarea' && <StyledTextarea {...field} error={error} placeholder={placeholder}/>}
+            {props.type === 'select' && <StyledSelect {...props.options} {...field}  error={error} placeholder={placeholder}/>}
+            {props.type === 'checkbox' && <CheckBoxIntegrated {...field} error={error} label={label}/>}
         </FormInputWrapper>
     )
 }
