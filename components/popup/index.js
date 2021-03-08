@@ -10,12 +10,16 @@ const PopupOverlay = styled.div`
     width: 100%;
     background-color: rgb(79, 79, 79, 0.5);
     z-index: 1000;
-    position: fixed;
+    position: absolute;
     padding: ${baseUnit}px ${baseUnit / 2}px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 `
 
 const PopupBody = styled.div`
@@ -25,6 +29,7 @@ const PopupBody = styled.div`
     padding: ${1.5 * baseUnit}px;
     box-shadow: rgba(79,79,79,1) 0px 1px 6px 0px;
     width: ${props => props.width ? props.width + 'px' : '100%'};
+    max-width: 1200px;
     max-height: 95vh;
 `
 const PopupHeader = styled.div`

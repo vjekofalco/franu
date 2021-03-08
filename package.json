@@ -25,6 +25,7 @@
     "react-dom": "16.13.1",
     "react-intl": "^5.10.6",
     "react-responsive-carousel": "^3.2.10",
+    "react-slideshow-image": "^3.4.3",
     "responsive-loader": "^2.0.0",
     "styled-components": "^5.2.0",
     "svg-sprite-loader": "^5.0.0",

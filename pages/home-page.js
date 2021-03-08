@@ -33,15 +33,15 @@ export default function Home() {
 
 export async function getServerSideProps(ctx) {
     const session = await getSession(ctx)
-    if (!session) {
-        ctx.res.writeHead(302, { Location: '/' })
-        ctx.res.end()
-        return {}
-    }
-
+    // if (!session) {
+    //     ctx.res.writeHead(302, { Location: '/' })
+    //     ctx.res.end()
+    //     return {}
+    // }
+    //
     return {
         props: {
-            user: session.user,
+            user: session?.user || {},
         },
     }
 }
