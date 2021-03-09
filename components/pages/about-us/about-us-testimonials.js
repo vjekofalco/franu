@@ -22,12 +22,14 @@ export const AboutUsTestimonials = ({ f }) => {
         return [
             {
                 description: f('customers.testimonials.first'),
-                name: 'Antonija Medic',
+                name: 'Martina Seibert',
+                image: 'about-us/person-1.png',
                 city: f('common.munich')
             },
             {
                 description: f('customers.testimonials.second'),
-                name: 'Angelique Kerber',
+                name: 'Angelique Geitner',
+                image: 'about-us/person-2.png',
                 city: f('common.munich')
             }
         ]

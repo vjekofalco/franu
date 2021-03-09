@@ -15,6 +15,6 @@ const TestimonialsWrapper = styled.div`
 
 export const Testimonials = ({ testimonials }) => {
     return (<TestimonialsWrapper>
-        {testimonials.map((t, i) => (<Testimonial key={i} testimonial={t}/>))}
+        {testimonials.map((t, i) => (<Testimonial key={i} testimonial={t} image={t.image}/>))}
     </TestimonialsWrapper>)
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { WarningMessage } from '../../warning-message'
 import { FormInputField, FormFieldsWrapper } from '../common'
 
 export const StepOne = (props) => (<>
@@ -63,4 +64,5 @@ export const StepOne = (props) => (<>
                     label={`${props.f('common.termsAndConditionsClaim')}`}
                            type="checkbox"
                            {...props}/>
+    <WarningMessage message={`${props.f('common.locationDisclaimer')}`} bold/>
 </>)

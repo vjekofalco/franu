@@ -9,7 +9,7 @@ export const FormSelectWrapper = styled.div`
   max-width: 30%;
   cursor: pointer;
   text-align: center;
-  margin-bottom: ${2 * baseUnit}px;
+  margin-top: ${2 * baseUnit}px;
 `
 
 export const FormIconWrapper = styled.div`

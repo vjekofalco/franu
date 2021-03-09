@@ -19,10 +19,10 @@ export const Header = () => {
     const { formatMessage } = useIntl()
     const f = id => formatMessage({ id })
     const router = useRouter()
-    const isHomePage = router.pathname === '/' || router.pathname === '/home-page'
+    const isHomePage = router.pathname === '/'
 
     const slideOnHomePage = (id) => {
-        if (!document || router.pathname === '/') return // TODO reset for home page after full release
+        if (!document) return
 
         const route = `/#${id}`
 

@@ -55,9 +55,10 @@ const HomePageFormWrapper = styled.div`
 `
 
 const HomePageFormInputsWrapper = styled.div`
-  min-height: 485px;
-  max-height: 485px;
+  min-height: 490px;
+  max-height: 490px;
   overflow-y: scroll;
+  margin-top: ${baseUnit}px;
   
   ${({ success }) => success && `
     display: flex;
@@ -198,7 +199,6 @@ export const HomePageRequestForm = ({ f }) => {
                                                 </>
                                         }
                                     </HomePageFormInputsWrapper>
-                                    <WarningMessage message={'Some warning message'}/>
                                     <ButtonsWrapper disabled={submitted}>
                                         <StepsControll disabled={step === 1} onClick={() => changeStep(step - 1)}>
                                             <Prev/>

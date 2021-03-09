@@ -51,7 +51,7 @@ const TestimonialAvatar = styled.div`
   border-radius: 50px;
   border: 1px solid ${grayscale4};
   margin-right: ${2 * baseUnit}px;
-  background-image: url(${require('../../images/about-us/testimonial-avatar.png')});
+  background-image: url(${({ image }) => require(`../../images/${image}`) || require('../../images/about-us/testimonial-avatar.png')});
   background-repeat: no-repeat;
   background-position: center;
   -ms-background-size: cover;
@@ -63,13 +63,13 @@ const TestimonialAvatar = styled.div`
 
 const TestimonialUserDataWrapper = styled.div``
 
-export const Testimonial = ({ testimonial }) => {
+export const Testimonial = ({ testimonial, image }) => {
     return (<TestimonialWrapper>
         <TestimonialTextWrapper>
             <Text>{testimonial.description}</Text>
         </TestimonialTextWrapper>
         <TestimonialAvatarWrapper>
-                <TestimonialAvatar/>
+                <TestimonialAvatar image={image}/>
                 <TestimonialUserDataWrapper>
                     <Text weight={600} marginBottom={0.5}>{testimonial.name}</Text>
                     <Text>{testimonial.city}</Text>

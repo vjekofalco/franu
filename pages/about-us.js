@@ -1,5 +1,4 @@
 import { useIntl } from 'react-intl'
-import { getSession } from 'next-auth/client'
 
 import { AboutUsJumbotron } from '../components/pages/about-us/about-us-jumbotron'
 import { AboutUsCtaBanner } from '../components/pages/about-us/about-us-cta-banner'
@@ -18,17 +17,3 @@ export default () => {
     </>)
 }
 
-export async function getServerSideProps(ctx) {
-    const session = await getSession(ctx)
-    if (!session) {
-        ctx.res.writeHead(302, { Location: '/' })
-        ctx.res.end()
-        return {}
-    }
-
-    return {
-        props: {
-            user: session.user,
-        },
-    }
-}

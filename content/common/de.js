@@ -39,6 +39,7 @@ export const common = {
     morePhotos: 'Mehr Fotos',
     munich: 'München',
     confirm: 'Bestätigen',
+    locationDisclaimer: 'Franu bietet seine Dienste zurzeit nur für den Raum München an.',
     cookies: {
         cookiesTitle: 'Franu Cookies',
         acceptAll: 'Akzeptiere alle',
