@@ -99,7 +99,7 @@ const HomePageStepsBarIconWrapper = styled.div`
 `
 
 const HomePageStepsBarWrapper = styled.div`
-  min-height: 290px;
+  min-height: 320px;
   display: flex;
   margin: 0 auto;
   align-items: center;

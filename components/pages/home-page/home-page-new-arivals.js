@@ -24,7 +24,6 @@ const NewArriwalsGalleryWrapper = styled.div`
 
 const NewArrivalsItemWrapper = styled.div`
   flex-grow: 1;
-  display: flex;
   flex-basis: 20%;
   cursor: pointer;
   position: relative;
