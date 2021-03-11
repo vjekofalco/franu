@@ -15,7 +15,8 @@ export const homeDe = {
         modern: 'Modern',
         vintage: 'Vintage',
         industrial: 'Industrial',
-        highGloss: 'Hochglanz'
+        highGloss: 'Hochglanz',
+        imageDefaultAlt: 'Einbauküchen design'
     },
     howItWorks: {
         title: 'Wie funktioniert es',

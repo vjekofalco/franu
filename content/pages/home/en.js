@@ -15,7 +15,8 @@ export const homeEn = {
         modern: 'Modern',
         vintage: 'Vintage',
         industrial: 'Industrial',
-        highGloss: 'High Gloss'
+        highGloss: 'High Gloss',
+        imageDefaultAlt: 'Built-in kitchen design'
     },
     howItWorks: {
         title: 'How it works',

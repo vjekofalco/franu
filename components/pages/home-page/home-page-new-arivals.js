@@ -54,7 +54,7 @@ const NewArrivalsItem = ({ item, onItemClick }) => {
 
     return (
         <NewArrivalsItemWrapper onMouseEnter={() => setActive(true)} onMouseLeave={() => setActive(false)} onClick={() => onItemClick()}>
-            <ImageOptimized url={item.image}/>
+            <ImageOptimized url={item.image} alt={item.alt}/>
             <HomePageGalleryItemContent active={active}>
                 <Text weight={600}>{item.name}</Text>
             </HomePageGalleryItemContent>
@@ -69,6 +69,7 @@ export const NewArrivals = ({ f }) => {
     const items = [{
         name: `${f('common.kitchen')} Filip`,
         style: `${f('newArivals.highGloss')}`,
+        alt: `${f('newArivals.imageDefaultAlt')}`,
         image: 'https://franu-images.s3.eu-central-1.amazonaws.com/27.1.jpg',
         sliderImages: [
             { url: 'https://franu-images.s3.eu-central-1.amazonaws.com/27.1.jpg' },
@@ -79,6 +80,7 @@ export const NewArrivals = ({ f }) => {
     {
         name: `${f('common.kitchen')} Emanuel`,
         style: `${f('newArivals.modern')}`,
+        alt: `${f('newArivals.imageDefaultAlt')}`,
         image: 'https://franu-images.s3.eu-central-1.amazonaws.com/32.1.jpg',
         sliderImages: [
             { url: 'https://franu-images.s3.eu-central-1.amazonaws.com/32.1.jpg' },
@@ -88,6 +90,7 @@ export const NewArrivals = ({ f }) => {
     {
         name: `${f('common.kitchen')} Mihael`,
         style: `${f('newArivals.vintage')}`,
+        alt: `${f('newArivals.imageDefaultAlt')}`,
         image: 'https://franu-images.s3.eu-central-1.amazonaws.com/R2.1.jpg',
         sliderImages: [
             { url: 'https://franu-images.s3.eu-central-1.amazonaws.com/R2.1.jpg' },
@@ -96,6 +99,7 @@ export const NewArrivals = ({ f }) => {
     {
         name: `${f('common.kitchen')} Dora`,
         style: `${f('newArivals.industrial')}`,
+        alt: `${f('newArivals.imageDefaultAlt')}`,
         image: 'https://franu-images.s3.eu-central-1.amazonaws.com/K1.1.jpg',
         sliderImages: [
             { url: 'https://franu-images.s3.eu-central-1.amazonaws.com/K1.1.jpg' },

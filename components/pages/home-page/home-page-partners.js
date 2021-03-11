@@ -9,11 +9,6 @@ import { mediaBreakpointDown } from '../../../styles/breakpoionts'
 import { SeparationLineDefault } from '../../common/separation-line'
 import { baseUnit, PAGE_CONTENT_WIDE_WIDTH } from '../../../common/constants'
 
-import Bosch from '../../../images/partners/bosch-logo.png'
-import Gorenje from '../../../images/partners/gorenje-logo.png'
-import Deante from '../../../images/partners/deante-logo.png'
-import Blum from '../../../images/partners/blum-logo.png'
-
 const HomePagePartnersSection = styled(Section)`
   background-color: ${white};
   padding-top: ${2 * baseUnit}px;
@@ -53,18 +48,13 @@ const HomePagePartnersWrapper = styled.div`
   }
 `
 
-const HomePagePartnersImageWrapper = styled.div`
-  display: flex;
-  
-`
-
 export const HomePagePartners = ({ f }) => {
     return (<HomePagePartnersSection>
         <HeadlineSecondary color={brown} center marginBottom={1}>{f('partners.title')}</HeadlineSecondary>
         <SeparationLineDefault center maxWidth={350} marginBottom={1}/>
         <Text size={1.5} center marginBottom={3}>{f('partners.subTitle')}</Text>
         <HomePagePartnersWrapper>
-            <ImageOptimized relativeUrl={'partners/bosch-logo.png'} alt={'bosch logo'}/>
+            <ImageOptimized relativeUrl={'partners/eger-logo.png'} alt={'eger logo'}/>
             <ImageOptimized relativeUrl={'partners/blum-logo.png'} alt={'blum logo'}/>
             <ImageOptimized relativeUrl={'partners/gorenje-logo.png'} alt={'gorenje logo'}/>
             <ImageOptimized relativeUrl={'partners/deante-logo.png'} alt={'deante logo'}/>
