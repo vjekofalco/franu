@@ -5,7 +5,7 @@ export const homeDe = {
     },
     jumbotron: {
         title: 'Franu, Ihr Online-Küchenstudio',
-        subTitle: 'Mit wenigen Klicks Ihre einbauküche in München bestellen.',
+        subTitle: 'Mit wenigen Klicks Ihre Einbauküche in München bestellen.',
         cta: 'Jetzt Ihre Küche bestellen',
         link: 'Oder Inspiration finden'
     },
