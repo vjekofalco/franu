@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Link from 'next/link'
 import { Formik, Form } from 'formik'
 import styled from 'styled-components'
 import React, { useState } from 'react'
@@ -13,13 +14,13 @@ import { SuccessMessage } from './success-message'
 import { Text, HeadlineSecondary } from '../../common/text'
 import { ValuesProposition } from './values-proposition'
 import { brown, white, grayscale2 } from '../../../styles/colors'
-import { mediaBreakpointDown } from '../../../styles/breakpoionts'
+import {mediaBreakpointDown, mediaBreakpointUp} from '../../../styles/breakpoionts'
 import { baseUnit, PAGE_CONTENT_WIDE_WIDTH} from '../../../common/constants'
 
+import Mail from '../../../images/social/email.svg?sprite'
 import Prev from '../../../images/icons/common/prev-arrow.svg?sprite'
 import Next from '../../../images/icons/common/next-arrow.svg?sprite'
-import {WarningMessage} from "../../warning-message";
-import {IntlProvider} from "react-intl";
+import Phone from '../../../images/icons/common/phone-call.svg?sprite'
 
 const HomePageFormSection = styled(Section)`
   background: linear-gradient(150deg, rgb(226, 202, 182) 0%, rgb(242, 242, 242) 90%);
@@ -39,6 +40,7 @@ const HomePageFormValuesWrapper = styled.div`
 `
 
 const HomePageFormHalf = styled.div`
+  position: relative;
   flex: 1;
 `
 
@@ -101,6 +103,31 @@ const StepsControll = styled.div`
     pointer-events: none;
     opacity: 0.7;
   `}
+`
+
+const MobileContactOptionsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  
+  svg {
+    width: 20px;
+    fill: ${brown};
+    color: ${brown};
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    margin-top: ${2 * baseUnit}px;
+    
+    &:not(:first-child) {
+      margin-left: ${2 * baseUnit}px;
+    }
+  }
+
+  @media ${mediaBreakpointUp.l} {
+    display: none;
+  }
 `
 
 const SendButton = styled(ButtonBrown)`
@@ -178,6 +205,14 @@ export const HomePageRequestForm = ({ f }) => {
     }
 
     return (<HomePageFormSection>
+        <MobileContactOptionsWrapper>
+                <Link href="tel:004915202432979" passHref>
+                    <a><Phone/><Text marginLeft={1} weight={600}>0152 024 32 979</Text></a>
+                </Link>
+                <Link href="mailto:info@franu.de" passHref>
+                    <a><Mail/><Text marginLeft={1} weight={600}>info@franu.de</Text></a>
+                </Link>
+        </MobileContactOptionsWrapper>
                 <HomePageFormValuesWrapper>
                     <HomePageFormHalf>
                         <ValuesProposition f={f}/>
