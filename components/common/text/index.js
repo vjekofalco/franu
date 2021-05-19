@@ -57,6 +57,7 @@ export const Text = styled.p`
     ${props => props.underline && 'text-decoration: underline;'}
     ${props => props.center && 'text-align: center;'}
     ${props => props.uppercase && 'text-transform: uppercase;'}
+    ${props => props.lineHeight && `line-height: ${props.lineHeight}px;`}
     
     ${props => props.hoverColor && `
       &:hover {

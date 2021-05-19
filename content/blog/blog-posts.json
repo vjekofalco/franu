@@ -1,0 +1,67 @@
+{
+  "posts": [
+    {
+      "id": "welche-form-sollte-meine-Kueche-haben",
+      "title": "Welche Form sollte meine Küche haben",
+      "subTitle": "Welche verschiedenen Küchenformen gibt es?",
+      "date": "06.05.2021.",
+      "image": {
+        "url": "https://franu-images.s3.eu-central-1.amazonaws.com/kollage-blog-article.png",
+        "alt": "Verschiedenen Küchenformen",
+        "thumbnail": "https://franu-images.s3.eu-central-1.amazonaws.com/kollage-blog-article-thumbnail.png"
+      },
+      "seo": {
+        "title": "Welche Form sollte meine Küche haben - Franu",
+        "description": "G-Form, die L-Form, die U-Form, die zweizeilige Küche, die einzeilige Küche, auch Küchenzeile genannt und die Kochinsel",
+        "keywords": "Einbauküche, L-Küche, U-Küche, G-Küche, Insel Küche, Zweizeilige Küchen"
+      },
+      "intro": [
+        "Die Küche ist ein Raum, der sich in Form und Ausstattung sehr stark unterscheiden kann. Beim Kauf einer neuen Küche hört man oft Begriffe wie L-Form, U-Form oder auch Zweizeilige Küche, die einem einfach kontextlos an den Kopf geschmissen werden. Die Küchenform ist aber eine der wichtigsten Variablen die es vor dem Kauf zu bestimmen gilt und eine unüberlegte Entscheidung kann sich hier schnell rächen.",
+        "In diesem Artikel listen wir Ihnen die verschiedenen möglichen Küchenformen auf und besprechen alles was es zu ihnen zu wissen gibt um Ihnen zu einer guten und auch langfristig zufriedenstellenden Küche zu verhelfen."
+      ],
+      "sections": [
+        {
+          "title": "Welche verschiedenen Küchenformen gibt es?",
+          "text": "Zu den am häufigsten verbauten und somit auch am beliebtesten Küchenformen zählen unter anderem die G-Form, die L-Form, die U-Form, die zweizeilige Küche, die einzeilige Küche, auch Küchenzeile genannt und die Kochinsel. Letztere kann alleine genutzt werden, ist aber auch mit anderen Küchenformen kombinierbar. Auf diese werden wir hier ebenfalls noch eingehen Es gibt natürlich auch noch weitere, eher exotische Küchenformen die jedoch nur selten vorkommen und in einer deutlich höheren Preisklasse angesiedelt sind. Deshalb konzentrieren wir uns in diesem Artikel auf die Standardformen und werden die Raritäten unter den Küchen hier nicht behandeln."
+        },
+        {
+          "title": "Wie sehen die verschiedenen Formen aus?",
+          "text": "In diesem Teil des Artikels veranschaulichen wir wie die verschiedenen Küchenformen aussehen.",
+          "subsections": {
+            "type": "list",
+            "content": [
+              "die G-Küchenform, die L-Küchenform, sowie die U-Küchenform sehen aus wie die Namen es vermuten lassen, sie sind nämlich der Form der Buchstaben angepasst. Es ist jedoch zu beachten, dass die G-Küchenform hin auch wieder gespiegelt vorkommen kann.",
+              "die Küchenzeile beziehungsweise die einzeilige Küche ist wie der Name sagt eine einzige lange Zeile in der alle in einer Küche benötigten Geräte aufgereiht sind.",
+              "die zweizeilige Küche ist eine in wie Zeilen aufgeteilte Küche. Diese Zeilen liegen parallel zueinander und bieten so allen benötigten Küchengeräten Platz.",
+              "die Kücheninsel muss nicht immer eine eigene Küchenform sein, sondern sie kann auch mit der L-Form oder der U-Form kombiniert werden. Hier ist wie der Name schon andeutet ein großer Block mit viel Platz zum Arbeiten im Raum. Darunter können sich auch Backofen und Spülmaschine befinden."
+            ]
+          }
+        },
+        {
+          "title": "Welche Vor- und Nachteile haben die verschiedenen Küchenformen?",
+          "text": "Alle Küchenformen haben eigene Vor- und Nachteile und unterscheiden sich in verschiedensten Punkten. In diesem Abschnitt des Artikels listen wir diese Vor- und Nachteile auf.",
+          "subsections": {
+            "type": "list",
+            "content": [
+              "die U-Form basiert auf der Zweizeilenküchenform, verbindet diese jedoch doch durch eine weitere, kleinere Zeile. Dies sorgt für mehr Ablagefläche und mehr Platz zum Arbeiten, lässt den Raum jedoch auch etwas kleiner erscheinen als er eigentlich ist.",
+              "die L-Form basiert anders als die U-Form nur auf einer einzigen Zeile, bietet aber dafür eine oft in den Raum hineinragende Verlängerung, welche besonders für den schnellen Verzehr von Mahlzeiten alleine oder zu zweit geeignet ist, da sie sich natürlich sehr nahe an Herd und Kühlschrank sowie der Spülmaschine befindet. Dies ist eine Form die in den letzten Jahren an Beliebtheit gewonnen hat und den Raum vergleichsweise effektiv nutzt, aber ihn dafür natürlich auch sehr klein erscheinen lässt.",
+              "die G-Form ist eine der beliebtesten Formen für Küchen, da sie die Frühstücksfunktion der L-Form mit der effizienten Nutzung des Platzes im Raum den die U-Form bietet zu verbinden. Negativ kann sich hier je nach Größe des Raumes allerdings die in die schiere Masse der G-Küchenform auswirken. Für enge Räume ist diese Küchenform auf keinen Fall zu empfehlen.",
+              "die einzeilige Küche oder auch Küchenzeile ist die wahrscheinlich traditionellste Küchenform und bleibt bis heute äußerst beliebt. Diese Form nutzt den Raum weniger effizient als andere und erfordert sehr viel Platz in der Länge, lässt jedoch die Mitte des Raumes unberührt und sorgt so dafür, dass die Küche teilweise größer erscheint als sie in Wirklichkeit ist.",
+              "die zweizeilige Küche eignet sich besonders gut für Wohnungen, da sie ein sehr platzsparendes Design hat und mit ihren zwei kurzen Zeilen viel Raum zum arbeiten bietet. Zwar wird dadurch die Mitte des Raumes etwas verengt, aber man kann die Küche so auch in Fluren ähnelnden Räumen platzieren, wie sie in vielen Wohnungen üblich sind.",
+              "die Kücheninsel ist eine sehr ineffiziente Küchenform, da sie einen großen Teil des Raumes belegt. Deshalb ist sie generell nur für größere Häuser mit mehreren Bewohnern geeignet."
+            ]
+          }
+        },
+        {
+          "subsections": {
+            "type": "text",
+            "content": [
+              "Letztendlich müssen Sie sich selbst überlegen für welche Küchenform Sie sich entscheiden. Denken Sie daran, dass eine teurere Form nicht immer gleich auch die bessere sein muss und daran, dass Sie eine Küchenform auswählen die Ihren Bedürfnissen entspricht und nicht die die Ihnen optisch am besten gefällt.",
+              "Wir hoffen sehr, dass wir Ihnen mit diesem Artikel bei Ihrer Entscheidungsfindung weiterhelfen konnten."
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

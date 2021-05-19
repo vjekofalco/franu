@@ -205,14 +205,14 @@ export const HomePageRequestForm = ({ f }) => {
     }
 
     return (<HomePageFormSection>
-        <MobileContactOptionsWrapper>
-                <Link href="tel:004915202432979" passHref>
-                    <a><Phone/><Text marginLeft={1} weight={600}>0152 024 32 979</Text></a>
-                </Link>
-                <Link href="mailto:info@franu.de" passHref>
-                    <a><Mail/><Text marginLeft={1} weight={600}>info@franu.de</Text></a>
-                </Link>
-        </MobileContactOptionsWrapper>
+                <MobileContactOptionsWrapper>
+                        <Link href="tel:004915202432979" passHref>
+                            <a><Phone/><Text marginLeft={1} weight={600}>0152 024 32 979</Text></a>
+                        </Link>
+                        <Link href="mailto:info@franu.de" passHref>
+                            <a><Mail/><Text marginLeft={1} weight={600}>info@franu.de</Text></a>
+                        </Link>
+                </MobileContactOptionsWrapper>
                 <HomePageFormValuesWrapper>
                     <HomePageFormHalf>
                         <ValuesProposition f={f}/>
