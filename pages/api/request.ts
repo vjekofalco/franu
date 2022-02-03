@@ -62,7 +62,6 @@ const requestApi = async (req: NextApiRequest, res: NextApiResponse) => {
       res.status(201)
       res.json(newKitchenRequest)
     } catch (error) {
-      console.log(error)
       res.status(500)
       res.json({ error })
     }

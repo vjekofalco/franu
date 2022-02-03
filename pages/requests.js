@@ -130,7 +130,6 @@ export default function Requests({ user }) {
   const [requests, setRequests] = useState([])
 
   useEffect(() => {
-    console.log(user)
     axios
       .get(STORED_REQUESTS_API)
       .then((data) => setRequests(data.data))

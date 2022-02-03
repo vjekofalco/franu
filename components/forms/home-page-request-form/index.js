@@ -159,6 +159,7 @@ export const HomePageRequestForm = ({ f }) => {
   const [step, setStep] = useState(INITIAL_STEP)
   const [appliances, setAppliances] = useState([])
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
   const [kitchenShape, setKitchenShape] = useState("")
 
   const changeStep = (s) => {
@@ -168,16 +169,16 @@ export const HomePageRequestForm = ({ f }) => {
   }
 
   const submitForm = (values) => {
+    setSubmitting(true)
     const data = {
       ...values,
       kitchenShape,
       appliances,
     }
-    console.log(values)
     axios
       .post("/api/request", data)
       .then((data) => {
-        console.log(data)
+        setSubmitting(false)
         setSubmitted(true)
       })
       .catch((err) => console.log(err))
@@ -297,7 +298,7 @@ export const HomePageRequestForm = ({ f }) => {
                         <Text marginLeft={0.5}>{f("common.prev")}</Text>
                       </StepsControll>
                       <SendButton
-                        disabled={submitted}
+                        disabled={submitting}
                         medium
                         marginLeft={1}
                         marginRight={1}

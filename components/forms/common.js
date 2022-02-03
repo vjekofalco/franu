@@ -65,8 +65,6 @@ export const FormInputField = (props) => {
   const error = meta.error
   const touched = meta.touched
 
-  console.log(field, meta)
-
   return (
     <FormInputWrapper {...props}>
       <FormErrorWrapper>

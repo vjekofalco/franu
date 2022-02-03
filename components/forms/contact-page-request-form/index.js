@@ -98,11 +98,9 @@ export const ContactPageRequestForm = (props) => {
       kitchenShape,
       appliances,
     }
-    console.log(values)
     axios
       .post("/api/request", data)
       .then((data) => {
-        console.log(data)
         setSubmitted(true)
         setSubmitting(false)
       })
