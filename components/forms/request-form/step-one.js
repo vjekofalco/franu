@@ -74,15 +74,6 @@ export const StepOne = (props) => {
         />
       </FormFieldsWrapper>
       <FormInputField
-        name="budget"
-        type="range"
-        min="3000"
-        max="50000"
-        step="500"
-        placeholder={`${props.f("common.priceTo")}:`}
-        {...props}
-      />
-      <FormInputField
         name="message"
         type="textarea"
         placeholder={`${props.f("common.message")}:`}

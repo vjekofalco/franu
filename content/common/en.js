@@ -45,6 +45,9 @@ export const common = {
     "At the moment Franu is providing its services only for Munich area.",
   chooseKitchenForm: "Choose kitchen form",
   chooseAppliances: "Choose appliances",
+  whatIsYourBudget: "What is Your budget?",
+  howBig: "How big is Your kitchen?",
+  weWillContactYou: "Thank you for contacting us.",
   cookies: {
     cookiesTitle: "Franu Cookies",
     acceptAll: "Accept all",

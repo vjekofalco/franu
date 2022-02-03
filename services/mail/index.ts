@@ -49,8 +49,15 @@ const composeMessage = (data) => {
             </div>`
             : ""
         }
+        ${
+          userData.kitchenSize
+            ? `<div style="margin-top: 12px;">
+              <b>Dužina kuhinje: </b> ≈ ${userData.kitchenSize} m
+            </div>`
+            : ""
+        }
         <div style="margin-top: 12px;">
-            <b>Budget:</b> ${userData.budget}
+            <b>Budget:</b> ${userData.budget} €
         </div>
         ${
           requestInfo.kitchenShape
@@ -73,10 +80,7 @@ const composeMessage = (data) => {
         ${
           userData.message
             ? `<div style="margin-top: 12px;">
-            <b>Info:</b>
-            <div style="margin-top: 6px;">
-                ${userData.message}
-            </div>
+            <b>Dodatne Info:</b>${userData.message}
         </div>`
             : ""
         }

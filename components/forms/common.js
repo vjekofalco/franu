@@ -56,11 +56,12 @@ const RangeValueWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: ${baseUnit}px;
 `
 
 export const FormInputField = (props) => {
   const [field, meta] = useField(props)
-  const { placeholder, label } = props
+  const { placeholder, label, unit, prefix } = props
   const error = meta.error
 
   console.log(field)
@@ -93,8 +94,14 @@ export const FormInputField = (props) => {
             placeholder={placeholder}
           />
           <RangeValueWrapper>
-            <span>{props.min}</span>
-            <span>{field.value}</span>
+            <span>
+              {field.value
+                ? `${prefix ? `${prefix} ` : ""}${field.value} ${unit}`
+                : ""}
+            </span>
+            <span>
+              {prefix || ""} {props.max} {unit}
+            </span>
           </RangeValueWrapper>
         </>
       )}

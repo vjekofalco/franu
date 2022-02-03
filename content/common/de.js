@@ -45,6 +45,9 @@ export const common = {
     "Franu bietet seine Dienste zurzeit nur für den Raum München an.",
   chooseKitchenForm: "Wahlen Sie Küchenform",
   chooseAppliances: "Wählen Sie Geräte",
+  whatIsYourBudget: "Was ist Ihr Budget?",
+  howBig: "Wie groß ist Ihre Küche?",
+  weWillContactYou: "Danke, dass Sie uns kontaktiert haben.",
   cookies: {
     cookiesTitle: "Franu Cookies",
     acceptAll: "Akzeptiere alle",
