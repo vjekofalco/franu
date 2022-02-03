@@ -1,17 +1,18 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 
-import { Text } from '../../common/text'
-import { white } from '../../../styles/colors'
-import { baseUnit } from '../../../common/constants'
-import { energyEfficiencyLabels } from '../../../common/energy-efficiency-labels'
+import { Text } from "../../common/text"
+import { white } from "../../../styles/colors"
+import { baseUnit } from "../../../common/constants"
+import { energyEfficiencyLabels } from "../../../common/energy-efficiency-labels"
 
 const EFLWrapper = styled.div`
   max-height: 27px;
   position: relative;
   display: inline-block;
   padding: ${baseUnit / 2}px;
-  ${({ backgroundColor }) => backgroundColor && `background-color: ${backgroundColor};`}
+  ${({ backgroundColor }) =>
+    backgroundColor && `background-color: ${backgroundColor};`}
   
   &:after {
     content: '';
@@ -24,15 +25,19 @@ const EFLWrapper = styled.div`
     border-right: 13px solid transparent;
     clear: both;
     transform: rotate(-90deg);
-    ${({backgroundColor}) => backgroundColor && `border-top: 16px solid ${backgroundColor};`}
+    ${({ backgroundColor }) =>
+      backgroundColor && `border-top: 16px solid ${backgroundColor};`}
     }
 }`
 
 export const CatalogItemEnergyEfficiencyLabel = ({ id }) => {
-    const { label, color } = energyEfficiencyLabels.filter(e => e.id === id)[0]
-    console.log(id, label, color)
+  const { label, color } = energyEfficiencyLabels.filter((e) => e.id === id)[0]
 
-    return (<EFLWrapper backgroundColor={color}>
-        <Text weight={600} color={white} size={0.75}>{label}</Text>
-    </EFLWrapper>)
+  return (
+    <EFLWrapper backgroundColor={color}>
+      <Text weight={600} color={white} size={0.75}>
+        {label}
+      </Text>
+    </EFLWrapper>
+  )
 }
