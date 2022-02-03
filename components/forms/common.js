@@ -63,8 +63,9 @@ export const FormInputField = (props) => {
   const [field, meta] = useField(props)
   const { placeholder, label, unit, prefix } = props
   const error = meta.error
+  const touched = meta.touched
 
-  console.log(field)
+  console.log(field, meta)
 
   return (
     <FormInputWrapper {...props}>
@@ -74,13 +75,13 @@ export const FormInputField = (props) => {
             {props.hint}
           </Text>
         )}
-        {error ? <ErrorText>{meta.error}</ErrorText> : null}
+        {error && touched ? <ErrorText>{meta.error}</ErrorText> : null}
       </FormErrorWrapper>
       {(props.type === "text" || props.type == "number") && (
         <StyledInput
           type={props.type}
           {...field}
-          error={error}
+          error={error && touched}
           placeholder={placeholder}
         />
       )}

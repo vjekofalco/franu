@@ -59,7 +59,9 @@ export const ContactPageRequestForm = (props) => {
   const { f } = props
   const [appliances, setAppliances] = useState([])
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
   const [kitchenFormSelection, setKitchenFormSelection] = useState(false)
+  const [kitchenSizeSelection, setKitchenSizeSelection] = useState(false)
   const [kitchenAppliancesSelection, setKitchenAppliancesSelection] =
     useState(false)
   const [kitchenShape, setKitchenShape] = useState("")
@@ -90,6 +92,7 @@ export const ContactPageRequestForm = (props) => {
   }, [submitted])
 
   const submitForm = (values) => {
+    setSubmitting(true)
     const data = {
       ...values,
       kitchenShape,
@@ -101,6 +104,7 @@ export const ContactPageRequestForm = (props) => {
       .then((data) => {
         console.log(data)
         setSubmitted(true)
+        setSubmitting(false)
       })
       .catch((err) => console.log(err))
   }
@@ -169,14 +173,14 @@ export const ContactPageRequestForm = (props) => {
               <SeparationLineDefault />
               <DropdownWrapper>
                 <DropdownWrapperHeadline
-                  onClick={() => setKitchenFormSelection(!kitchenFormSelection)}
+                  onClick={() => setKitchenSizeSelection(!kitchenSizeSelection)}
                 >
                   <HeadlineTernarry color={brown}>
                     {f("common.howBig")}
                   </HeadlineTernarry>
                   <Next />
                 </DropdownWrapperHeadline>
-                <DropdownContent selected={kitchenFormSelection}>
+                <DropdownContent selected={kitchenSizeSelection}>
                   <FormInputField
                     name="length"
                     type="range"
@@ -232,7 +236,7 @@ export const ContactPageRequestForm = (props) => {
               </DropdownWrapper>
               <SeparationLineDefault marginBottom={0.7} />
               <TermsAndConditions {...props} f={f} />
-              <SendButton disabled={submitted} big type="submit">
+              <SendButton disabled={submitting} big type="submit">
                 {f("common.send")}
               </SendButton>
             </Form>
