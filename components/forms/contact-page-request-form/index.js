@@ -232,7 +232,7 @@ export const ContactPageRequestForm = (props) => {
                   />
                 </DropdownContent>
               </DropdownWrapper>
-              <SeparationLineDefault marginBottom={0.7} />
+              <SeparationLineDefault marginBottom={1.5} />
               <TermsAndConditions {...props} f={f} />
               <SendButton disabled={submitting} big type="submit">
                 {f("common.send")}
