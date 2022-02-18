@@ -89,7 +89,6 @@ export const FormInputField = (props) => {
             type={props.type}
             {...field}
             {...props}
-            error={error}
             placeholder={placeholder}
           />
           <RangeValueWrapper>
@@ -105,7 +104,11 @@ export const FormInputField = (props) => {
         </>
       )}
       {props.type === "textarea" && (
-        <StyledTextarea {...field} error={error} placeholder={placeholder} />
+        <StyledTextarea
+          {...field}
+          error={error && touched}
+          placeholder={placeholder}
+        />
       )}
       {props.type === "select" && (
         <StyledSelect
@@ -116,7 +119,7 @@ export const FormInputField = (props) => {
         />
       )}
       {props.type === "checkbox" && (
-        <CheckBoxIntegrated {...field} error={error} label={label} />
+        <CheckBoxIntegrated {...field} error={error && touched} label={label} />
       )}
     </FormInputWrapper>
   )
