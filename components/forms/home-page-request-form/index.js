@@ -231,7 +231,7 @@ export const HomePageRequestForm = ({ f }) => {
             </Text>
           </a>
         </Link>
-        <Link href="mailto:info@franu.de" passHref>
+        <Link href="/contact" passHref>
           <a>
             <Mail />
             <Text marginLeft={1} weight={600}>

@@ -10,6 +10,7 @@ export const ImageOptimized = ({ relativeUrl, alt, url, width, height }) => {
         <img
           src={require("../../images/placeholder-image.png")}
           alt={alt || ""}
+          loading="lazy"
         />
       </picture>
     )
@@ -31,6 +32,7 @@ export const ImageOptimized = ({ relativeUrl, alt, url, width, height }) => {
         alt={alt || ""}
         width={width}
         height={height}
+        loading="lazy"
       />
     </picture>
   )

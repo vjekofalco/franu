@@ -18,14 +18,17 @@ export const sendMail = async (data) => {
 
     let options = {
       from: `${userData.email}`,
-      to: [process.env.GMAIL_USER_ONE, process.env.GMAIL_USER_TWO],
+      to: [process.env.GMAIL_USER, process.env.GMAIL_USER_TWO],
       subject: "Novi zahtijev za kuhinju",
       html: composeMessage(data),
     }
 
     await transporter.sendMail(options)
   } catch (e) {
-    console.log(e)
+    console.error(
+      `Sending request E-mail to ${userData.email} failed. User name: ${userData.firstName} ${userData.lastName}, phone: ${userData.phone}`,
+      e
+    )
   }
 }
 
